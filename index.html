@@ -1,42 +1,244 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#080d15">
-  <meta name="description" content="AEGERYN — exploring resilient autonomy, robotics, and intelligent systems for a safer world.">
-  <title>AEGERYN | Engineering the Next Frontier</title>
-  <style>
-    :root{color-scheme:dark;--bg:#080d15;--fg:#edf4fc;--muted:#93a5b9;--line:rgba(170,199,225,.16);--accent:#a9d4ee}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--fg);font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
-    body:before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(ellipse at 75% 30%,rgba(29,80,112,.23),transparent 43%),radial-gradient(ellipse at 15% 85%,rgba(20,45,72,.19),transparent 44%);z-index:-1}
-    .grid{position:fixed;inset:0;pointer-events:none;opacity:.38;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:80px 80px;mask-image:linear-gradient(to bottom,transparent 5%,black 45%,transparent 100%);z-index:-1}
-    .shell{width:min(1180px,calc(100% - 64px));margin:auto}header{height:94px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:13px;text-decoration:none;color:var(--fg)}.mark{width:32px;height:38px;stroke:var(--accent);fill:none;stroke-width:1.7}.brand-name{font-size:20px;font-weight:750;letter-spacing:.24em}.header-right{font-size:11px;letter-spacing:.19em;color:var(--muted);text-transform:uppercase}
-    main{min-height:calc(100svh - 174px);display:flex;flex-direction:column;justify-content:center;padding:95px 0 115px;position:relative}.eyebrow{display:flex;align-items:center;gap:13px;font-size:12px;font-weight:650;letter-spacing:.25em;color:var(--accent);text-transform:uppercase}.eyebrow:before{content:"";width:27px;height:1px;background:var(--accent)}h1{max-width:950px;font-size:clamp(54px,8.4vw,118px);letter-spacing:-.065em;line-height:1.02;margin:31px 0 28px;font-weight:650}h1 span{color:#8faec5}.lead{max-width:610px;color:#aabacc;font-size:clamp(17px,2vw,21px);line-height:1.75;margin:0}.status{margin-top:48px;display:inline-flex;align-items:center;gap:11px;border:1px solid rgba(169,212,238,.25);background:rgba(169,212,238,.045);padding:14px 18px;width:fit-content;color:#c4d7e5;font-size:12px;font-weight:650;letter-spacing:.17em;text-transform:uppercase}.dot{width:7px;height:7px;border-radius:50%;background:#9ac8e3;box-shadow:0 0 0 5px rgba(154,200,227,.09);animation:pulse 2.5s infinite}@keyframes pulse{50%{opacity:.5;box-shadow:0 0 0 9px rgba(154,200,227,0)}}
-    .bottom{border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;align-items:center;min-height:80px;color:#8194a8;font-size:12px;letter-spacing:.06em}.bottom a{color:#afc8dc;text-decoration:none}.bottom a:hover{text-decoration:underline}.corner{position:absolute;right:0;bottom:110px;color:rgba(151,188,212,.3);font-size:11px;letter-spacing:.2em;writing-mode:vertical-rl}
-    @media(max-width:700px){.shell{width:calc(100% - 42px)}header{height:78px}.brand-name{font-size:16px;letter-spacing:.19em}.header-right{font-size:9px}main{min-height:calc(100svh - 150px);padding:80px 0}.bottom{min-height:72px;flex-wrap:wrap;padding:18px 0}.corner{display:none}h1{letter-spacing:-.055em}.lead{line-height:1.65}}
-    @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important}}
-  </style>
-</head>
-<body>
-  <div class="grid" aria-hidden="true"></div>
-  <div class="shell">
-    <header>
-      <a class="brand" href="/" aria-label="AEGERYN home">
-        <svg class="mark" viewBox="0 0 34 40" aria-hidden="true"><path d="M17 2 31 10v15L17 38 3 25V10Z"/><path d="m9 27 8-17 8 17M12 21h10"/></svg>
-        <span class="brand-name">AEGERYN</span>
-      </a>
-      <div class="header-right">Independent technology initiative</div>
-    </header>
-    <main>
-      <div class="eyebrow">The next frontier</div>
-      <h1>Intelligence.<br>Autonomy.<br><span>Purpose.</span></h1>
-      <p class="lead">Exploring advanced robotics, artificial intelligence, and resilient autonomous systems designed to support people in the world's most demanding environments.</p>
-      <div class="status"><span class="dot" aria-hidden="true"></span>Something extraordinary is taking shape</div>
-      <div class="corner" aria-hidden="true">AEGERYN / 001</div>
-    </main>
-    <footer class="bottom"><span>© <span id="year">2026</span> AEGERYN. All rights reserved.</span><span>Engineering a safer future.</span></footer>
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>AEGERYN Project Aegis</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+:root {
+  /* Layout: a single column that widens into a two-column hero, with the search map as the visual anchor. */
+  --bg: #f3f5f8;
+  --surface: #e6ebf2;
+  --fg: #0b1320;
+  --muted: #4b5769;
+  --line: #cbd3df;
+  --accent: #b8390b;
+  font-family: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: var(--fg);
+  background: var(--bg);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #060a11;
+    --surface: #0c131e;
+    --fg: #e7ecf3;
+    --muted: #8f9bb0;
+    --line: #1d2839;
+    --accent: #ff8a3d;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #060a11;
+  --surface: #0c131e;
+  --fg: #e7ecf3;
+  --muted: #8f9bb0;
+  --line: #1d2839;
+  --accent: #ff8a3d;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg); font-size: 16px; line-height: 1.6; }
+a { color: inherit; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+.wrap {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding-left: max(20px, env(safe-area-inset-left, 0px));
+  padding-right: max(20px, env(safe-area-inset-right, 0px));
+}
+
+.mono { font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
+.eyebrow { color: var(--muted); margin: 0 0 18px; }
+
+header.site { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 24px; padding-block: 24px; border-bottom: 1px solid var(--line); }
+.brand { font-family: "Instrument Serif", Georgia, serif; font-size: 1.6rem; text-decoration: none; letter-spacing: 0.02em; }
+nav.main { display: flex; flex-wrap: wrap; gap: 8px 22px; }
+nav.main a { text-decoration: none; color: var(--muted); font-size: 0.95rem; }
+nav.main a:hover { color: var(--fg); }
+
+.hero { display: grid; gap: 48px; align-items: center; padding-block: 72px 80px; }
+@media (min-width: 880px) { .hero { grid-template-columns: 1.05fr 0.95fr; } }
+h1 {
+  font-family: "Instrument Serif", Georgia, serif;
+  font-weight: 400;
+  font-size: clamp(2.5rem, 6vw, 4.4rem);
+  line-height: 1.02;
+  letter-spacing: -0.01em;
+  margin: 0 0 24px;
+  text-wrap: balance;
+}
+.lead { font-size: 1.1rem; color: var(--muted); max-width: 34em; margin: 0 0 32px; }
+.status-pill { display: inline-flex; align-items: center; gap: 10px; border: 1px solid var(--line); padding: 8px 14px; border-radius: 999px; color: var(--muted); }
+.status-pill::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+.actions { display: flex; flex-wrap: wrap; gap: 16px 24px; align-items: center; margin-top: 28px; }
+.link-arrow { text-decoration: none; border-bottom: 1px solid var(--accent); padding-bottom: 2px; font-weight: 500; }
+
+figure.map { margin: 0; }
+figure.map svg { display: block; width: 100%; height: auto; max-width: 100%; }
+figure.map figcaption { color: var(--muted); margin-top: 12px; font-size: 0.85rem; }
+.s-bg { fill: var(--surface); }
+.s-zone { fill: none; stroke: var(--line); stroke-width: 1.5; }
+.s-last { fill: none; stroke: var(--muted); stroke-dasharray: 4 5; stroke-width: 1.2; }
+.s-path { fill: none; stroke: var(--muted); stroke-width: 1.2; opacity: 0.7; }
+.s-hit { fill: var(--accent); }
+.s-ring { fill: none; stroke: var(--accent); stroke-width: 1.5; }
+.s-label { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 11px; fill: var(--muted); letter-spacing: 0.04em; }
+.s-label.hot { fill: var(--accent); }
+@media (prefers-reduced-motion: no-preference) {
+  .s-ring { animation: pulse 2.6s ease-out infinite; transform-origin: center; transform-box: fill-box; }
+  @keyframes pulse { 0% { opacity: 0.9; transform: scale(0.8); } 100% { opacity: 0; transform: scale(1.6); } }
+}
+
+section { padding-block: 80px; border-top: 1px solid var(--line); }
+h2 { font-family: "Instrument Serif", Georgia, serif; font-weight: 400; font-size: clamp(2rem, 4vw, 2.9rem); line-height: 1.1; margin: 0 0 20px; text-wrap: balance; }
+.section-lead { color: var(--muted); max-width: 40em; margin: 0 0 48px; }
+
+.steps { display: grid; gap: 40px 48px; }
+@media (min-width: 880px) { .steps { grid-template-columns: repeat(3, 1fr); } }
+.step { border-top: 1px solid var(--fg); padding-top: 22px; min-width: 0; }
+.step .num { color: var(--accent); display: block; margin-bottom: 14px; }
+.step h3 { font-size: 1.25rem; font-weight: 600; margin: 0 0 10px; }
+.step p { color: var(--muted); margin: 0; }
+
+.principles { display: grid; gap: 36px 48px; margin: 0; }
+@media (min-width: 720px) { .principles { grid-template-columns: 1fr 1fr; } }
+.principles div { min-width: 0; }
+.principles dt { font-weight: 600; font-size: 1.1rem; margin-bottom: 8px; }
+.principles dd { margin: 0; color: var(--muted); }
+
+.stages { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--line); }
+.stages li { display: grid; grid-template-columns: 1fr; gap: 4px 24px; padding: 20px 0; border-bottom: 1px solid var(--line); position: relative; padding-left: 0; }
+@media (min-width: 720px) { .stages li { grid-template-columns: 220px 1fr; align-items: baseline; } }
+.stages .stage-name { font-weight: 600; }
+.stages .stage-desc { color: var(--muted); }
+.stages li.is-current .stage-name { color: var(--accent); }
+.stages li.is-current .tag { color: var(--accent); }
+.later { margin-top: 28px; color: var(--muted); }
+
+footer.site { padding-block: 40px 56px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.9rem; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 24px; }
+footer.site p { margin: 0; }
+</style>
+
+<header class="wrap site">
+  <a class="brand" href="#top" id="top">AEGERYN</a>
+  <nav class="main" aria-label="Main">
+    <a href="#how">How it works</a>
+    <a href="#principles">Principles</a>
+    <a href="#status">Status</a>
+  </nav>
+</header>
+
+<main class="wrap">
+  <div class="hero">
+    <div>
+      <p class="eyebrow mono">AEGERYN / Project Aegis</p>
+      <h1>Find missing people faster across wide areas.</h1>
+      <p class="lead">Aegis is a drone system for search and rescue. It scans a search zone with thermal and visual cameras, flags where a person may be, and sends each detection to a trained operator who decides what happens next.</p>
+      <span class="status-pill mono">In development. Not yet in field use.</span>
+      <div class="actions">
+        <a class="link-arrow" href="#how">See how it works</a>
+      </div>
+    </div>
+
+    <figure class="map">
+      <svg viewBox="0 0 640 420" role="img" aria-labelledby="mapTitle">
+        <title id="mapTitle">A simulated search pattern over a zone, with two possible detections</title>
+        <rect class="s-bg" x="0" y="0" width="640" height="420"/>
+        <rect class="s-zone" x="60" y="60" width="520" height="300"/>
+        <circle class="s-last" cx="300" cy="210" r="150"/>
+        <polyline class="s-path" points="60,60 580,60 580,110 60,110 60,160 580,160 580,210 60,210 60,260 580,260 580,310 60,310 60,360 580,360"/>
+        <text class="s-label" x="70" y="48">SEARCH ZONE</text>
+        <text class="s-label" x="170" y="150">LAST SEEN AREA</text>
+        <circle class="s-ring" cx="410" cy="160" r="16"/>
+        <circle class="s-hit" cx="410" cy="160" r="6"/>
+        <text class="s-label hot" x="434" y="164">DET 01 · 0.91</text>
+        <circle class="s-ring" cx="235" cy="260" r="16"/>
+        <circle class="s-hit" cx="235" cy="260" r="6"/>
+        <text class="s-label hot" x="182" y="290">DET 02 · 0.78</text>
+        <text class="s-label" x="60" y="398">ILLUSTRATIVE SIMULATION</text>
+      </svg>
+      <figcaption>A simulated search pattern. Dots mark possible detections, which a trained operator reviews before any action.</figcaption>
+    </figure>
   </div>
-  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
-</body>
-</html>
+
+  <section id="how">
+    <h2>How Aegis works</h2>
+    <p class="section-lead">One drone covers a zone in planned passes. Each step produces something a person can check.</p>
+    <div class="steps">
+      <div class="step">
+        <span class="num mono">01 Scan</span>
+        <h3>Fly a planned pattern</h3>
+        <p>The drone covers the search zone row by row, so every part of the area is visited and any gaps are visible on the map.</p>
+      </div>
+      <div class="step">
+        <span class="num mono">02 Detect</span>
+        <h3>Look for person-shaped heat and shape</h3>
+        <p>Thermal and visual models flag possible people. Each detection gets a location, a confidence score, and an image for review.</p>
+      </div>
+      <div class="step">
+        <span class="num mono">03 Report</span>
+        <h3>Hand each detection to a person</h3>
+        <p>Detections reach the operator with time and position. The operator checks each one and decides whether to send a ground team.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="principles">
+    <h2>Design principles</h2>
+    <p class="section-lead">These shape what Aegis does and what it does not do.</p>
+    <dl class="principles">
+      <div>
+        <dt>Detect, do not identify.</dt>
+        <dd>Aegis finds possible people by heat and shape. It does not identify anyone, and it does not use facial recognition.</dd>
+      </div>
+      <div>
+        <dt>People make the decisions.</dt>
+        <dd>A trained operator reviews every detection before any action. The drone never dispatches anyone on its own.</dd>
+      </div>
+      <div>
+        <dt>Measure before claiming.</dt>
+        <dd>Performance is reported as measured precision, recall, and false alarms per hour, under stated conditions.</dd>
+      </div>
+      <div>
+        <dt>Fly within the rules.</dt>
+        <dd>Field operations will follow CASA requirements and approvals before any flight outside a controlled test.</dd>
+      </div>
+    </dl>
+  </section>
+
+  <section id="status">
+    <h2>Where the project stands</h2>
+    <p class="section-lead">Aegis is built in stages. Each stage has to work before the next one starts.</p>
+    <ol class="stages">
+      <li class="is-current">
+        <span class="stage-name">Simulation</span>
+        <span class="stage-desc"><span class="tag mono">Current focus.</span> One drone over a simulated search zone, with detection and reporting.</span>
+      </li>
+      <li>
+        <span class="stage-name">Bench tests</span>
+        <span class="stage-desc">Sensors and detection running on flight hardware, with the drone not flying.</span>
+      </li>
+      <li>
+        <span class="stage-name">Tethered flight</span>
+        <span class="stage-desc">Basic flight and failsafes tested with the drone secured.</span>
+      </li>
+      <li>
+        <span class="stage-name">Supervised field trials</span>
+        <span class="stage-desc">Short, approved flights with a trained spotter present.</span>
+      </li>
+      <li>
+        <span class="stage-name">Partner pilots</span>
+        <span class="stage-desc">Trials alongside an emergency or volunteer search group, on their procedures.</span>
+      </li>
+    </ol>
+    <p class="later">After single-drone operation, the plan adds coordination across several drones, with a mesh network and a ground station.</p>
+  </section>
+</main>
+
+<footer class="wrap site">
+  <p>AEGERYN is an independent technology initiative focused on robotics, AI, and resilient autonomous systems.</p>
+  <p>© 2026 AEGERYN. All rights reserved. Engineering a safer future.</p>
+</footer>
+
+</body></html>
