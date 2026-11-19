@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#080c0c">
+  <meta name="theme-color" content="#090909">
   <meta name="description" content="AEGERYN explores resilient autonomous systems for real-world challenges. Discover AEGIS Rescue, our early-stage multi-agent search-and-rescue concept.">
   <meta property="og:title" content="AEGERYN — Autonomy for what matters">
   <meta property="og:description" content="Independent engineering initiative exploring autonomy, perception and resilient systems. Meet AEGIS Rescue.">
@@ -14,41 +14,41 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
-    :root{color-scheme:dark;--bg:#080c0c;--panel:#101718;--panel2:#141e1d;--ink:#f0f3ee;--muted:#98a6a0;--subtle:#687872;--lime:#ccff9a;--lime-rgb:204,255,154;--stroke:rgba(224,243,227,.14);--mono:'IBM Plex Mono',monospace;--display:'Space Grotesk',Arial,sans-serif;--body:'DM Sans',Arial,sans-serif}
+    :root{color-scheme:dark;--bg:#090909;--panel:#1a1b1e;--panel2:#292c30;--ink:#f5f5f5;--muted:#a5a9b0;--subtle:#747981;--accent:#c6cbd3;--accent-rgb:198,203,211;--stroke:rgba(241,243,246,.12);--mono:'IBM Plex Mono',monospace;--display:'Space Grotesk',Arial,sans-serif;--body:'DM Sans',Arial,sans-serif}
     *,*::before,*::after{box-sizing:border-box}
     html{scroll-behavior:smooth;scroll-padding-top:85px}
     body{margin:0;color:var(--ink);background:var(--bg);font-family:var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
-    a{color:inherit;text-decoration:none}button{font:inherit}button,a{-webkit-tap-highlight-color:transparent}button:focus-visible,a:focus-visible{outline:2px solid var(--lime);outline-offset:5px}
-    ::selection{background:var(--lime);color:#09100b}
-    .container{width:min(100% - 108px,1460px);margin-inline:auto}.mono{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.15em;text-transform:uppercase}.accent{color:var(--lime)}
-    .progress{height:2px;background:var(--lime);width:0;position:fixed;z-index:99;top:0;left:0;box-shadow:0 0 12px rgba(var(--lime-rgb),.6)}
-    .site-nav{height:84px;position:fixed;inset:0 0 auto;z-index:60;display:flex;align-items:center;border-bottom:1px solid rgba(241,255,245,.13);transition:background .35s,backdrop-filter .35s}
-    .site-nav.scrolled,.site-nav.menu-open{background:rgba(7,12,12,.9);backdrop-filter:blur(22px)}
+    a{color:inherit;text-decoration:none}button{font:inherit}button,a{-webkit-tap-highlight-color:transparent}button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:5px}
+    ::selection{background:var(--accent);color:#101114}
+    .container{width:min(100% - 108px,1460px);margin-inline:auto}.mono{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.15em;text-transform:uppercase}.accent{color:var(--accent)}
+    .progress{height:2px;background:var(--accent);width:0;position:fixed;z-index:99;top:0;left:0;box-shadow:0 0 12px rgba(var(--accent-rgb),.6)}
+    .site-nav{height:84px;position:fixed;inset:0 0 auto;z-index:60;display:flex;align-items:center;border-bottom:1px solid rgba(249,251,254,.13);transition:background .35s,backdrop-filter .35s}
+    .site-nav.scrolled,.site-nav.menu-open{background:rgba(15,17,20,.9);backdrop-filter:blur(22px)}
     .nav-inner{width:min(100% - 108px,1460px);margin:auto;display:flex;align-items:center;justify-content:space-between;gap:30px}
     .brand{display:flex;align-items:center;gap:13px;font-family:var(--display);font-size:20px;letter-spacing:.24em;font-weight:700;white-space:nowrap}
-    .brand-symbol{height:32px;width:32px;flex-shrink:0}.brand-symbol path{fill:none;stroke:var(--lime);stroke-width:2.1;stroke-linecap:round;stroke-linejoin:round}
-    .nav-links{display:flex;align-items:center;gap:clamp(20px,3.3vw,53px)}.nav-links>a{font-family:var(--mono);font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:#d2ded4;transition:color .2s}.nav-links>a:hover{color:var(--lime)}
-    .nav-links .nav-contact{border:1px solid rgba(var(--lime-rgb),.48);padding:13px 17px;color:var(--lime)}.nav-links .nav-contact:hover{background:var(--lime);color:#101611}
-    .menu-toggle{display:none;width:42px;height:42px;border:1px solid var(--stroke);background:rgba(10,17,17,.8);color:#f0fff0;align-items:center;justify-content:center;cursor:pointer}
-    .menu-toggle span,.menu-toggle span::before,.menu-toggle span::after{display:block;width:19px;height:1px;background:currentColor;position:relative;transition:transform .25s}.menu-toggle span::before,.menu-toggle span::after{content:'';position:absolute;left:0}.menu-toggle span::before{top:-6px}.menu-toggle span::after{top:6px}.menu-open .menu-toggle span{background:transparent}.menu-open .menu-toggle span::before{top:0;transform:rotate(45deg);background:var(--lime)}.menu-open .menu-toggle span::after{top:0;transform:rotate(-45deg);background:var(--lime)}
+    .brand-symbol{height:32px;width:32px;flex-shrink:0}.brand-symbol path{fill:none;stroke:var(--accent);stroke-width:2.1;stroke-linecap:round;stroke-linejoin:round}
+    .nav-links{display:flex;align-items:center;gap:clamp(20px,3.3vw,53px)}.nav-links>a{font-family:var(--mono);font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:#dddfe3;transition:color .2s}.nav-links>a:hover{color:var(--accent)}
+    .nav-links .nav-contact{border:1px solid rgba(var(--accent-rgb),.48);padding:13px 17px;color:var(--accent)}.nav-links .nav-contact:hover{background:var(--accent);color:#181a1d}
+    .menu-toggle{display:none;width:42px;height:42px;border:1px solid var(--stroke);background:rgba(18,20,23,.8);color:#f9fbff;align-items:center;justify-content:center;cursor:pointer}
+    .menu-toggle span,.menu-toggle span::before,.menu-toggle span::after{display:block;width:19px;height:1px;background:currentColor;position:relative;transition:transform .25s}.menu-toggle span::before,.menu-toggle span::after{content:'';position:absolute;left:0}.menu-toggle span::before{top:-6px}.menu-toggle span::after{top:6px}.menu-open .menu-toggle span{background:transparent}.menu-open .menu-toggle span::before{top:0;transform:rotate(45deg);background:var(--accent)}.menu-open .menu-toggle span::after{top:0;transform:rotate(-45deg);background:var(--accent)}
     /* Cinematic hero */
-    .hero{min-height:100svh;min-height:max(790px,100svh);position:relative;isolation:isolate;display:flex;align-items:center;overflow:hidden;background:#07100f}
-    .hero-world{position:absolute;inset:0;z-index:-2;pointer-events:none;overflow:hidden;background:radial-gradient(ellipse 65% 70% at 73% 46%,#22443a 0%,#102321 35%,#07100e 77%)}
+    .hero{min-height:100svh;min-height:max(790px,100svh);position:relative;isolation:isolate;display:flex;align-items:center;overflow:hidden;background:#0b0c0e}
+    .hero-world{position:absolute;inset:0;z-index:-2;pointer-events:none;overflow:hidden;background:radial-gradient(ellipse 65% 70% at 73% 46%,#323438 0%,#1d1f23 35%,#0b0c0e 77%)}
     .hero-world svg{height:100%;width:100%;position:absolute;inset:0;object-fit:cover;transform-origin:70% 55%;animation:scene-enter 2.5s ease-out both,scene-drift 27s ease-in-out 2.5s infinite alternate}
-    .hero-world::after{content:"";position:absolute;inset:0;z-index:5;background:linear-gradient(90deg,#070d0de8 2%,#07100ed9 26%,#07100e83 47%,#07100e00 84%),linear-gradient(0deg,#080c0c 1%,transparent 32%),linear-gradient(180deg,#080c0c80 0%,transparent 22%);pointer-events:none}
+    .hero-world::after{content:"";position:absolute;inset:0;z-index:5;background:linear-gradient(90deg,#0a0b0de8 2%,#0b0c0ed9 26%,#0b0c0e83 47%,#0b0c0e00 84%),linear-gradient(0deg,#101113 1%,transparent 32%),linear-gradient(180deg,#10111380 0%,transparent 22%);pointer-events:none}
     .hero-noise{position:absolute;inset:0;z-index:6;opacity:.14;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.27'/%3E%3C/svg%3E")}
     .hero-inner{position:relative;z-index:8;padding-top:130px;padding-bottom:145px;width:min(100% - 108px,1460px)}.hero-copy{max-width:880px}
-    .eyebrow{display:flex;align-items:center;gap:14px;color:#d9e7d8}.eyebrow::before{content:'';width:28px;height:1px;background:var(--lime)}
+    .eyebrow{display:flex;align-items:center;gap:14px;color:#e3e5e9}.eyebrow::before{content:'';width:28px;height:1px;background:var(--accent)}
     .hero h1{font:500 clamp(76px,9.35vw,156px)/.94 var(--display);letter-spacing:-.091em;margin:31px 0 30px;text-wrap:balance}
-    .hero h1 .line{display:block}.hero h1 .outline{color:transparent;-webkit-text-stroke:1px rgba(234,249,233,.92);text-shadow:0 0 80px #bdff9a10}.hero h1 .last{color:var(--lime)}
-    .hero-desc{font-size:clamp(16px,1.25vw,19px);line-height:1.75;color:#c2d1c6;max-width:490px;margin:0}
+    .hero h1 .line{display:block}.hero h1 .outline{color:transparent;-webkit-text-stroke:1px rgba(243,245,248,.92);text-shadow:0 0 80px #c6cbd310}.hero h1 .last{color:var(--accent)}
+    .hero-desc{font-size:clamp(16px,1.25vw,19px);line-height:1.75;color:#d0d2d6;max-width:490px;margin:0}
     .hero-cta{margin-top:37px;display:flex;flex-wrap:wrap;align-items:center;gap:28px}
-    .btn{display:inline-flex;align-items:center;justify-content:space-between;gap:32px;min-height:54px;padding:0 21px;border:1px solid var(--lime);color:#07120b;background:var(--lime);font-family:var(--mono);font-size:10px;letter-spacing:.13em;text-transform:uppercase;font-weight:600;transition:transform .25s,background .25s,box-shadow .25s;cursor:pointer}
-    .btn:hover{transform:translateY(-3px);background:#e4ffbf;box-shadow:0 12px 32px rgba(var(--lime-rgb),.12)}.btn.secondary{color:#e7f0e7;border-color:#c9ddc55a;background:rgba(10,20,17,.48)}.btn.secondary:hover{background:rgba(204,255,154,.09)}.btn .arr{font-size:20px;font-family:var(--display);line-height:1}
-    .hero-frame{position:absolute;right:clamp(30px,4vw,70px);top:48%;transform:translateY(-50%);z-index:3;width:160px;pointer-events:none;text-align:right;color:#d2e7d7;opacity:.82}.hero-frame .boxline{width:100%;height:1px;background:linear-gradient(90deg,transparent,var(--lime));margin:13px 0}.hero-frame .frame-number{font:500 30px var(--display);letter-spacing:-.06em}.hero-frame .frame-sub{font:10px/1.7 var(--mono);color:#9bbcad;letter-spacing:.06em}
-    .hero-bottom{position:absolute;bottom:0;left:0;right:0;z-index:9;border-top:1px solid rgba(215,255,222,.2);background:rgba(5,10,10,.52);backdrop-filter:blur(7px)}.hero-bottom-inner{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;min-height:82px;align-items:center}.hero-data{padding:0 24px;border-right:1px solid #e7ffea2b;display:flex;gap:16px;align-items:center}.hero-data:first-child{padding-left:0}.hero-data:last-child{border:0}.data-dot{width:7px;height:7px;border-radius:50%;background:var(--lime);box-shadow:0 0 14px var(--lime);flex:none;animation:blink 2s infinite}.hero-data small{display:block;color:#92aba0;font:9px var(--mono);letter-spacing:.12em;text-transform:uppercase;margin-bottom:7px}.hero-data strong{display:block;color:#e3eee5;font:11px var(--mono);letter-spacing:.08em;font-weight:500}
-    .hero-index{position:absolute;bottom:122px;right:55px;z-index:9;color:#a5b8ad;writing-mode:vertical-rl;font-family:var(--mono);letter-spacing:.16em;font-size:9px;text-transform:uppercase}
-    .world-reticle{stroke:rgba(199,255,165,.39);fill:none;stroke-width:1.4}.world-pulse{transform-box:fill-box;transform-origin:center;animation:world-pulse 3.2s ease-out infinite}.world-pulse.delay{animation-delay:1.6s}.scan-beam{transform-origin:72% 38%;animation:beam-sway 7s ease-in-out infinite alternate}.drone-body{transform-box:fill-box;transform-origin:center;animation:drone-float 5.6s ease-in-out infinite}.blade{transform-box:fill-box;transform-origin:center;animation:rotor-spin .25s linear infinite}.ambient-fog{animation:mist-shift 18s ease-in-out infinite alternate}
+    .btn{display:inline-flex;align-items:center;justify-content:space-between;gap:32px;min-height:54px;padding:0 21px;border:1px solid var(--accent);color:#121315;background:var(--accent);font-family:var(--mono);font-size:10px;letter-spacing:.13em;text-transform:uppercase;font-weight:600;transition:transform .25s,background .25s,box-shadow .25s;cursor:pointer}
+    .btn:hover{transform:translateY(-3px);background:#e2e6ed;box-shadow:0 12px 32px rgba(var(--accent-rgb),.12)}.btn.secondary{color:#eef0f4;border-color:#d7d9dd5a;background:rgba(19,21,24,.48)}.btn.secondary:hover{background:rgba(198,203,211,.09)}.btn .arr{font-size:20px;font-family:var(--display);line-height:1}
+    .hero-frame{position:absolute;right:clamp(30px,4vw,70px);top:48%;transform:translateY(-50%);z-index:9;width:210px;pointer-events:none;text-align:right;color:#e1e3e7;opacity:.82}.hero-frame .boxline{width:100%;height:1px;background:linear-gradient(90deg,transparent,var(--accent));margin:13px 0}.hero-frame .frame-number{font:500 30px var(--display);letter-spacing:-.06em}.hero-frame .frame-sub{font:10px/1.7 var(--mono);color:#b6b8bc;letter-spacing:.06em}
+    .hero-bottom{position:absolute;bottom:0;left:0;right:0;z-index:9;border-top:1px solid rgba(238,240,243,.2);background:rgba(14,16,19,.52);backdrop-filter:blur(7px)}.hero-bottom-inner{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;min-height:82px;align-items:center}.hero-data{padding:0 24px;border-right:1px solid #f5f7fb2b;display:flex;gap:16px;align-items:center}.hero-data:first-child{padding-left:0}.hero-data:last-child{border:0}.data-dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 14px var(--accent);flex:none;animation:blink 2s infinite}.hero-data small{display:block;color:#b7b9bd;font:9px var(--mono);letter-spacing:.12em;text-transform:uppercase;margin-bottom:7px}.hero-data strong{display:block;color:#ebedf1;font:11px var(--mono);letter-spacing:.08em;font-weight:500}
+    .hero-index{position:absolute;bottom:122px;right:55px;z-index:9;color:#b9bbbf;writing-mode:vertical-rl;font-family:var(--mono);letter-spacing:.16em;font-size:9px;text-transform:uppercase}
+    .world-reticle{stroke:rgba(198,203,211,.39);fill:none;stroke-width:1.4}.world-pulse{transform-box:fill-box;transform-origin:center;animation:world-pulse 3.2s ease-out infinite}.world-pulse.delay{animation-delay:1.6s}.scan-beam{transform-origin:72% 38%;animation:beam-sway 7s ease-in-out infinite alternate}.drone-body{transform-box:fill-box;transform-origin:center;animation:drone-float 5.6s ease-in-out infinite}.blade{transform-box:fill-box;transform-origin:center;animation:rotor-spin .25s linear infinite}.ambient-fog{animation:mist-shift 18s ease-in-out infinite alternate}
     @keyframes scene-enter{from{transform:scale(1.13);opacity:.25}to{transform:scale(1);opacity:1}}
     @keyframes scene-drift{to{transform:scale(1.05) translate(-1.5%,.6%)}}
     @keyframes drone-float{50%{transform:translateY(-12px) rotate(-.8deg)}}
@@ -59,41 +59,83 @@
     @keyframes blink{50%{opacity:.4}}
     /* Sections */
     .section{padding:clamp(104px,12vw,188px) 0;position:relative}.section-border{border-top:1px solid var(--stroke)}
-    .section-label{display:flex;gap:18px;align-items:center;color:var(--lime);margin:0 0 34px}.section-label .section-num{opacity:.7;color:#aabeb1}.section-label::after{content:'';height:1px;max-width:80px;flex:1;background:#8ba68968}
-    h2,h3,p{margin-top:0}.heading{font:500 clamp(46px,6.1vw,104px)/1.04 var(--display);letter-spacing:-.077em;margin:0;text-wrap:balance}.heading .dim{color:#718178}.heading .highlight{color:var(--lime)}
+    .section-label{display:flex;gap:18px;align-items:center;color:var(--accent);margin:0 0 34px}.section-label .section-num{opacity:.7;color:#bec0c4}.section-label::after{content:'';height:1px;max-width:80px;flex:1;background:#b1b3b768}
+    h2,h3,p{margin-top:0}.heading{font:500 clamp(46px,6.1vw,104px)/1.04 var(--display);letter-spacing:-.077em;margin:0;text-wrap:balance}.heading .dim{color:#7e8189}.heading .highlight{color:var(--accent)}
     .body-copy{font-size:clamp(16px,1.25vw,19px);line-height:1.9;color:var(--muted);max-width:580px}
-    .intro-section{background:radial-gradient(ellipse at 90% 90%,#13221b,#080c0c 56%)}.intro-grid{display:grid;grid-template-columns:1.3fr .7fr;align-items:end;gap:10vw}.intro-lead{font-size:clamp(18px,1.4vw,21px);color:#ceddd0;line-height:1.7;margin:26px 0 0}.intro-aside{border-left:1px solid rgba(var(--lime-rgb),.5);padding:6px 0 3px 33px}.intro-aside .mono{color:var(--lime);margin-bottom:20px}.intro-aside .body-copy{margin-bottom:0}
-    .ticker{height:64px;overflow:hidden;display:flex;align-items:center;gap:0;border-block:1px solid #d5ffd52d;background:#0e1613}.ticker-track{display:flex;gap:70px;align-items:center;white-space:nowrap;width:max-content;animation:ticker 34s linear infinite}.ticker-track span{color:#d8eadb;font:500 11px var(--mono);letter-spacing:.19em}.ticker-track i{display:inline-block;width:5px;height:5px;background:var(--lime);transform:rotate(45deg);margin-right:65px;vertical-align:middle}@keyframes ticker{to{transform:translateX(-50%)}}
+    .intro-section{background:radial-gradient(ellipse at 90% 90%,#1e2024,#101113 56%)}.intro-grid{display:grid;grid-template-columns:1.3fr .7fr;align-items:end;gap:10vw}.intro-lead{font-size:clamp(18px,1.4vw,21px);color:#dbdde1;line-height:1.7;margin:26px 0 0}.intro-aside{border-left:1px solid rgba(var(--accent-rgb),.5);padding:6px 0 3px 33px}.intro-aside .mono{color:var(--accent);margin-bottom:20px}.intro-aside .body-copy{margin-bottom:0}
+    .ticker{height:64px;overflow:hidden;display:flex;align-items:center;gap:0;border-block:1px solid #edeff32d;background:#15171a}.ticker-track{display:flex;gap:70px;align-items:center;white-space:nowrap;width:max-content;animation:ticker 34s linear infinite}.ticker-track span{color:#e5e7eb;font:500 11px var(--mono);letter-spacing:.19em}.ticker-track i{display:inline-block;width:5px;height:5px;background:var(--accent);transform:rotate(45deg);margin-right:65px;vertical-align:middle}@keyframes ticker{to{transform:translateX(-50%)}}
     /* Project reveal */
-    .project{background:#0b1110}.project-head{display:grid;grid-template-columns:1fr 1fr;gap:10vw;align-items:end}.project-head .body-copy{margin:0 0 5px auto}
-    .project-mark{font:500 clamp(84px,13vw,200px)/.83 var(--display);letter-spacing:-.1em;color:#f2f5eb;margin:50px 0 12px}.project-mark span{color:var(--lime)}
-    .project-meta{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;padding:23px 0;border-block:1px solid var(--stroke);font:10px var(--mono);text-transform:uppercase;letter-spacing:.13em;color:#a1b0a5}.project-meta span:first-child{color:var(--lime)}
-    .numbers{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--stroke);margin-top:70px;border:1px solid var(--stroke)}.number-block{padding:32px 38px;background:#101917}.number-block strong{font:500 clamp(42px,4.5vw,68px)/1 var(--display);letter-spacing:-.06em;display:block;margin-bottom:22px}.number-block span{color:#a5b5a6;font:10px/1.7 var(--mono);letter-spacing:.1em;text-transform:uppercase;display:block}.number-block .sup{color:var(--lime);font-size:14px;letter-spacing:-.04em;vertical-align:top;padding-left:6px}
+    .project{background:#111215}.project-head{display:grid;grid-template-columns:1fr 1fr;gap:10vw;align-items:end}.project-head .body-copy{margin:0 0 5px auto}
+    .project-mark{font:500 clamp(84px,13vw,200px)/.83 var(--display);letter-spacing:-.1em;color:#f2f4f8;margin:50px 0 12px}.project-mark span{color:var(--accent)}
+    .project-meta{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;padding:23px 0;border-block:1px solid var(--stroke);font:10px var(--mono);text-transform:uppercase;letter-spacing:.13em;color:#b5b7bb}.project-meta span:first-child{color:var(--accent)}
+    .numbers{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--stroke);margin-top:70px;border:1px solid var(--stroke)}.number-block{padding:32px 38px;background:#191b1e}.number-block strong{font:500 clamp(42px,4.5vw,68px)/1 var(--display);letter-spacing:-.06em;display:block;margin-bottom:22px}.number-block span{color:#b7b9bd;font:10px/1.7 var(--mono);letter-spacing:.1em;text-transform:uppercase;display:block}.number-block .sup{color:var(--accent);font-size:14px;letter-spacing:-.04em;vertical-align:top;padding-left:6px}
     /* Interactive mission console */
-    .console-section{background:#101817}.console-intro{display:grid;grid-template-columns:.8fr 1.2fr;gap:8vw;align-items:end;margin-bottom:60px}.console-intro .body-copy{margin:0 0 4px}
-    .console{border:1px solid rgba(198,252,166,.29);background:#07100f;box-shadow:0 40px 100px rgba(0,0,0,.23);overflow:hidden}.console-head{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:20px 24px;border-bottom:1px solid #b5ddb323;background:#101b19}.console-head .row{display:flex;gap:13px;align-items:center}.console-head .status-dot{width:7px;height:7px;background:var(--lime);border-radius:50%;box-shadow:0 0 15px var(--lime)}.console-head .mono{color:#d3e5d3;letter-spacing:.1em}.console-tag{padding:7px 10px;border:1px solid #a8c4a64d;color:#94aa9a;font:9px var(--mono);letter-spacing:.1em;text-transform:uppercase}.console-content{display:grid;grid-template-columns:minmax(0,1.9fr) minmax(240px,.72fr);min-height:540px}
-    .map-area{position:relative;overflow:hidden;min-height:520px;background:radial-gradient(circle at 75% 30%,#19382b 0%,#0d201c 45%,#0a1615 100%)}
-    .map-area svg{position:absolute;inset:0;width:100%;height:100%;display:block}.map-area .map-overlay{pointer-events:none;position:absolute;inset:0;opacity:.33;background:repeating-linear-gradient(0deg,transparent 0 66px,#d7ffd50e 67px),repeating-linear-gradient(90deg,transparent 0 66px,#d7ffd50b 67px)}
-    .map-area::after{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,transparent 96%,rgba(204,255,154,.04) 100%);background-size:7px 100%}
-    .map-corner{position:absolute;z-index:2;font:9px var(--mono);letter-spacing:.1em;color:#b1c6b3;text-transform:uppercase;pointer-events:none}.map-tl{top:23px;left:25px}.map-br{right:25px;bottom:21px}.map-live{position:absolute;z-index:3;top:20px;right:23px;color:var(--lime);font:9px var(--mono);letter-spacing:.13em;text-transform:uppercase;display:flex;gap:8px;align-items:center}.map-live span{width:5px;height:5px;border-radius:50%;background:var(--lime);animation:blink 2s infinite}
-    #missionMap .contour{fill:none;stroke:#95c59d;stroke-width:1.35;stroke-opacity:.14}.sector-line{stroke:#b9d7b5;stroke-opacity:.25;fill:none;stroke-dasharray:5 6}.drone-unit{transition:opacity .3s}.drone-unit .drone-sprite{fill:#caffab;stroke:#0c2219;stroke-width:2}.drone-unit .drone-halo{stroke:#caffab;stroke-opacity:.7;stroke-width:1;fill:rgba(204,255,154,.1)}.drone-unit .drone-label{fill:#e2f4e2;font:10px var(--mono);letter-spacing:1px}.trail{fill:none;stroke:#bfff9c;stroke-width:1.6;stroke-opacity:.48;stroke-linecap:round}.signal-ring{stroke:#e3ffb5;fill:none;stroke-width:1.5;transform-box:fill-box;transform-origin:center;animation:world-pulse 3s ease-out infinite}
-    .console-side{border-left:1px solid #b1d1b125;display:flex;flex-direction:column}.side-group{padding:27px 26px;border-bottom:1px solid #b1d1b125}.side-group:last-child{border:0}.side-title{font:9px var(--mono);letter-spacing:.18em;color:#829b8d;margin-bottom:17px;text-transform:uppercase}.metric-line{display:flex;justify-content:space-between;align-items:baseline;gap:15px;margin-bottom:13px}.metric-line strong{font:400 31px var(--display);letter-spacing:-.05em}.metric-line span{font:9px var(--mono);color:#a9bcb0}.meter{height:3px;background:#27392c;overflow:hidden}.meter b{display:block;width:0;height:100%;background:var(--lime);transition:width .4s}
-    .unit-list{display:grid;grid-template-columns:1fr 1fr;gap:13px 7px}.unit-item{display:flex;align-items:center;gap:8px;font:10px var(--mono);color:#c6d8c6}.unit-item i{width:6px;height:6px;border-radius:50%;background:var(--lime);box-shadow:0 0 8px #bdff9980;flex:none}.unit-item.offline i{background:#ff9c84;box-shadow:none}.unit-item.offline{color:#dfaa9f}
-    .side-alert{margin-top:13px;padding:12px;background:rgba(204,255,154,.06);border-left:2px solid var(--lime);font:10px/1.7 var(--mono);color:#b9cdb7;min-height:57px}
-    .sim-actions{display:flex;flex-wrap:wrap;gap:9px}.sim-btn{background:#192821;border:1px solid #b5d8b545;color:#e5f3e4;padding:12px 13px;font:9px var(--mono);letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:background .2s,color .2s}.sim-btn:hover{background:#283e30}.sim-btn.primary{color:#111c10;background:var(--lime);border-color:var(--lime)}.sim-btn.primary:hover{background:#e3ffb8}.console-foot{padding:17px 24px;border-top:1px solid #b1d1b125;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;font:9px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:#899c8d}.console-foot b{color:#cde3ce;font-weight:400}
+    .console-section{background:#181a1e}.console-intro{display:grid;grid-template-columns:.8fr 1.2fr;gap:8vw;align-items:end;margin-bottom:60px}.console-intro .body-copy{margin:0 0 4px}
+    .console{border:1px solid rgba(198,203,211,.29);background:#0b0c0e;box-shadow:0 40px 100px rgba(0,2,5,.23);overflow:hidden}.console-head{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:20px 24px;border-bottom:1px solid #d0d2d623;background:#191b1e}.console-head .row{display:flex;gap:13px;align-items:center}.console-head .status-dot{width:7px;height:7px;background:var(--accent);border-radius:50%;box-shadow:0 0 15px var(--accent)}.console-head .mono{color:#e0e2e6;letter-spacing:.1em}.console-tag{padding:7px 10px;border:1px solid #bfc1c54d;color:#b7b9bd;font:9px var(--mono);letter-spacing:.1em;text-transform:uppercase}.console-content{display:grid;grid-template-columns:minmax(0,1.9fr) minmax(240px,.72fr);min-height:540px}
+    .map-area{position:relative;overflow:hidden;min-height:520px;background:radial-gradient(circle at 75% 30%,#272b31 0%,#17191d 45%,#141619 100%)}
+    .map-area svg{position:absolute;inset:0;width:100%;height:100%;display:block}.map-area .map-overlay{pointer-events:none;position:absolute;inset:0;opacity:.33;background:repeating-linear-gradient(0deg,transparent 0 66px,#edeff30e 67px),repeating-linear-gradient(90deg,transparent 0 66px,#edeff30b 67px)}
+    .map-area::after{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,transparent 96%,rgba(198,203,211,.04) 100%);background-size:7px 100%}
+    .map-corner{position:absolute;z-index:2;font:9px var(--mono);letter-spacing:.1em;color:#c4c6ca;text-transform:uppercase;pointer-events:none}.map-tl{top:23px;left:25px}.map-br{right:25px;bottom:21px}.map-live{position:absolute;z-index:3;top:20px;right:23px;color:var(--accent);font:9px var(--mono);letter-spacing:.13em;text-transform:uppercase;display:flex;gap:8px;align-items:center}.map-live span{width:5px;height:5px;border-radius:50%;background:var(--accent);animation:blink 2s infinite}
+    #missionMap .contour{fill:none;stroke:#b7b9bd;stroke-width:1.35;stroke-opacity:.14}.sector-line{stroke:#cdcfd3;stroke-opacity:.25;fill:none;stroke-dasharray:5 6}.drone-unit{transition:opacity .3s}.drone-unit .drone-sprite{fill:#cbd1d9;stroke:#17191d;stroke-width:2}.drone-unit .drone-halo{stroke:#cbd1d9;stroke-opacity:.7;stroke-width:1;fill:rgba(198,203,211,.1)}.drone-unit .drone-label{fill:#eef0f4;font:10px var(--mono);letter-spacing:1px}.trail{fill:none;stroke:#d0d6df;stroke-width:1.6;stroke-opacity:.48;stroke-linecap:round}.signal-ring{stroke:#dce1e7;fill:none;stroke-width:1.5;transform-box:fill-box;transform-origin:center;animation:world-pulse 3s ease-out infinite}
+    .console-side{border-left:1px solid #c9cbcf25;display:flex;flex-direction:column}.side-group{padding:27px 26px;border-bottom:1px solid #c9cbcf25}.side-group:last-child{border:0}.side-title{font:9px var(--mono);letter-spacing:.18em;color:#a8aaae;margin-bottom:17px;text-transform:uppercase}.metric-line{display:flex;justify-content:space-between;align-items:baseline;gap:15px;margin-bottom:13px}.metric-line strong{font:400 31px var(--display);letter-spacing:-.05em}.metric-line span{font:9px var(--mono);color:#bcbec2}.meter{height:3px;background:#353940;overflow:hidden}.meter b{display:block;width:0;height:100%;background:var(--accent);transition:width .4s}
+    .unit-list{display:grid;grid-template-columns:1fr 1fr;gap:13px 7px}.unit-item{display:flex;align-items:center;gap:8px;font:10px var(--mono);color:#d5d7db}.unit-item i{width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px #c6cbd380;flex:none}.unit-item.offline i{background:#bfc4cd;box-shadow:none}.unit-item.offline{color:#9ca3ad}
+    .side-alert{margin-top:13px;padding:12px;background:rgba(198,203,211,.06);border-left:2px solid var(--accent);font:10px/1.7 var(--mono);color:#caccd0;min-height:57px}
+    .sim-actions{display:flex;flex-wrap:wrap;gap:9px}.sim-btn{background:#222428;border:1px solid #ced0d445;color:#eef0f4;padding:12px 13px;font:9px var(--mono);letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:background .2s,color .2s}.sim-btn:hover{background:#313337}.sim-btn.primary{color:#111215;background:var(--accent);border-color:var(--accent)}.sim-btn.primary:hover{background:#d9dfe7}.console-foot{padding:17px 24px;border-top:1px solid #c9cbcf25;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;font:9px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:#9d9fa3}.console-foot b{color:#dddfe3;font-weight:400}
     /* Capabilities */
-    .capabilities{background:#080c0c}.cap-head{display:grid;grid-template-columns:1fr 1fr;gap:8vw;align-items:end}.cap-head .body-copy{margin-bottom:3px;margin-left:auto}
-    .cap-grid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--stroke);margin-top:70px}.cap-card{padding:44px 38px 46px;min-height:390px;border-right:1px solid var(--stroke);position:relative;overflow:hidden;background:radial-gradient(ellipse at 50% 160%,#162921,#0a1010 60%);transition:background .25s}.cap-card:last-child{border-right:0}.cap-card:hover{background:radial-gradient(ellipse at 50% 150%,#1a3927,#0d1513 70%)}.cap-card:before{content:'';position:absolute;left:0;top:0;width:0;height:2px;background:var(--lime);transition:width .6s}.cap-card:hover:before{width:100%}.cap-icon{width:95px;height:95px;margin:10px 0 52px;display:grid;place-items:center}.cap-icon svg{width:100%;height:100%;overflow:visible}.cap-card .mono{color:var(--lime);margin-bottom:17px}.cap-card h3{font:500 clamp(24px,2.5vw,35px)/1.15 var(--display);letter-spacing:-.045em;margin:0 0 15px}.cap-card p{font-size:14px;line-height:1.85;color:#9aada0;max-width:320px;margin:0}
+    .capabilities{background:#101113}.cap-head{display:grid;grid-template-columns:1fr 1fr;gap:8vw;align-items:end}.cap-head .body-copy{margin-bottom:3px;margin-left:auto}
+    .cap-grid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--stroke);margin-top:70px}.cap-card{padding:44px 38px 46px;min-height:390px;border-right:1px solid var(--stroke);position:relative;overflow:hidden;background:radial-gradient(ellipse at 50% 160%,#22252a,#121315 60%);transition:background .25s}.cap-card:last-child{border-right:0}.cap-card:hover{background:radial-gradient(ellipse at 50% 150%,#262a30,#181a1d 70%)}.cap-card:before{content:'';position:absolute;left:0;top:0;width:0;height:2px;background:var(--accent);transition:width .6s}.cap-card:hover:before{width:100%}.cap-icon{width:95px;height:95px;margin:10px 0 52px;display:grid;place-items:center}.cap-icon svg{width:100%;height:100%;overflow:visible}.cap-card .mono{color:var(--accent);margin-bottom:17px}.cap-card h3{font:500 clamp(24px,2.5vw,35px)/1.15 var(--display);letter-spacing:-.045em;margin:0 0 15px}.cap-card p{font-size:14px;line-height:1.85;color:#afb1b5;max-width:320px;margin:0}
     /* Roadmap */
-    .roadmap{background:radial-gradient(ellipse at 90% 20%,#15251c,#0b100f 65%)}.roadmap-head{display:grid;grid-template-columns:1fr 1fr;gap:8vw;align-items:end;margin-bottom:80px}.roadmap-head p{margin-bottom:0}
-    .road-rows{border-top:1px solid var(--stroke)}.road-row{display:grid;grid-template-columns:.24fr .95fr 1fr .45fr;gap:28px;align-items:center;padding:33px 0;border-bottom:1px solid var(--stroke)}.road-row .phase{color:var(--lime)}.road-row h3{font:500 clamp(21px,2.2vw,30px) var(--display);letter-spacing:-.04em;margin:0}.road-row p{font-size:14px;line-height:1.6;color:#9aab9d;margin:0}.pill{font:9px var(--mono);text-transform:uppercase;letter-spacing:.08em;border:1px solid #b8d3b640;display:inline-block;padding:10px 12px;color:#b9c5b8;justify-self:end;white-space:nowrap}.pill.now{border-color:var(--lime);color:var(--lime)}
+    .roadmap{background:radial-gradient(ellipse at 90% 20%,#1e2125,#151619 65%)}.roadmap-head{display:grid;grid-template-columns:1fr 1fr;gap:8vw;align-items:end;margin-bottom:80px}.roadmap-head p{margin-bottom:0}
+    .road-rows{border-top:1px solid var(--stroke)}.road-row{display:grid;grid-template-columns:.24fr .95fr 1fr .45fr;gap:28px;align-items:center;padding:33px 0;border-bottom:1px solid var(--stroke)}.road-row .phase{color:var(--accent)}.road-row h3{font:500 clamp(21px,2.2vw,30px) var(--display);letter-spacing:-.04em;margin:0}.road-row p{font-size:14px;line-height:1.6;color:#aeb0b4;margin:0}.pill{font:9px var(--mono);text-transform:uppercase;letter-spacing:.08em;border:1px solid #ccced240;display:inline-block;padding:10px 12px;color:#bfc1c5;justify-self:end;white-space:nowrap}.pill.now{border-color:var(--accent);color:var(--accent)}
     /* Statement & footer */
-    .statement{min-height:600px;display:flex;align-items:center;position:relative;overflow:hidden;background:radial-gradient(ellipse at 82% 52%,#1b3825,#0d1915 50%,#080c0c 78%)}.statement::before{content:'';position:absolute;width:60vw;height:60vw;right:-25vw;top:-15vw;border:1px solid rgba(var(--lime-rgb),.13);border-radius:50%;box-shadow:0 0 0 8vw rgba(193,251,167,.02),0 0 0 16vw rgba(193,251,167,.014);pointer-events:none}.statement .container{position:relative}.statement h2{font:500 clamp(50px,7vw,116px)/1.03 var(--display);letter-spacing:-.08em;max-width:1180px;margin:0 0 28px}.statement .body-copy{max-width:670px}.statement .btn{margin-top:18px}
-    footer{background:#070b0b;border-top:1px solid var(--stroke)}.footer-top{padding-top:67px;padding-bottom:78px;display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:50px}.footer-brand{font:600 clamp(44px,6.2vw,88px)/1 var(--display);letter-spacing:-.075em}.footer-note{color:#8fa399;line-height:1.8;font-size:14px;max-width:290px;margin:24px 0 0}.footer-links{display:flex;flex-direction:column;gap:17px}.footer-links .mono{color:var(--lime);margin-bottom:10px}.footer-links a{width:max-content;color:#d1dfd2;font-size:14px}.footer-links a:hover{color:var(--lime)}.footer-bottom{border-top:1px solid var(--stroke);padding:23px 0;display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;color:#81948a;font:9px var(--mono);letter-spacing:.1em;text-transform:uppercase}.footer-bottom a{color:#ccddcb}
+    .statement{min-height:600px;display:flex;align-items:center;position:relative;overflow:hidden;background:radial-gradient(ellipse at 82% 52%,#262a30,#181a1d 50%,#101113 78%)}.statement::before{content:'';position:absolute;width:60vw;height:60vw;right:-25vw;top:-15vw;border:1px solid rgba(var(--accent-rgb),.13);border-radius:50%;box-shadow:0 0 0 8vw rgba(198,203,211,.02),0 0 0 16vw rgba(198,203,211,.014);pointer-events:none}.statement .container{position:relative}.statement h2{font:500 clamp(50px,7vw,116px)/1.03 var(--display);letter-spacing:-.08em;max-width:1180px;margin:0 0 28px}.statement .body-copy{max-width:670px}.statement .btn{margin-top:18px}
+    footer{background:#090a0b;border-top:1px solid var(--stroke)}.footer-top{padding-top:67px;padding-bottom:78px;display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:50px}.footer-brand{font:600 clamp(44px,6.2vw,88px)/1 var(--display);letter-spacing:-.075em}.footer-note{color:#a5a7ab;line-height:1.8;font-size:14px;max-width:290px;margin:24px 0 0}.footer-links{display:flex;flex-direction:column;gap:17px}.footer-links .mono{color:var(--accent);margin-bottom:10px}.footer-links a{width:max-content;color:#dddfe3;font-size:14px}.footer-links a:hover{color:var(--accent)}.footer-bottom{border-top:1px solid var(--stroke);padding:23px 0;display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;color:#95979b;font:9px var(--mono);letter-spacing:.1em;text-transform:uppercase}.footer-bottom a{color:#dadce0}
     .reveal{opacity:0;transform:translateY(35px);transition:opacity .85s cubic-bezier(.16,1,.3,1),transform .85s cubic-bezier(.16,1,.3,1)}.reveal.visible{opacity:1;transform:translateY(0)}
-    @media(max-width:1100px){.container,.nav-inner{width:min(100% - 60px,1460px)}.hero h1{font-size:clamp(74px,9.6vw,140px)}.nav-links{gap:22px}.hero-frame{display:none}.hero-world::after{background:linear-gradient(90deg,#070d0df5 0%,#07100ed9 35%,#07100e28 90%),linear-gradient(0deg,#080c0c 1%,transparent 30%)}.console-content{grid-template-columns:minmax(0,1.4fr) minmax(230px,.75fr)}.cap-card{padding:40px 24px}.road-row{grid-template-columns:50px 1fr 1fr auto;gap:18px}}
-    @media(max-width:780px){html{scroll-padding-top:68px}.site-nav{height:68px}.nav-inner,.container{width:calc(100% - 40px)}.brand{font-size:17px;gap:9px}.brand-symbol{width:26px;height:26px}.menu-toggle{display:flex}.nav-links{display:none;position:absolute;top:68px;left:0;right:0;background:#0b1412f5;border-bottom:1px solid var(--stroke);flex-direction:column;align-items:stretch;gap:0;padding:18px 20px 24px;backdrop-filter:blur(20px)}.menu-open .nav-links{display:flex}.nav-links>a{font-size:12px;padding:16px 0;border-bottom:1px solid var(--stroke)}.nav-links .nav-contact{text-align:center;margin-top:14px;border:1px solid rgba(var(--lime-rgb),.48);padding:15px}.hero{min-height:790px;min-height:100svh}.hero-inner{width:calc(100% - 40px);padding-top:120px;padding-bottom:175px}.hero h1{font-size:clamp(59px,12vw,95px);margin:26px 0 25px;letter-spacing:-.078em}.hero-desc{font-size:15px;line-height:1.73;max-width:420px}.hero-world svg{width:145%;left:-10%;height:100%}.hero-world::after{background:linear-gradient(90deg,#070d0df5 0%,#07100edf 56%,#07100e70 100%),linear-gradient(0deg,#080c0c 1%,transparent 35%)}.hero-bottom-inner{grid-template-columns:1fr 1fr;min-height:100px}.hero-data{padding:13px 10px;border-bottom:1px solid var(--stroke);gap:10px}.hero-data:nth-child(odd){padding-left:0}.hero-data:nth-child(2){border-right:0}.hero-data:nth-child(n+3){border-bottom:0}.hero-data small{font-size:8px}.hero-data strong{font-size:9px}.hero-index{display:none}.section{padding:95px 0}.heading{font-size:clamp(44px,8vw,68px)}.intro-grid,.project-head,.console-intro,.cap-head,.roadmap-head{grid-template-columns:1fr;gap:30px}.intro-aside{margin-top:22px}.project-head .body-copy,.cap-head .body-copy{margin-left:0}.project-mark{font-size:clamp(80px,16vw,135px)}.numbers{margin-top:44px}.number-block{padding:25px 19px}.number-block strong{font-size:40px}.number-block span{font-size:9px}.console-intro{margin-bottom:36px}.console-content{grid-template-columns:1fr}.map-area{min-height:410px}.console-side{border-left:0;border-top:1px solid var(--stroke);display:grid;grid-template-columns:1fr 1fr}.side-group{padding:20px}.side-group:nth-child(1){border-right:1px solid var(--stroke)}.side-group:last-child{grid-column:1/-1}.cap-grid{grid-template-columns:1fr;margin-top:45px}.cap-card{min-height:300px;border-right:0;border-bottom:1px solid var(--stroke)}.cap-card:last-child{border-bottom:0}.cap-icon{margin:0 0 25px}.roadmap-head{margin-bottom:50px}.road-row{grid-template-columns:55px 1fr auto;align-items:start}.road-row p{grid-column:2/-1}.road-row .pill{grid-column:3;grid-row:1;white-space:normal;text-align:center}.statement{min-height:560px}.footer-top{grid-template-columns:1fr 1fr;gap:40px}.footer-top>div:first-child{grid-column:1/-1}.footer-brand{font-size:60px}}
+    @media(max-width:1100px){.container,.nav-inner{width:min(100% - 60px,1460px)}.hero h1{font-size:clamp(74px,9.6vw,140px)}.nav-links{gap:22px}.hero-frame{display:none}.hero-world::after{background:linear-gradient(90deg,#0a0b0df5 0%,#0b0c0ed9 35%,#0b0c0e28 90%),linear-gradient(0deg,#101113 1%,transparent 30%)}.console-content{grid-template-columns:minmax(0,1.4fr) minmax(230px,.75fr)}.cap-card{padding:40px 24px}.road-row{grid-template-columns:50px 1fr 1fr auto;gap:18px}}
+    @media(max-width:780px){html{scroll-padding-top:68px}.site-nav{height:68px}.nav-inner,.container{width:calc(100% - 40px)}.brand{font-size:17px;gap:9px}.brand-symbol{width:26px;height:26px}.menu-toggle{display:flex}.nav-links{display:none;position:absolute;top:68px;left:0;right:0;background:#141519f5;border-bottom:1px solid var(--stroke);flex-direction:column;align-items:stretch;gap:0;padding:18px 20px 24px;backdrop-filter:blur(20px)}.menu-open .nav-links{display:flex}.nav-links>a{font-size:12px;padding:16px 0;border-bottom:1px solid var(--stroke)}.nav-links .nav-contact{text-align:center;margin-top:14px;border:1px solid rgba(var(--accent-rgb),.48);padding:15px}.hero{min-height:790px;min-height:100svh}.hero-inner{width:calc(100% - 40px);padding-top:120px;padding-bottom:175px}.hero h1{font-size:clamp(59px,12vw,95px);margin:26px 0 25px;letter-spacing:-.078em}.hero-desc{font-size:15px;line-height:1.73;max-width:420px}.hero-world svg{width:145%;left:-10%;height:100%}.hero-world::after{background:linear-gradient(90deg,#0a0b0df5 0%,#0b0c0edf 56%,#0b0c0e70 100%),linear-gradient(0deg,#101113 1%,transparent 35%)}.hero-bottom-inner{grid-template-columns:1fr 1fr;min-height:100px}.hero-data{padding:13px 10px;border-bottom:1px solid var(--stroke);gap:10px}.hero-data:nth-child(odd){padding-left:0}.hero-data:nth-child(2){border-right:0}.hero-data:nth-child(n+3){border-bottom:0}.hero-data small{font-size:8px}.hero-data strong{font-size:9px}.hero-index{display:none}.section{padding:95px 0}.heading{font-size:clamp(44px,8vw,68px)}.intro-grid,.project-head,.console-intro,.cap-head,.roadmap-head{grid-template-columns:1fr;gap:30px}.intro-aside{margin-top:22px}.project-head .body-copy,.cap-head .body-copy{margin-left:0}.project-mark{font-size:clamp(80px,16vw,135px)}.numbers{margin-top:44px}.number-block{padding:25px 19px}.number-block strong{font-size:40px}.number-block span{font-size:9px}.console-intro{margin-bottom:36px}.console-content{grid-template-columns:1fr}.map-area{min-height:410px}.console-side{border-left:0;border-top:1px solid var(--stroke);display:grid;grid-template-columns:1fr 1fr}.side-group{padding:20px}.side-group:nth-child(1){border-right:1px solid var(--stroke)}.side-group:last-child{grid-column:1/-1}.cap-grid{grid-template-columns:1fr;margin-top:45px}.cap-card{min-height:300px;border-right:0;border-bottom:1px solid var(--stroke)}.cap-card:last-child{border-bottom:0}.cap-icon{margin:0 0 25px}.roadmap-head{margin-bottom:50px}.road-row{grid-template-columns:55px 1fr auto;align-items:start}.road-row p{grid-column:2/-1}.road-row .pill{grid-column:3;grid-row:1;white-space:normal;text-align:center}.statement{min-height:560px}.footer-top{grid-template-columns:1fr 1fr;gap:40px}.footer-top>div:first-child{grid-column:1/-1}.footer-brand{font-size:60px}}
     @media(max-width:480px){.hero h1{font-size:clamp(55px,12.5vw,72px)}.hero-cta{gap:13px}.hero-cta .btn{min-height:50px;width:100%;justify-content:space-between}.hero-inner{padding-top:120px;padding-bottom:174px}.hero-data{gap:7px}.data-dot{width:5px;height:5px}.hero-data strong{font-size:8px}.project-mark{font-size:17vw}.numbers{grid-template-columns:1fr}.number-block{display:flex;align-items:center;justify-content:space-between;padding:20px 25px}.number-block strong{margin:0}.number-block span{max-width:145px}.console-head{padding:15px 13px}.console-head .mono{font-size:9px}.console-tag{font-size:8px}.map-area{min-height:340px}.map-tl{top:16px;left:13px;font-size:8px}.map-live{right:14px;top:16px;font-size:8px}.console-side{grid-template-columns:1fr}.side-group:nth-child(1){border-right:0}.side-group:last-child{grid-column:auto}.console-foot{padding:16px}.road-row{grid-template-columns:38px 1fr;gap:10px 17px}.road-row .pill{grid-column:2;grid-row:auto;justify-self:start}.road-row p{grid-column:2}.footer-top{grid-template-columns:1fr}.footer-top>div:first-child{grid-column:auto}.footer-brand{font-size:49px}.footer-bottom{line-height:1.7}}
+    /* Mission simulation */
+    .console-content{align-items:start}
+    .map-area{min-height:0!important;aspect-ratio:800/530;cursor:crosshair}
+    .console-side{contain:size;overflow:auto;align-self:stretch}
+    .lane-guide{stroke:var(--muted);stroke-opacity:.2;stroke-dasharray:3 6}
+    .footprint{fill:rgba(var(--accent-rgb),.07);stroke:var(--accent);stroke-opacity:.5;stroke-width:1;stroke-dasharray:4 4}
+    .drone-unit{cursor:pointer;outline:none}.drone-unit:focus-visible .drone-halo{stroke:var(--ink);stroke-width:2}
+    .drone-unit .drone-sprite{fill:#e3e6eb;stroke:var(--bg);stroke-width:2}
+    .drone-unit .drone-halo{stroke:var(--accent);stroke-opacity:.85;stroke-width:1;fill:rgba(var(--accent-rgb),.14)}
+    .drone-unit .drone-label{fill:var(--ink);font:10px var(--mono);letter-spacing:1px}
+    .drone-unit.lost{opacity:.4}.drone-unit.lost .drone-sprite{fill:var(--muted)}.drone-unit.lost .drone-halo{stroke:var(--muted);stroke-dasharray:2 3;fill:none}
+    .trail{fill:none;stroke:var(--accent);stroke-width:1.4;stroke-opacity:.5;stroke-linecap:round;stroke-linejoin:round}
+    .target-ring{fill:none;stroke:#eff2f5;stroke-width:1.6;transform-box:fill-box;transform-origin:center;animation:world-pulse 3s ease-out infinite}
+    .target-dot{fill:#eff2f5}.target-label{fill:#e8eaed;font:10px var(--mono);letter-spacing:1px}
+    #target.found .target-ring{stroke:var(--accent)}#target.found .target-dot{fill:var(--accent)}#target.found .target-label{fill:#e6eaee}
+    .base-mark{fill:none;stroke:var(--muted)}.base-label,.scale-label{fill:var(--muted);font:9px var(--mono);letter-spacing:1px}.scale-bar{stroke:#d2d4d8;stroke-width:1.5}
+    .stat-rows{margin:18px 0 0;display:grid;gap:8px}.stat-rows div{display:flex;justify-content:space-between;gap:12px;font:10px var(--mono);letter-spacing:.06em;text-transform:uppercase}.stat-rows dt{color:var(--muted)}.stat-rows dd{margin:0;color:var(--ink);font-variant-numeric:tabular-nums}
+    .metric-line strong,.metric-line span{font-variant-numeric:tabular-nums}
+    .fleet-list{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+    .fleet-btn{display:flex;align-items:center;gap:8px;min-width:0;padding:9px 10px;background:var(--panel2);border:1px solid var(--stroke);color:var(--ink);font:10px var(--mono);letter-spacing:.05em;cursor:pointer;text-align:left;transition:border-color .2s}
+    .fleet-btn:hover{border-color:rgba(var(--accent-rgb),.6)}.fleet-btn i{width:7px;height:7px;border-radius:50%;background:var(--accent);flex:none}
+    .fleet-btn em{margin-left:auto;font-style:normal;color:var(--muted);font-size:9px;white-space:nowrap}
+    .fleet-btn.offline{color:var(--muted)}.fleet-btn.offline span{text-decoration:line-through}.fleet-btn.offline i{background:transparent;border:1px solid var(--muted)}
+    .ctrl{display:flex;justify-content:space-between;align-items:baseline;font:10px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:#d2d4d8;margin:16px 0 7px}.ctrl:first-of-type{margin-top:0}.ctrl output{color:var(--accent);font-variant-numeric:tabular-nums}
+    .console-side input[type=range]{width:100%;accent-color:var(--accent);margin:0;cursor:pointer}
+    .ctrl-note{font:9px/1.6 var(--mono);color:var(--muted);letter-spacing:.04em;margin:14px 0 16px}
+    .mission-log{list-style:none;margin:0;padding:0;display:grid;gap:9px;font:10px/1.6 var(--mono);color:#d2d4d8}.mission-log li{padding-left:10px;border-left:2px solid rgba(var(--accent-rgb),.6)}.mission-log li:not(:first-child){opacity:.6;border-left-color:var(--stroke)}.mission-log b{color:var(--accent);font-weight:500;margin-right:7px}
+    @media(max-width:780px){.console-side{contain:none;overflow:visible;display:block}.side-group{border-right:0!important}.map-corner.map-br{display:none}}
+    .hero-hud{position:absolute;inset:0;width:100%;height:100%;z-index:3;pointer-events:none}
+    .statement .hero-cta{margin-top:18px}.statement .hero-cta .btn{margin-top:0}
+    .footer-contact{margin-top:30px}.footer-contact .mono{color:var(--accent);margin-bottom:10px}
+    .footer-email{display:inline-block;color:var(--ink);font:500 clamp(16px,1.6vw,20px) var(--display);letter-spacing:-.01em;border-bottom:1px solid rgba(var(--accent-rgb),.5);padding-bottom:3px;overflow-wrap:anywhere;user-select:all}
+    .footer-email:hover{color:var(--accent)}
+    .contact-dialog{width:min(520px,calc(100% - 32px));padding:38px 34px 30px;background:var(--panel);color:var(--ink);border:1px solid rgba(var(--accent-rgb),.45);box-shadow:0 40px 120px rgba(0,2,5,.5)}
+    .contact-dialog::backdrop{background:rgba(8,10,13,.72);backdrop-filter:blur(6px)}
+    .contact-dialog h2{font:500 clamp(34px,5vw,48px)/1 var(--display);letter-spacing:-.06em;margin:16px 0 12px}
+    .contact-lead{color:var(--muted);line-height:1.7;margin:0 0 26px}
+    .contact-address{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 16px;background:var(--bg);border:1px solid var(--stroke);margin-bottom:18px}
+    .contact-address span{font:500 16px var(--display);overflow-wrap:anywhere;user-select:all;min-width:0}
+    .contact-actions{display:flex;flex-wrap:wrap;gap:12px}.contact-actions .btn{flex:1 1 200px}
+    .contact-note{font:10px/1.6 var(--mono);color:var(--muted);letter-spacing:.03em;margin:18px 0 0}
+    .contact-x{position:absolute;top:12px;right:14px;width:36px;height:36px;background:none;border:1px solid var(--stroke);color:var(--ink);font-size:20px;line-height:1;cursor:pointer}.contact-x:hover{border-color:var(--accent);color:var(--accent)}
     @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}.hero-world svg{transform:none!important}}
   </style>
 </head>
@@ -107,7 +149,7 @@
       </a>
       <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false" aria-controls="navLinks"><span></span></button>
       <nav class="nav-links" id="navLinks" aria-label="Main navigation">
-        <a href="#mission">Our mission</a><a href="#aegis">AEGIS Rescue</a><a href="#technology">Technology</a><a href="#roadmap">Roadmap</a><a class="nav-contact" href="#console">View simulation ↗</a>
+        <a href="#mission">Our mission</a><a href="#aegis">AEGIS Rescue</a><a href="#technology">Technology</a><a href="#roadmap">Roadmap</a><a href="#contact" data-contact>Contact</a><a class="nav-contact" href="#console">Try the simulation ↓</a>
       </nav>
     </div>
   </header>
@@ -116,57 +158,58 @@
       <div class="hero-world" aria-hidden="true">
         <svg viewBox="0 0 1600 1000" preserveAspectRatio="xMaxYMid slice" role="presentation">
           <defs>
-            <linearGradient id="skyGradient" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#1d3e3b"/><stop offset=".48" stop-color="#1b4236"/><stop offset="1" stop-color="#061010"/></linearGradient>
-            <radialGradient id="skyGlow"><stop stop-color="#81bc85" stop-opacity=".34"/><stop offset="1" stop-color="#9adb9c" stop-opacity="0"/></radialGradient>
-            <linearGradient id="mountain1" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#254f42"/><stop offset="1" stop-color="#071c1b"/></linearGradient>
-            <linearGradient id="mountain2" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#16392f"/><stop offset="1" stop-color="#071414"/></linearGradient>
-            <linearGradient id="mountain3" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#102e27"/><stop offset="1" stop-color="#06100e"/></linearGradient>
-            <linearGradient id="laser" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#beffa5" stop-opacity=".31"/><stop offset=".58" stop-color="#c0ffac" stop-opacity=".1"/><stop offset="1" stop-color="#c0ffac" stop-opacity="0"/></linearGradient>
-            <linearGradient id="fog" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#b9f4aa" stop-opacity=".03"/><stop offset="1" stop-color="#061110" stop-opacity=".06"/></linearGradient>
-            <pattern id="worldDots" width="26" height="26" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".9" fill="#bdffd0" opacity=".23"/></pattern>
+            <linearGradient id="skyGradient" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#2a2d32"/><stop offset=".48" stop-color="#30333a"/><stop offset="1" stop-color="#0d0e10"/></linearGradient>
+            <radialGradient id="skyGlow"><stop stop-color="#b7b9bd" stop-opacity=".34"/><stop offset="1" stop-color="#c5c7cb" stop-opacity="0"/></radialGradient>
+            <linearGradient id="mountain1" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#363a40"/><stop offset="1" stop-color="#17191b"/></linearGradient>
+            <linearGradient id="mountain2" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#282b30"/><stop offset="1" stop-color="#141619"/></linearGradient>
+            <linearGradient id="mountain3" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#202328"/><stop offset="1" stop-color="#0d0e10"/></linearGradient>
+            <linearGradient id="laser" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#c9ced6" stop-opacity=".31"/><stop offset=".58" stop-color="#d0d6df" stop-opacity=".1"/><stop offset="1" stop-color="#d0d6df" stop-opacity="0"/></linearGradient>
+            <linearGradient id="fog" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#c9ced6" stop-opacity=".03"/><stop offset="1" stop-color="#0b0c0e" stop-opacity=".06"/></linearGradient>
+            <pattern id="worldDots" width="26" height="26" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".9" fill="#d1d7df" opacity=".23"/></pattern>
             <filter id="blurFog"><feGaussianBlur stdDeviation="30"/></filter>
             <filter id="beamBlur"><feGaussianBlur stdDeviation="7"/></filter>
-            <filter id="droneShadow"><feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#b9ff9c" flood-opacity=".23"/></filter>
+            <filter id="droneShadow"><feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#d0d6df" flood-opacity=".23"/></filter>
           </defs>
           <rect width="1600" height="1000" fill="url(#skyGradient)"/>
           <ellipse cx="1140" cy="340" rx="620" ry="500" fill="url(#skyGlow)"/>
-          <path d="M0 385Q400 335 850 401T1600 369V550H0Z" fill="#accfb4" opacity=".035" filter="url(#blurFog)"/>
-          <g opacity=".5"><circle cx="1055" cy="133" r="1" fill="#f4fce9"/><circle cx="1340" cy="167" r="1" fill="#f4fce9"/><circle cx="1478" cy="284" r="1.2" fill="#f4fce9"/><circle cx="882" cy="222" r="1" fill="#f4fce9"/><circle cx="1270" cy="66" r="1" fill="#f4fce9"/></g>
+          <path d="M0 385Q400 335 850 401T1600 369V550H0Z" fill="#c6c8cc" opacity=".035" filter="url(#blurFog)"/>
+          <g opacity=".5"><circle cx="1055" cy="133" r="1" fill="#f4f6fa"/><circle cx="1340" cy="167" r="1" fill="#f4f6fa"/><circle cx="1478" cy="284" r="1.2" fill="#f4f6fa"/><circle cx="882" cy="222" r="1" fill="#f4f6fa"/><circle cx="1270" cy="66" r="1" fill="#f4f6fa"/></g>
           <path d="M0 688L130 585 260 646 390 537 500 638 670 464 805 566 980 361 1110 488 1280 294 1435 460 1600 336V1000H0Z" fill="url(#mountain1)"/>
-          <path d="M610 530 670 464 805 566 980 361 1110 488 1280 294 1350 377 1283 346 1200 456 1090 532 979 414 881 575 800 607 670 500Z" fill="#badcbb" opacity=".045"/>
+          <path d="M610 530 670 464 805 566 980 361 1110 488 1280 294 1350 377 1283 346 1200 456 1090 532 979 414 881 575 800 607 670 500Z" fill="#d2d4d8" opacity=".045"/>
           <path d="M0 768L185 639 336 714 515 606 679 723 837 565 986 675 1153 484 1320 613 1460 518 1600 600V1000H0Z" fill="url(#mountain2)"/>
           <path d="M0 860L144 755 320 833 530 703 694 820 862 679 1050 782 1227 672 1440 785 1600 728V1000H0Z" fill="url(#mountain3)"/>
-          <path d="M0 765Q350 675 680 734T1600 692" stroke="#80b99e" stroke-width="24" opacity=".1" fill="none" filter="url(#blurFog)" class="ambient-fog"/>
-          <path d="M0 850Q470 756 850 820T1600 790" stroke="#8bb29a" stroke-width="22" opacity=".08" fill="none" filter="url(#blurFog)" class="ambient-fog"/>
-          <g fill="none" stroke="#b7d8bd" stroke-width="1" opacity=".1"><path d="M300 840Q710 640 1150 785T1600 790"/><path d="M380 875Q735 712 1120 834T1600 838"/><path d="M555 900Q790 799 1150 860T1600 880"/><path d="M270 815Q690 605 1200 750T1600 755"/></g>
+          <path d="M0 765Q350 675 680 734T1600 692" stroke="#b5b7bb" stroke-width="24" opacity=".1" fill="none" filter="url(#blurFog)" class="ambient-fog"/>
+          <path d="M0 850Q470 756 850 820T1600 790" stroke="#b7b9bd" stroke-width="22" opacity=".08" fill="none" filter="url(#blurFog)" class="ambient-fog"/>
+          <g fill="none" stroke="#ced0d4" stroke-width="1" opacity=".1"><path d="M300 840Q710 640 1150 785T1600 790"/><path d="M380 875Q735 712 1120 834T1600 838"/><path d="M555 900Q790 799 1150 860T1600 880"/><path d="M270 815Q690 605 1200 750T1600 755"/></g>
           <rect width="1600" height="1000" fill="url(#worldDots)" opacity=".5"/>
           <g class="scan-beam"><path d="M1130 325 799 880 1445 880Z" fill="url(#laser)" filter="url(#beamBlur)"/><path d="M1130 325 845 853 1401 853Z" fill="url(#laser)"/></g>
           <g transform="translate(1130 314)" filter="url(#droneShadow)"><g class="drone-body">
-            <path d="M-112 -5-33 0 34 0 111 -5" stroke="#bfd5c2" stroke-width="11" stroke-linecap="round"/>
-            <path d="M-90 0-104 13M90 0 104 13" stroke="#78998b" stroke-width="5"/>
-            <path d="M-43 -13C-31 -27 27 -28 44 -10L29 16H-32Z" fill="#a8bbb1"/>
-            <path d="M-28 -9C-19 -15 20 -15 27 -7L19 9H-20Z" fill="#223d36"/>
-            <path d="M-18 14H18L10 23H-11Z" fill="#b0c9b3"/>
-            <circle cy="24" r="9" fill="#d0ebc7"/><circle cy="24" r="4" fill="#274b34"/>
-            <g class="blade"><ellipse cx="-113" cy="-9" rx="52" ry="5.5" fill="#c3e0ce" opacity=".78"/></g>
-            <g class="blade"><ellipse cx="113" cy="-9" rx="52" ry="5.5" fill="#c3e0ce" opacity=".78"/></g>
-            <circle cx="-37" cy="4" r="3" fill="#daffb7"/><circle cx="37" cy="4" r="3" fill="#daffb7"/>
+            <path d="M-112 -5-33 0 34 0 111 -5" stroke="#d1d3d7" stroke-width="11" stroke-linecap="round"/>
+            <path d="M-90 0-104 13M90 0 104 13" stroke="#a2a4a8" stroke-width="5"/>
+            <path d="M-43 -13C-31 -27 27 -28 44 -10L29 16H-32Z" fill="#bcbec2"/>
+            <path d="M-28 -9C-19 -15 20 -15 27 -7L19 9H-20Z" fill="#353940"/>
+            <path d="M-18 14H18L10 23H-11Z" fill="#c5c7cb"/>
+            <circle cy="24" r="9" fill="#dfe1e5"/><circle cy="24" r="4" fill="#36383c"/>
+            <g class="blade"><ellipse cx="-113" cy="-9" rx="52" ry="5.5" fill="#d8dade" opacity=".78"/></g>
+            <g class="blade"><ellipse cx="113" cy="-9" rx="52" ry="5.5" fill="#d8dade" opacity=".78"/></g>
+            <circle cx="-37" cy="4" r="3" fill="#d9dfe7"/><circle cx="37" cy="4" r="3" fill="#d9dfe7"/>
           </g></g>
-          <g transform="translate(1125 707)"><circle class="world-reticle" r="49"/><circle class="world-reticle world-pulse" r="19"/><circle class="world-reticle world-pulse delay" r="19"/><circle r="5" fill="#d9ffaf"/><path class="world-reticle" d="M-67 0h35 M32 0h35 M0-67v35 M0 32v35"/></g>
-          <g stroke="#caffaa" stroke-opacity=".5" fill="none" stroke-width="1.2"><path d="M1164 676L1245 620H1490"/><path d="M1245 620v-17"/></g>
-          <g fill="#deffdf" font-family="monospace" letter-spacing="2" font-size="13" opacity=".76"><text x="1240" y="585">SECTOR ALPHA</text><text x="1240" y="644" font-size="11" fill="#d8ffb8">SEARCH TARGET / DEMO</text><text x="1045" y="224" font-size="11" opacity=".6">UAV // 06</text></g>
+          
+          
+          <g fill="#f1f3f7" font-family="monospace" letter-spacing="2" font-size="13" opacity=".76"><text x="1045" y="224" font-size="11" opacity=".6">UAV // 06</text></g>
           <rect width="1600" height="1000" fill="url(#fog)"/>
         </svg>
+        <canvas class="hero-hud" id="heroHud" aria-hidden="true"></canvas>
         <div class="hero-noise"></div>
       </div>
-      <div class="hero-frame" aria-hidden="true"><div class="mono accent">Mission frame</div><div class="boxline"></div><div class="frame-number">01 / 04</div><div class="frame-sub">Search area: Alpha<br>Visual concept / 2026</div></div>
+      <div class="hero-frame" aria-hidden="true"><div class="mono accent">Mission feed · demo</div><div class="boxline"></div><div class="frame-number" id="hudCov">0.0%</div><div class="frame-sub">Sector Alpha coverage<br><span id="hudScouts">Scouts 06/06</span> · <span id="hudTime">T+00:00</span><br>Visual concept / not live</div></div>
       <div class="container hero-inner"><div class="hero-copy">
         <div class="mono eyebrow">Independent autonomy initiative / Australia</div>
         <h1 id="hero-title"><span class="line">Autonomy</span><span class="line outline">for what</span><span class="line last">matters.</span></h1>
         <p class="hero-desc">We are exploring intelligent, resilient systems for the moments when the environment is unforgiving and the mission matters most.</p>
         <div class="hero-cta"><a href="#aegis" class="btn">Discover AEGIS Rescue <span class="arr">↗</span></a><a href="#mission" class="btn secondary">Our purpose <span class="arr">↓</span></a></div>
       </div></div>
-      <div class="hero-index">AEGERYN / DIGITAL EXPERIENCE / 2026</div>
+      <div class="hero-index">AEGIS-01 / SECTOR ALPHA / SIMULATED FEED</div>
       <div class="hero-bottom"><div class="container hero-bottom-inner"><div class="hero-data"><i class="data-dot"></i><div><small>Initiative status</small><strong>Early-stage development</strong></div></div><div class="hero-data"><div><small>Focus area</small><strong>Resilient autonomy</strong></div></div><div class="hero-data"><div><small>First program</small><strong>AEGIS Rescue</strong></div></div><div class="hero-data"><div><small>Experience</small><strong>Concept visualization</strong></div></div></div></div>
     </section>
 
@@ -185,48 +228,84 @@
     </div></section>
 
     <section class="section console-section" id="console"><div class="container">
-      <div class="console-intro"><div class="reveal"><div class="mono section-label"><span class="section-num">03 /</span> Mission systems</div><h2 class="heading">One mission.<br><span class="highlight">Many minds.</span></h2></div><p class="body-copy reveal">See a simplified interactive illustration of how six search agents could cover an area together. Pause the scene, simulate the loss of one agent, and watch the other routes continue. This is a website demo, not our flight software.</p></div>
+      <div class="console-intro"><div class="reveal"><div class="mono section-label"><span class="section-num">03 /</span> Mission simulation</div><h2 class="heading">One mission.<br><span class="highlight">Many minds.</span></h2></div><p class="body-copy reveal">A simplified model of how a small fleet could split up and sweep a 954 × 567 m sector. Coverage is worked out from the ground each camera has actually seen. Click the map to hide the missing person, click a drone to knock it out, and change the fleet with the controls. This is a website demo, not our flight software.</p></div>
       <div class="console reveal">
-        <div class="console-head"><div class="row"><i class="status-dot" id="consoleStatusDot"></i><span class="mono">AEGIS / Mission visualization</span></div><span class="console-tag">Illustrative demo · not live</span></div>
+        <div class="console-head"><div class="row"><i class="status-dot" id="consoleStatusDot"></i><span class="mono">AEGIS / Mission simulation</span></div><span class="console-tag">Illustrative model · not live</span></div>
         <div class="console-content">
-          <div class="map-area" aria-label="Animated concept search map with six moving drone indicators">
-            <svg id="missionMap" viewBox="0 0 800 530" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Simulated search sector with six drones moving along routes and a possible target marker">
-              <defs><radialGradient id="mapLight"><stop stop-color="#3c754f" stop-opacity=".25"/><stop offset="1" stop-color="#2b693a" stop-opacity="0"/></radialGradient><pattern id="smallGrid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#b8deaa" stroke-opacity=".09" stroke-width="1"/></pattern></defs>
+          <div class="map-area">
+            <svg id="missionMap" viewBox="0 0 800 530" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Search sector with scout drones sweeping lanes. Click inside the sector to hide the missing person; click a drone to knock it out.">
+              <defs><radialGradient id="mapLight"><stop stop-color="#51555d" stop-opacity=".3"/><stop offset="1" stop-color="#393d44" stop-opacity="0"/></radialGradient><pattern id="smallGrid" x="80" y="82" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#d2d4d8" stroke-opacity=".08" stroke-width="1"/></pattern></defs>
               <rect width="800" height="530" fill="url(#smallGrid)"/><circle cx="500" cy="220" r="350" fill="url(#mapLight)"/>
-              <g class="contour"><path d="M-50 100Q80 40 180 104T440 75 710 145 870 85"/><path d="M-50 129Q80 70 180 133T440 104 710 174 870 114"/><path d="M-50 158Q80 99 180 162T440 133 710 203 870 143"/><path d="M-50 187Q80 128 180 191T440 162 710 232 870 172"/><path d="M-50 216Q80 157 180 220T440 191 710 261 870 201"/><path d="M-50 245Q80 186 180 249T440 220 710 290 870 230"/><path d="M-50 274Q80 215 180 278T440 249 710 319 870 259"/><path d="M-50 303Q80 244 180 307T440 278 710 348 870 288"/><path d="M-50 332Q80 273 180 336T440 307 710 377 870 317"/><path d="M-50 361Q80 302 180 365T440 336 710 406 870 346"/><path d="M-50 390Q80 331 180 394T440 365 710 435 870 375"/><path d="M-50 419Q80 360 180 423T440 394 710 464 870 404"/><path d="M-50 448Q80 389 180 452T440 423 710 493 870 433"/></g>
-              <path class="sector-line" d="M80 82H716V460H80Z"/><path class="sector-line" d="M80 145H716M80 209H716M80 271H716M80 335H716M80 398H716"/>
-              <g fill="#c6efbc" opacity=".3" font-family="monospace" font-size="11" letter-spacing="1"><text x="87" y="74">SECTOR ALPHA</text><text x="617" y="479">GRID A-01</text></g>
-              <g id="trails"></g><g id="drones"></g>
-              <g transform="translate(605 333)"><circle class="signal-ring" r="12"/><circle class="signal-ring" r="12" style="animation-delay:1.5s"/><circle r="5" fill="#f2d999"/><path d="M13 -12 63 -49 136 -49" stroke="#f1d79a" stroke-width="1" fill="none"/><text x="45" y="-58" fill="#eedba6" font-family="monospace" font-size="10" letter-spacing="1">REVIEW POINT</text></g>
-              <path d="M20 47v-20h20M760 27h20v20M20 483v20h20M760 503h20v-20" stroke="#bfffad" stroke-opacity=".5" stroke-width="1.4" fill="none"/>
+              <g class="contour"><path d="M-50 129Q80 70 180 133T440 104 710 174 870 114"/><path d="M-50 187Q80 128 180 191T440 162 710 232 870 172"/><path d="M-50 245Q80 186 180 249T440 220 710 290 870 230"/><path d="M-50 303Q80 244 180 307T440 278 710 348 870 288"/><path d="M-50 361Q80 302 180 365T440 336 710 406 870 346"/><path d="M-50 419Q80 360 180 423T440 394 710 464 870 404"/></g>
+              <image id="coverageImage" x="80" y="82" width="636" height="378" preserveAspectRatio="none" style="image-rendering:pixelated"/>
+              <path class="sector-line" d="M80 82H716V460H80Z"/>
+              <g id="laneGuides"></g>
+              <g transform="translate(42 271)"><path class="base-mark" d="M-9 -9h18v18h-18Z"/><path class="base-mark" d="M-5 0h10M0 -5v10"/><text class="base-label" x="-14" y="26">LAUNCH</text></g>
+              <g fill="#d2d4d8" opacity=".45" font-family="monospace" font-size="11" letter-spacing="1"><text x="87" y="74">SECTOR ALPHA · 954 × 567 M</text></g>
+              <g transform="translate(616 486)"><path class="scale-bar" d="M0 0h66.7M0 -4v8M66.7 -4v8"/><text class="scale-label" x="0" y="18">100 M</text></g>
+              <g id="trails"></g><g id="footprints"></g>
+              <g id="target"><circle id="targetRing" class="target-ring" r="14"/><circle class="target-dot" r="4.5"/><text id="targetLabel" class="target-label" x="12" y="-12">MISSING PERSON</text></g>
+              <g id="drones"></g>
+              <path d="M20 47v-20h20M760 27h20v20M20 483v20h20M760 503h20v-20" stroke="#c6cbd3" stroke-opacity=".5" stroke-width="1.4" fill="none"/>
             </svg>
-            <div class="map-overlay"></div><div class="map-corner map-tl">Area scan / Alpha sector</div><div class="map-live" id="mapStatus"><span></span>Sim running</div><div class="map-corner map-br">Simulation coordinates / no GPS</div>
+            <div class="map-live" id="mapStatus"><span></span>Sim running</div><div class="map-corner map-br">Click map: hide person · Click drone: knock out</div>
           </div>
-          <aside class="console-side" aria-label="Simulation controls and metrics">
-            <div class="side-group"><div class="side-title">Coverage estimate / demo</div><div class="metric-line"><strong id="coverageValue" aria-live="off">0.0%</strong><span id="elapsedValue">T + 00:00</span></div><div class="meter" aria-hidden="true"><b id="coverageBar"></b></div></div>
-            <div class="side-group"><div class="side-title">Simulated fleet status</div><div class="unit-list" id="unitList"><div class="unit-item"><i></i>SCOUT 01</div><div class="unit-item"><i></i>SCOUT 02</div><div class="unit-item"><i></i>SCOUT 03</div><div class="unit-item"><i></i>SCOUT 04</div><div class="unit-item"><i></i>SCOUT 05</div><div class="unit-item"><i></i>SCOUT 06</div></div><div class="side-alert" id="missionAlert" aria-live="polite">Six virtual agents assigned. Coverage paths active.</div></div>
-            <div class="side-group"><div class="side-title">Mission controls</div><div class="sim-actions"><button class="sim-btn primary" id="pauseButton" type="button">Pause demo</button><button class="sim-btn" id="failureButton" type="button">Simulate loss</button><button class="sim-btn" id="resetButton" type="button">Reset</button></div></div>
+          <aside class="console-side" aria-label="Simulation metrics and controls">
+            <div class="side-group">
+              <div class="side-title">Ground seen by cameras</div>
+              <div class="metric-line"><strong id="coverageValue">0.0%</strong><span id="elapsedValue">T+00:00</span></div>
+              <div class="meter" aria-hidden="true"><b id="coverageBar"></b></div>
+              <dl class="stat-rows"><div><dt>Area searched</dt><dd id="areaValue">0.00 km²</dd></div><div><dt>Est. time left</dt><dd id="etaValue">—</dd></div><div><dt>Sector size</dt><dd>0.54 km²</dd></div></dl>
+            </div>
+            <div class="side-group">
+              <div class="side-title">Fleet · click to knock out or restore</div>
+              <div class="fleet-list" id="fleetList"></div>
+            </div>
+            <div class="side-group">
+              <div class="side-title">Mission setup</div>
+              <label class="ctrl" for="droneCount"><span>Scout drones</span><output id="droneCountOut">6</output></label>
+              <input type="range" id="droneCount" min="1" max="6" step="1" value="6">
+              <label class="ctrl" for="speedInput"><span>Flight speed</span><output id="speedOut">8 m/s</output></label>
+              <input type="range" id="speedInput" min="4" max="15" step="1" value="8">
+              <label class="ctrl" for="swathInput"><span>Camera width</span><output id="swathOut">90 m</output></label>
+              <input type="range" id="swathInput" min="40" max="150" step="10" value="90">
+              <p class="ctrl-note">Changing drones or camera width restarts the search. Playback runs at 8× real time.</p>
+              <div class="sim-actions"><button class="sim-btn primary" id="pauseButton" type="button">Pause</button><button class="sim-btn" id="moveTargetButton" type="button">Hide person elsewhere</button><button class="sim-btn" id="resetButton" type="button">Restart</button></div>
+            </div>
+            <div class="side-group">
+              <div class="side-title">Mission log</div>
+              <ol class="mission-log" id="missionLog" aria-live="polite"></ol>
+            </div>
           </aside>
         </div>
-        <div class="console-foot"><span><b>Human verification</b> required for any real detection</span><span>UI concept / not operational telemetry</span></div>
+        <div class="console-foot"><span><b>Detector modelled at 90% per pass.</b> Human verification required for any real detection</span><span>UI concept / not operational telemetry</span></div>
       </div>
     </div></section>
 
     <section class="section capabilities" id="technology"><div class="container"><div class="cap-head"><div class="reveal"><div class="mono section-label"><span class="section-num">04 /</span> Core research directions</div><h2 class="heading">Designed to<br><span class="highlight">adapt.</span></h2></div><p class="body-copy reveal">The AEGIS concept centers on three connected challenges: sensing the environment, coordinating multiple agents, and recovering when systems encounter failure.</p></div>
       <div class="cap-grid">
-        <article class="cap-card reveal"><div class="cap-icon" aria-hidden="true"><svg viewBox="0 0 100 100" fill="none" stroke="#ccff9a" stroke-width="1.3"><circle cx="50" cy="50" r="39" opacity=".45"/><circle cx="50" cy="50" r="26" opacity=".6"/><circle cx="50" cy="50" r="12"/><path d="M50 8v19M50 73v19M8 50h19M73 50h19" opacity=".7"/><path d="M50 50 78 19" stroke-width="3"/><circle cx="50" cy="50" r="3.5" fill="#ccff9a"/></svg></div><div class="mono">01 / Perception</div><h3>See what matters.</h3><p>Research visual and thermal sensing for potential search targets, with confidence indicators and human review.</p></article>
-        <article class="cap-card reveal"><div class="cap-icon" aria-hidden="true"><svg viewBox="0 0 100 100" fill="none" stroke="#ccff9a" stroke-width="1.4"><path d="M50 14 17 38 29 80H71L83 38Z" opacity=".45"/><path d="M50 14 30 52 71 80 83 38 17 38 29 80 50 14 71 80" opacity=".8"/><circle cx="50" cy="14" r="5" fill="#102015"/><circle cx="17" cy="38" r="5" fill="#102015"/><circle cx="83" cy="38" r="5" fill="#102015"/><circle cx="29" cy="80" r="5" fill="#102015"/><circle cx="71" cy="80" r="5" fill="#102015"/><circle cx="30" cy="52" r="5" fill="#ccff9a"/></svg></div><div class="mono">02 / Coordination</div><h3>Move as one.</h3><p>Develop distributed search planning and task assignment so cooperating agents can cover ground efficiently.</p></article>
-        <article class="cap-card reveal"><div class="cap-icon" aria-hidden="true"><svg viewBox="0 0 100 100" fill="none" stroke="#ccff9a" stroke-width="1.4"><path d="M50 9 85 28v25c0 21-12 33-35 42C27 86 15 74 15 53V28L50 9Z" opacity=".8"/><path d="m33 52 12 12 23-27" stroke-width="3"/><path d="M50 22 72 34v19c0 12-7 20-22 27C35 73 28 65 28 53V34Z" opacity=".28"/></svg></div><div class="mono">03 / Resilience</div><h3>Keep going.</h3><p>Model coordinator failover, degraded connectivity, and the safe reassignment of work when an agent goes offline.</p></article>
+        <article class="cap-card reveal"><div class="cap-icon" aria-hidden="true"><svg viewBox="0 0 100 100" fill="none" stroke="#c6cbd3" stroke-width="1.3"><circle cx="50" cy="50" r="39" opacity=".45"/><circle cx="50" cy="50" r="26" opacity=".6"/><circle cx="50" cy="50" r="12"/><path d="M50 8v19M50 73v19M8 50h19M73 50h19" opacity=".7"/><path d="M50 50 78 19" stroke-width="3"/><circle cx="50" cy="50" r="3.5" fill="#c6cbd3"/></svg></div><div class="mono">01 / Perception</div><h3>See what matters.</h3><p>Research visual and thermal sensing for potential search targets, with confidence indicators and human review.</p></article>
+        <article class="cap-card reveal"><div class="cap-icon" aria-hidden="true"><svg viewBox="0 0 100 100" fill="none" stroke="#c6cbd3" stroke-width="1.4"><path d="M50 14 17 38 29 80H71L83 38Z" opacity=".45"/><path d="M50 14 30 52 71 80 83 38 17 38 29 80 50 14 71 80" opacity=".8"/><circle cx="50" cy="14" r="5" fill="#1b1d21"/><circle cx="17" cy="38" r="5" fill="#1b1d21"/><circle cx="83" cy="38" r="5" fill="#1b1d21"/><circle cx="29" cy="80" r="5" fill="#1b1d21"/><circle cx="71" cy="80" r="5" fill="#1b1d21"/><circle cx="30" cy="52" r="5" fill="#c6cbd3"/></svg></div><div class="mono">02 / Coordination</div><h3>Move as one.</h3><p>Develop distributed search planning and task assignment so cooperating agents can cover ground efficiently.</p></article>
+        <article class="cap-card reveal"><div class="cap-icon" aria-hidden="true"><svg viewBox="0 0 100 100" fill="none" stroke="#c6cbd3" stroke-width="1.4"><path d="M50 9 85 28v25c0 21-12 33-35 42C27 86 15 74 15 53V28L50 9Z" opacity=".8"/><path d="m33 52 12 12 23-27" stroke-width="3"/><path d="M50 22 72 34v19c0 12-7 20-22 27C35 73 28 65 28 53V34Z" opacity=".28"/></svg></div><div class="mono">03 / Resilience</div><h3>Keep going.</h3><p>Model coordinator failover, degraded connectivity, and the safe reassignment of work when an agent goes offline.</p></article>
       </div>
     </div></section>
 
     <section class="section roadmap section-border" id="roadmap"><div class="container"><div class="roadmap-head"><div class="reveal"><div class="mono section-label"><span class="section-num">05 /</span> Development path</div><h2 class="heading">Progress is<br><span class="highlight">engineered.</span></h2></div><p class="body-copy reveal">We're starting with software and measurable simulation milestones. Any real-world drone work would follow later, with appropriate safety testing, permissions, and human supervision.</p></div>
-      <div class="road-rows"><div class="road-row reveal"><div class="mono phase">01</div><h3>2D mission simulation</h3><p>Virtual search agents, area coverage, task assignment, and basic failures.</p><span class="pill now">Current focus</span></div><div class="road-row reveal"><div class="mono phase">02</div><h3>Multi-agent autonomy</h3><p>Distributed coordination, communication faults, and adaptive route planning.</p><span class="pill">Planned</span></div><div class="road-row reveal"><div class="mono phase">03</div><h3>Robotics simulation</h3><p>Integration with flight simulation, environmental conditions, and sensor models.</p><span class="pill">Future stage</span></div><div class="road-row reveal"><div class="mono phase">04</div><h3>Physical prototyping</h3><p>Controlled prototype validation after software, safety, and compliance work.</p><span class="pill">Long-term</span></div></div>
+      <div class="road-rows"><div class="road-row reveal"><div class="mono phase">01</div><h3>2D mission simulation</h3><p>Virtual search agents, area coverage, task assignment, and basic failures.</p><span class="pill now">Current focus</span></div><div class="road-row reveal"><div class="mono phase">02</div><h3>Multi-agent autonomy</h3><p>Distributed coordination, communication faults, and adaptive route planning.</p><span class="pill">Planned</span></div><div class="road-row reveal"><div class="mono phase">03</div><h3>AI perception</h3><p>Visual and thermal detection of possible missing people in simulation, with confidence scores and human verification.</p><span class="pill">Planned</span></div><div class="road-row reveal"><div class="mono phase">04</div><h3>Robotics simulation</h3><p>Integration with flight simulation, environmental conditions, and sensor models.</p><span class="pill">Future stage</span></div><div class="road-row reveal"><div class="mono phase">05</div><h3>Physical prototyping</h3><p>Controlled prototype validation after software, safety, and compliance work.</p><span class="pill">Long-term</span></div></div>
     </div></section>
 
-    <section class="section statement"><div class="container reveal"><div class="mono section-label"><span class="section-num">06 /</span> The direction</div><h2>Not autonomy<br>for its own sake.<br><span class="highlight">Autonomy for life.</span></h2><p class="body-copy">AEGERYN is an independent, early-stage technology initiative. The systems and mission displays on this website illustrate a development vision—not deployed rescue capabilities.</p><a class="btn" href="#console">Explore the mission demo <span class="arr">↗</span></a></div></section>
+    <section class="section statement"><div class="container reveal"><div class="mono section-label"><span class="section-num">06 /</span> The direction</div><h2>Not autonomy<br>for its own sake.<br><span class="highlight">Autonomy for life.</span></h2><p class="body-copy">AEGERYN is an independent, early-stage technology initiative. The systems and mission displays on this website illustrate a development vision—not deployed rescue capabilities.</p><div class="hero-cta"><a class="btn" href="#console">Try the simulation <span class="arr">↓</span></a><button class="btn secondary" type="button" data-contact>Get in touch <span class="arr">↗</span></button></div></div></section>
   </main>
-  <footer><div class="container"><div class="footer-top"><div><div class="footer-brand">AEGERYN<span class="accent">.</span></div><p class="footer-note">Exploring resilient autonomous systems that put human lives and human judgment first.</p></div><div class="footer-links"><div class="mono">Navigate</div><a href="#mission">Our mission</a><a href="#aegis">AEGIS Rescue</a><a href="#technology">Technology</a><a href="#roadmap">Roadmap</a></div><div class="footer-links"><div class="mono">Explore</div><a href="#console">Mission demo</a><a href="#top">Back to top ↑</a></div></div><div class="footer-bottom"><span>© <span id="year">2026</span> AEGERYN. All rights reserved.</span><span>Independent initiative / Australia</span><span>Concepts shown are not operational flight systems</span></div></div></footer>
+  <footer id="contact"><div class="container"><div class="footer-top"><div><div class="footer-brand">AEGERYN<span class="accent">.</span></div><p class="footer-note">Exploring resilient autonomous systems that put human lives and human judgment first.</p><div class="footer-contact"><div class="mono">Contact</div><a class="footer-email" href="mailto:aegerynindustries@gmail.com" data-contact>aegerynindustries@gmail.com</a></div></div><div class="footer-links"><div class="mono">Navigate</div><a href="#mission">Our mission</a><a href="#aegis">AEGIS Rescue</a><a href="#technology">Technology</a><a href="#roadmap">Roadmap</a></div><div class="footer-links"><div class="mono">Explore</div><a href="#console">Mission demo</a><a href="mailto:aegerynindustries@gmail.com" data-contact>Email us</a><a href="#top">Back to top ↑</a></div></div><div class="footer-bottom"><span>© <span id="year">2026</span> AEGERYN. All rights reserved.</span><span>Independent initiative / Australia</span><span>Concepts shown are not operational flight systems</span></div></div></footer>
+  <dialog class="contact-dialog" id="contactDialog" aria-labelledby="contactTitle">
+    <button class="contact-x" type="button" id="contactClose" aria-label="Close">×</button>
+    <div class="mono accent">Contact AEGERYN</div>
+    <h2 id="contactTitle">Get in touch</h2>
+    <p class="contact-lead">Email us about AEGIS Rescue, research or partnerships.</p>
+    <div class="contact-address"><span id="contactEmail">aegerynindustries@gmail.com</span><button type="button" class="sim-btn" id="copyEmail">Copy</button></div>
+    <div class="contact-actions"><a class="btn" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=aegerynindustries@gmail.com&amp;su=Enquiry%20about%20AEGERYN" target="_blank" rel="noopener">Write in Gmail <span class="arr">↗</span></a><a class="btn secondary" href="mailto:aegerynindustries@gmail.com?subject=Enquiry%20about%20AEGERYN">Open mail app</a></div>
+    <p class="contact-note" id="copyStatus" aria-live="polite">"Open mail app" only works if your device has an email app set up.</p>
+  </dialog>
   <script>
     (() => {
       'use strict';
@@ -239,32 +318,215 @@
       menu.addEventListener('click',()=>{const open=nav.classList.toggle('menu-open');menu.setAttribute('aria-expanded',String(open));menu.setAttribute('aria-label',open?'Close navigation':'Open navigation')});
       document.querySelectorAll('#navLinks a').forEach(link=>link.addEventListener('click',()=>{nav.classList.remove('menu-open');menu.setAttribute('aria-expanded','false');menu.setAttribute('aria-label','Open navigation')}));
       if('IntersectionObserver' in window && !reduced.matches){const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}}),{threshold:.1,rootMargin:'0px 0px -30px 0px'});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el))}else{document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'))}
-      // The mission display below is an illustrative UI animation, not operational autonomy software.
-      const svgNS='http://www.w3.org/2000/svg', fleetGroup=$('drones'), trailsGroup=$('trails');
-      const fleet=Array.from({length:6},(_,i)=>{
-        const g=document.createElementNS(svgNS,'g');g.classList.add('drone-unit');
-        const halo=document.createElementNS(svgNS,'circle');halo.setAttribute('r','13');halo.setAttribute('class','drone-halo');
-        const sprite=document.createElementNS(svgNS,'path');sprite.setAttribute('class','drone-sprite');sprite.setAttribute('d','M0 -8 3.5 -2.5 9 0 3.5 2.5 0 8 -3.5 2.5 -9 0 -3.5 -2.5Z');
-        const label=document.createElementNS(svgNS,'text');label.setAttribute('class','drone-label');label.setAttribute('x','17');label.setAttribute('y','-9');label.textContent='S-'+String(i+1).padStart(2,'0');
-        g.append(halo,sprite,label);fleetGroup.appendChild(g);
-        const path=document.createElementNS(svgNS,'path');path.setAttribute('class','trail');trailsGroup.appendChild(path);
-        return {g,path};
-      });
-      const pauseBtn=$('pauseButton'),failureBtn=$('failureButton'),resetBtn=$('resetButton'),coverage=$('coverageValue'),bar=$('coverageBar'),elapsed=$('elapsedValue'),alert=$('missionAlert'),mapStatus=$('mapStatus'),unitList=$('unitList');
-      let simulatedSeconds=0,lastFrame=0,running=!reduced.matches,failed=false,lastUiSecond=-1;
-      function position(i,time){
-        // Repeating serpentine sweeps inside the search rectangle.
-        const laneY=110+i*60;const progress=((time*.027+i*.125)%2+2)%2;
-        const x=105+(progress<1?progress:2-progress)*586;
-        const y=laneY+Math.sin(time*.011+i*.9)*12;
-        return {x,y};
+      // Contact panel: mailto links do nothing on devices without an email app, so offer copy and Gmail too.
+      (function contact(){
+        const dlg=$('contactDialog'),status=$('copyStatus'),addr=$('contactEmail').textContent;
+        const open=e=>{e.preventDefault();if(dlg.showModal){dlg.showModal()}else{location.href='mailto:'+addr}};
+        document.querySelectorAll('[data-contact]').forEach(el=>el.addEventListener('click',open));
+        $('contactClose').addEventListener('click',()=>dlg.close());
+        dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close()});
+        $('copyEmail').addEventListener('click',()=>{
+          const done=()=>{status.textContent='Copied '+addr+' to your clipboard.'};
+          const fallback=()=>{const r=document.createRange();r.selectNodeContents($('contactEmail'));const sel=getSelection();sel.removeAllRanges();sel.addRange(r);status.textContent='Address selected. Press Ctrl+C or Cmd+C to copy.'};
+          if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(addr).then(done,fallback);else fallback();
+        });
+      })();
+      // Hero mission feed: decorative animation only, not real telemetry.
+      (function heroHud(){
+        const cvs=$('heroHud');if(!cvs||!cvs.getContext)return;const ctx=cvs.getContext('2d');
+        const tele={cov:$('hudCov'),scouts:$('hudScouts'),time:$('hudTime')};
+        const ACC='198,203,211',INK='245,245,245',SKY='222,225,231';
+        let W=0,H=0,visible=true,t0=performance.now(),lastTele=0;
+        function size(){const r=cvs.getBoundingClientRect(),dpr=Math.min(devicePixelRatio||1,2);W=r.width;H=r.height;cvs.width=Math.round(W*dpr);cvs.height=Math.round(H*dpr);ctx.setTransform(dpr,0,0,dpr,0,0)}
+        // Ground plane: u = lateral position, z = depth (1 near, 8 far).
+        const proj=(u,z)=>({x:W*.66+u*W*.5/z,y:H*.6+H*.42/z});
+        const scouts=[0,1,2].map(i=>({u:-1.3+i*.9,z:2+i*1.6,dir:i%2?-1:1,trail:[]}));
+        let lock=null,nextLock=1.5;
+        function line(a,b,alpha,w){ctx.strokeStyle=`rgba(${INK},${alpha})`;ctx.lineWidth=w||1;ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke()}
+        function grid(t){
+          for(let z=1.2;z<=8;z+=.6){const fade=Math.max(0,.13-(z-1)*.014);line(proj(-2.2,z),proj(2.2,z),fade)}
+          for(let u=-2;u<=2.01;u+=.4)line(proj(u,1.2),proj(u,8),.06);
+          // coverage sweep travelling outward across the ground
+          const zs=1.2+((t*.09)%1)*6.8,a=proj(-2.2,zs),b=proj(2.2,zs),a2=proj(-2.2,1.2),b2=proj(2.2,1.2);
+          ctx.fillStyle=`rgba(${ACC},.045)`;ctx.beginPath();ctx.moveTo(a2.x,a2.y);ctx.lineTo(b2.x,b2.y);ctx.lineTo(b.x,b.y);ctx.lineTo(a.x,a.y);ctx.closePath();ctx.fill();
+          ctx.shadowColor=`rgba(${ACC},.8)`;ctx.shadowBlur=14;ctx.strokeStyle=`rgba(${ACC},.55)`;ctx.lineWidth=1.4;ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();ctx.shadowBlur=0;
+        }
+        function scoutStep(s,dt){
+          s.u+=s.dir*dt*.32;if(Math.abs(s.u)>1.5){s.u=Math.sign(s.u)*1.5;s.dir*=-1;s.z+=.55;if(s.z>7.2)s.z=1.8}
+          const p=proj(s.u,s.z);s.trail.push(p);if(s.trail.length>70)s.trail.shift();
+        }
+        function scoutDraw(s){
+          for(let i=1;i<s.trail.length;i++){const a=s.trail[i-1],b=s.trail[i];if(Math.hypot(a.x-b.x,a.y-b.y)>40)continue;ctx.strokeStyle=`rgba(${ACC},${(i/s.trail.length)*.5})`;ctx.lineWidth=1.2;ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke()}
+          const p=proj(s.u,s.z),k=Math.max(.45,1.6/s.z);
+          const f=[proj(s.u-.16,s.z-.12),proj(s.u+.16,s.z-.12),proj(s.u+.16,s.z+.12),proj(s.u-.16,s.z+.12)];
+          ctx.fillStyle=`rgba(${ACC},.08)`;ctx.strokeStyle=`rgba(${ACC},.35)`;ctx.lineWidth=1;ctx.beginPath();f.forEach((q,i)=>i?ctx.lineTo(q.x,q.y):ctx.moveTo(q.x,q.y));ctx.closePath();ctx.fill();ctx.stroke();
+          const lift=26*k;ctx.strokeStyle=`rgba(${INK},.25)`;ctx.setLineDash([2,3]);ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(p.x,p.y-lift);ctx.stroke();ctx.setLineDash([]);
+          const r=5*k;ctx.fillStyle=`rgba(${INK},.9)`;ctx.beginPath();ctx.moveTo(p.x,p.y-lift-r);ctx.lineTo(p.x+r,p.y-lift);ctx.lineTo(p.x,p.y-lift+r);ctx.lineTo(p.x-r,p.y-lift);ctx.closePath();ctx.fill();
+        }
+        function lockDraw(t){
+          if(!lock){if(t>nextLock)lock={u:-.4+Math.random()*1.7,z:1.9+Math.random()*2,start:t,conf:(.78+Math.random()*.17).toFixed(2)};return}
+          const e=t-lock.start;if(e>5){lock=null;nextLock=t+2.5;return}
+          const p=proj(lock.u,lock.z),acq=Math.min(1,e/1.2),ease=1-Math.pow(1-acq,3),s=70-48*ease,alpha=e>4.2?Math.max(0,1-(e-4.2)/.8):1;
+          const col=acq<1?INK:ACC;ctx.strokeStyle=`rgba(${col},${.85*alpha})`;ctx.lineWidth=1.5;const c=s*.35;
+          [[-1,-1],[1,-1],[1,1],[-1,1]].forEach(([sx,sy])=>{ctx.beginPath();ctx.moveTo(p.x+sx*s,p.y+sy*(s-c));ctx.lineTo(p.x+sx*s,p.y+sy*s);ctx.lineTo(p.x+sx*(s-c),p.y+sy*s);ctx.stroke()});
+          if(acq>=1){const pr=((e-1.2)%1.4)/1.4;ctx.strokeStyle=`rgba(${ACC},${(1-pr)*.7*alpha})`;ctx.beginPath();ctx.arc(p.x,p.y,6+pr*34,0,Math.PI*2);ctx.stroke();
+            ctx.fillStyle=`rgba(${ACC},${alpha})`;ctx.beginPath();ctx.arc(p.x,p.y,3.5,0,Math.PI*2);ctx.fill();
+            if(W<700)return;const lx=p.x+s+16,ly=p.y-s;ctx.strokeStyle=`rgba(${ACC},${.6*alpha})`;ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(p.x+s,p.y-s*.6);ctx.lineTo(lx-6,ly+4);ctx.lineTo(lx+150,ly+4);ctx.stroke();
+            const typed=Math.min(1,(e-1.2)/.9);ctx.font='500 11px "IBM Plex Mono", monospace';ctx.fillStyle=`rgba(${ACC},${alpha})`;
+            ctx.fillText('POSSIBLE DETECTION'.slice(0,Math.ceil(18*typed)),lx,ly-4);
+            if(e>2.2){ctx.fillStyle=`rgba(${INK},${.75*alpha})`;ctx.font='10px "IBM Plex Mono", monospace';ctx.fillText('CONF '+lock.conf+' · AWAITING HUMAN REVIEW',lx,ly+20)}}
+          else if(W>=700){ctx.fillStyle=`rgba(${INK},${.6*acq})`;ctx.font='10px "IBM Plex Mono", monospace';ctx.fillText('ACQUIRING…',p.x+s+10,p.y-s+10)}
+        }
+        function telemetry(t){
+          const cov=Math.min(97.5,(t*1.1)%110);tele.cov&&(tele.cov.textContent=cov.toFixed(1)+'%');
+          tele.scouts&&(tele.scouts.textContent='Scouts 06/06');
+          const s=Math.floor(t*8);tele.time&&(tele.time.textContent='T+'+String(Math.floor(s/60)%100).padStart(2,'0')+':'+String(s%60).padStart(2,'0'));
+        }
+        let last=0;
+        function frame(now){
+          const t=(now-t0)/1000,dt=Math.min(.05,(now-(last||now))/1000);last=now;
+          if(visible&&document.visibilityState==='visible'){
+            ctx.clearRect(0,0,W,H);grid(t);scouts.forEach(s=>{scoutStep(s,dt);scoutDraw(s)});lockDraw(t);
+            if(now-lastTele>400){lastTele=now;telemetry(t)}
+          }
+          requestAnimationFrame(frame);
+        }
+        size();addEventListener('resize',size,{passive:true});
+        if(reduced.matches){ // one still frame, no motion
+          scouts.forEach(s=>{for(let i=0;i<40;i++)scoutStep(s,.03)});grid(2.2);scouts.forEach(scoutDraw);lock={u:.7,z:2.6,start:0,conf:'0.86'};lockDraw(3);telemetry(40);return}
+        if('IntersectionObserver' in window)new IntersectionObserver(es=>{visible=es[0].isIntersecting},{threshold:0}).observe($('top'));
+        requestAnimationFrame(frame);
+      })();
+      // AEGIS mission simulation: an illustrative model for this website, not flight software.
+      // Coverage is computed from the ground each simulated camera footprint has actually swept.
+      const svgNS='http://www.w3.org/2000/svg', map=$('missionMap');
+      const SECTOR={x:80,y:82,w:636,h:378}, M_PER_PX=1.5, PLAYBACK=8, CELL=6, P_DETECT=.9, BASE={x:42,y:271};
+      const COLS=Math.ceil(SECTOR.w/CELL), ROWS=Math.ceil(SECTOR.h/CELL), TOTAL=COLS*ROWS, grid=new Uint8Array(TOTAL);
+      const covCanvas=document.createElement('canvas');covCanvas.width=COLS;covCanvas.height=ROWS;const cctx=covCanvas.getContext('2d');
+      const el={img:$('coverageImage'),lanes:$('laneGuides'),trails:$('trails'),feet:$('footprints'),drones:$('drones'),target:$('target'),targetLabel:$('targetLabel'),
+        count:$('droneCount'),countOut:$('droneCountOut'),speed:$('speedInput'),speedOut:$('speedOut'),swath:$('swathInput'),swathOut:$('swathOut'),
+        pause:$('pauseButton'),reset:$('resetButton'),moveTarget:$('moveTargetButton'),cov:$('coverageValue'),bar:$('coverageBar'),area:$('areaValue'),
+        elapsed:$('elapsedValue'),eta:$('etaValue'),fleet:$('fleetList'),log:$('missionLog'),status:$('mapStatus'),dot:$('consoleStatusDot')};
+      const target={x:560,y:330};
+      let S=null,running=!reduced.matches,lastFrame=0,imgDirty=false,lastImg=0,metricsAcc=0;
+      const pad=n=>String(n).padStart(2,'0');
+      const fmt=s=>{s=Math.max(0,Math.round(s));return pad(Math.floor(s/60))+':'+pad(s%60)};
+      const mk=(tag,attrs,parent)=>{const n=document.createElementNS(svgNS,tag);for(const k in attrs)n.setAttribute(k,attrs[k]);if(parent)parent.appendChild(n);return n};
+      function log(msg){const li=document.createElement('li');const b=document.createElement('b');b.textContent='T+'+fmt(S.t);li.append(b,document.createTextNode(msg));el.log.prepend(li);while(el.log.children.length>5)el.log.lastChild.remove()}
+      function buildMission(){
+        const n=+el.count.value,swM=+el.swath.value,sw=swM/M_PER_PX;
+        el.countOut.textContent=n;el.swathOut.textContent=swM+' m';el.speedOut.textContent=el.speed.value+' m/s';
+        const laneN=Math.max(1,Math.ceil(SECTOR.h/sw)),hy=Math.min(sw/2,SECTOR.h/2),hx=Math.min(sw/2,SECTOR.w/2);
+        const top=SECTOR.y+hy,bot=SECTOR.y+SECTOR.h-hy,step=laneN>1?(bot-top)/(laneN-1):0;
+        const lanes=Array.from({length:laneN},(_,k)=>({y:laneN>1?top+k*step:SECTOR.y+SECTOR.h/2,a:SECTOR.x+hx,b:SECTOR.x+SECTOR.w-hx,done:false,owner:-1}));
+        grid.fill(0);cctx.clearRect(0,0,COLS,ROWS);cctx.fillStyle='rgba(216,218,221,.16)';
+        [el.lanes,el.trails,el.feet,el.drones,el.fleet,el.log].forEach(x=>x.replaceChildren());
+        lanes.forEach(l=>mk('line',{x1:SECTOR.x,x2:SECTOR.x+SECTOR.w,y1:l.y.toFixed(1),y2:l.y.toFixed(1),class:'lane-guide'},el.lanes));
+        const drones=Array.from({length:n},(_,i)=>{
+          const d={id:i,x:BASE.x,y:BASE.y+(i-(n-1)/2)*14,alive:true,phase:'idle',lane:null,queue:[],dir:1,tx:0,ty:0,inView:false,pts:[]};
+          d.trail=mk('polyline',{class:'trail',points:''},el.trails);
+          d.foot=mk('rect',{class:'footprint',width:sw.toFixed(1),height:sw.toFixed(1)},el.feet);
+          d.g=mk('g',{class:'drone-unit',tabindex:'0',role:'button','aria-label':'Scout '+(i+1)+': press to knock out or restore'},el.drones);
+          mk('circle',{r:13,class:'drone-halo'},d.g);mk('path',{class:'drone-sprite',d:'M0 -8 3.5 -2.5 9 0 3.5 2.5 0 8 -3.5 2.5 -9 0 -3.5 -2.5Z'},d.g);
+          mk('text',{class:'drone-label',x:14,y:-11},d.g).textContent='S-'+pad(i+1);
+          d.g.addEventListener('click',e=>{e.stopPropagation();toggleDrone(i)});
+          d.g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();toggleDrone(i)}});
+          const btn=document.createElement('button');btn.type='button';btn.className='fleet-btn';
+          btn.innerHTML='<i></i><span>S-'+pad(i+1)+'</span><em>Active</em>';btn.addEventListener('click',()=>toggleDrone(i));el.fleet.appendChild(btn);d.btn=btn;
+          return d});
+        S={t:0,sw,swM,lanes,drones,covered:0,complete:false,detected:false,passes:0};
+        el.target.classList.remove('found');el.targetLabel.textContent='MISSING PERSON';
+        el.target.setAttribute('transform',`translate(${target.x.toFixed(1)} ${target.y.toFixed(1)})`);
+        assign();render();updateMetrics();imgDirty=true;flushImg(true);
+        log(n+' scout'+(n>1?'s':'')+' launched. Sector split into '+laneN+' search lanes for a '+swM+' m camera.');
       }
-      function draw(){fleet.forEach((f,i)=>{const hidden=failed&&i===3;f.g.style.opacity=hidden?'.12':'1';f.path.style.opacity=hidden?'.08':'1';const p=position(i,simulatedSeconds);f.g.setAttribute('transform',`translate(${p.x.toFixed(1)} ${p.y.toFixed(1)})`);const back=position(i,Math.max(0,simulatedSeconds-12));f.path.setAttribute('d',`M${back.x.toFixed(1)} ${back.y.toFixed(1)}L${p.x.toFixed(1)} ${p.y.toFixed(1)}`)})}
-      function updateControls(){pauseBtn.textContent=running?'Pause demo':'Resume demo';failureBtn.textContent=failed?'Restore scout':'Simulate loss';mapStatus.innerHTML='<span></span>'+ (running?'Sim running':'Sim paused');$('consoleStatusDot').style.background=running?'var(--lime)':'#9ba99c';unitList.querySelectorAll('.unit-item').forEach((item,i)=>item.classList.toggle('offline',failed&&i===3));if(!running){alert.textContent=failed?'Simulation paused. Scout 04 is offline.':'Simulation paused. Resume to continue.'}else if(failed){alert.textContent='Scout 04 offline. Remaining virtual agents continue their search routes.'}else{alert.textContent='Six virtual agents assigned. Coverage paths active.'}}
-      function drawMetrics(){const score=Math.min(98.5,simulatedSeconds*.1*(failed?.82:1));coverage.textContent=score.toFixed(1)+'%';bar.style.width=score+'%';const secs=Math.floor(simulatedSeconds);elapsed.textContent='T + '+String(Math.floor(secs/60)).padStart(2,'0')+':'+String(secs%60).padStart(2,'0')}
-      pauseBtn.addEventListener('click',()=>{running=!running;updateControls()});failureBtn.addEventListener('click',()=>{failed=!failed;updateControls();draw()});resetBtn.addEventListener('click',()=>{simulatedSeconds=0;failed=false;running=!reduced.matches;lastUiSecond=-1;updateControls();drawMetrics();draw()});
-      function tick(now){if(!lastFrame)lastFrame=now;const dt=Math.min((now-lastFrame)/1000,.06);lastFrame=now;if(running&&document.visibilityState==='visible'){simulatedSeconds+=dt*2.2;draw();const s=Math.floor(simulatedSeconds);if(s!==lastUiSecond){lastUiSecond=s;drawMetrics()}}requestAnimationFrame(tick)}
-      document.addEventListener('visibilitychange',()=>{lastFrame=0});updateControls();drawMetrics();draw();requestAnimationFrame(tick);
+      // Divide unsearched lanes between active scouts in balanced, contiguous blocks.
+      function assign(){
+        const active=S.drones.filter(d=>d.alive);
+        S.lanes.forEach(l=>{if(!l.done)l.owner=-1});
+        active.forEach(d=>{d.queue=[];if(d.lane&&!d.lane.done)d.lane.owner=d.id});
+        if(!active.length)return;
+        const open=S.lanes.filter(l=>!l.done&&l.owner<0),k=active.length,total=open.reduce((s,l)=>s+(l.b-l.a),0),per=total/k;
+        const order=[...active].sort((p,q)=>p.y-q.y),groups=order.map(()=>[]);let acc=0,gi=0;
+        open.forEach(l=>{const len=l.b-l.a;while(gi<k-1&&acc+len/2>per*(gi+1))gi++;groups[gi].push(l);acc+=len});
+        order.forEach((d,i)=>{const g=groups[i];if(g.length&&d.y>(g[0].y+g[g.length-1].y)/2)g.reverse();g.forEach(l=>l.owner=d.id);d.queue=g});
+      }
+      function mark(d){
+        const h=S.sw/2;
+        const c0=Math.max(0,Math.floor((d.x-h-SECTOR.x)/CELL)),c1=Math.min(COLS-1,Math.floor((d.x+h-SECTOR.x)/CELL));
+        const r0=Math.max(0,Math.floor((d.y-h-SECTOR.y)/CELL)),r1=Math.min(ROWS-1,Math.floor((d.y+h-SECTOR.y)/CELL));
+        for(let r=r0;r<=r1;r++){const cy=SECTOR.y+(r+.5)*CELL;if(Math.abs(cy-d.y)>h)continue;
+          for(let c=c0;c<=c1;c++){const cx=SECTOR.x+(c+.5)*CELL;if(Math.abs(cx-d.x)>h)continue;const i=r*COLS+c;
+            if(!grid[i]){grid[i]=1;S.covered++;cctx.fillRect(c,r,1,1);imgDirty=true}}}
+        const inView=Math.abs(target.x-d.x)<=h&&Math.abs(target.y-d.y)<=h;
+        if(inView&&!d.inView&&!S.detected){S.passes++;
+          if(Math.random()<P_DETECT){S.detected=true;el.target.classList.add('found');el.targetLabel.textContent='FLAGGED · HUMAN REVIEW';log('S-'+pad(d.id+1)+' flagged a possible person. Sent to an operator for review.')}
+          else log('S-'+pad(d.id+1)+' flew over the person but did not detect them (pass '+S.passes+').')}
+        d.inView=inView;
+      }
+      function moveTo(d,tx,ty,budget){
+        const dx=tx-d.x,dy=ty-d.y,dist=Math.hypot(dx,dy);if(dist<1e-6){d.x=tx;d.y=ty;return budget}
+        const go=Math.min(dist,budget),steps=Math.max(1,Math.ceil(go/2));
+        for(let s=0;s<steps;s++){d.x+=dx/dist*go/steps;d.y+=dy/dist*go/steps;mark(d)}
+        if(go>=dist){d.x=tx;d.y=ty}return budget-go;
+      }
+      function update(dt){
+        S.t+=dt;const v=(+el.speed.value)/M_PER_PX;
+        S.drones.forEach(d=>{if(!d.alive)return;let budget=v*dt,guard=0;
+          while(budget>1e-6&&guard++<10){
+            if(d.phase==='idle'){
+              while(d.queue.length&&d.queue[0].done)d.queue.shift();
+              if(d.queue.length){const l=d.lane=d.queue.shift(),fromA=Math.abs(d.x-l.a)<=Math.abs(d.x-l.b);d.dir=fromA?1:-1;d.tx=fromA?l.a:l.b;d.ty=l.y;d.phase='transit'}
+              else if(S.complete){d.tx=BASE.x;d.ty=BASE.y+(d.id-(S.drones.length-1)/2)*14;d.phase='rtb'}
+              else{ // finished early: take the last queued lane from the busiest scout
+                const busy=S.drones.filter(o=>o.alive&&o.queue.length).sort((p,q)=>q.queue.length-p.queue.length)[0];
+                if(!busy)break;const l=busy.queue.pop();l.owner=d.id;d.queue.push(l);continue}
+            }
+            if(d.phase==='transit'||d.phase==='rtb'){budget=moveTo(d,d.tx,d.ty,budget);if(d.x===d.tx&&d.y===d.ty)d.phase=d.phase==='transit'?'sweep':'home';continue}
+            if(d.phase==='sweep'){const l=d.lane;budget=moveTo(d,d.dir>0?l.b:l.a,l.y,budget);
+              if(d.dir>0)l.a=Math.max(l.a,d.x);else l.b=Math.min(l.b,d.x);
+              if(l.b-l.a<.5){l.done=true;l.owner=-1;d.lane=null;d.phase='idle'}continue}
+            break;
+          }});
+        if(!S.complete&&S.lanes.every(l=>l.done)){S.complete=true;
+          log('Sector fully covered at T+'+fmt(S.t)+'. '+(S.detected?'Scouts returning to launch.':'The person was missed on every pass, so a second search would be needed. Scouts returning to launch.'))}
+      }
+      function toggleDrone(i){const d=S.drones[i];
+        if(d.alive){d.alive=false;d.phase='lost';d.lane=null;d.queue=[];assign();const left=S.drones.filter(x=>x.alive).length;
+          log('S-'+pad(i+1)+' lost. '+(left?left+' scout'+(left>1?'s':'')+' re-planned to cover its unsearched lanes.':'No scouts left. Restore one or restart.'))}
+        else{d.alive=true;d.phase='idle';d.inView=false;assign();log('S-'+pad(i+1)+' back online and re-tasked.')}
+        render();updateMetrics();
+      }
+      function render(){S.drones.forEach(d=>{
+        d.g.setAttribute('transform',`translate(${d.x.toFixed(1)} ${d.y.toFixed(1)})`);d.g.classList.toggle('lost',!d.alive);
+        d.foot.setAttribute('x',(d.x-S.sw/2).toFixed(1));d.foot.setAttribute('y',(d.y-S.sw/2).toFixed(1));d.foot.style.display=d.alive&&d.phase!=='home'?'':'none';
+        if(d.alive&&d.phase!=='home'){const last=d.pts[d.pts.length-1],p=d.x.toFixed(1)+','+d.y.toFixed(1);if(p!==last){d.pts.push(p);if(d.pts.length>90)d.pts.shift()}}
+        d.trail.setAttribute('points',d.pts.join(' '))})}
+      function updateMetrics(){
+        const pct=S.covered/TOTAL*100;el.cov.textContent=pct.toFixed(1)+'%';el.bar.style.width=pct+'%';
+        el.area.textContent=(S.covered*CELL*CELL*M_PER_PX*M_PER_PX/1e6).toFixed(2)+' km²';el.elapsed.textContent='T+'+fmt(S.t);
+        const active=S.drones.filter(d=>d.alive).length,rem=S.lanes.reduce((s,l)=>s+(l.done?0:l.b-l.a),0)*M_PER_PX;
+        el.eta.textContent=S.complete?'Complete':active?'~'+fmt(rem/(active*(+el.speed.value))):'No scouts';
+        S.drones.forEach(d=>{d.btn.classList.toggle('offline',!d.alive);d.btn.querySelector('em').textContent=!d.alive?'Lost':d.phase==='home'?'Landed':d.phase==='rtb'?'Returning':d.phase==='idle'?'Standing by':'Searching'});
+      }
+      function flushImg(force){const now=performance.now();if(imgDirty&&(force||now-lastImg>150)){el.img.setAttribute('href',covCanvas.toDataURL());imgDirty=false;lastImg=now}}
+      function updateRunState(){el.pause.textContent=running?'Pause':'Run';el.status.innerHTML='<span></span>'+(running?'Sim running':'Sim paused');el.dot.style.background=running?'var(--accent)':'var(--muted)'}
+      map.addEventListener('click',e=>{const pt=map.createSVGPoint();pt.x=e.clientX;pt.y=e.clientY;const p=pt.matrixTransform(map.getScreenCTM().inverse());
+        const near=S.drones.map(d=>({d,dist:Math.hypot(d.x-p.x,d.y-p.y)})).sort((u,v)=>u.dist-v.dist)[0];
+        if(near&&near.dist<26){toggleDrone(near.d.id);return}
+        if(p.x<SECTOR.x||p.x>SECTOR.x+SECTOR.w||p.y<SECTOR.y||p.y>SECTOR.y+SECTOR.h)return;
+        target.x=p.x;target.y=p.y;buildMission();log('Person hidden '+Math.round((p.x-SECTOR.x)*M_PER_PX)+' m east, '+Math.round((p.y-SECTOR.y)*M_PER_PX)+' m south of the sector corner. Search restarted.')});
+      el.moveTarget.addEventListener('click',()=>{target.x=SECTOR.x+20+Math.random()*(SECTOR.w-40);target.y=SECTOR.y+20+Math.random()*(SECTOR.h-40);buildMission();log('Person hidden at a new random spot. Search restarted.')});
+      el.pause.addEventListener('click',()=>{running=!running;updateRunState()});
+      el.reset.addEventListener('click',()=>buildMission());
+      el.count.addEventListener('input',()=>{el.countOut.textContent=el.count.value});el.count.addEventListener('change',buildMission);
+      el.swath.addEventListener('input',()=>{el.swathOut.textContent=el.swath.value+' m'});el.swath.addEventListener('change',buildMission);
+      el.speed.addEventListener('input',()=>{el.speedOut.textContent=el.speed.value+' m/s';updateMetrics()});
+      function tick(now){if(!lastFrame)lastFrame=now;const dt=Math.min((now-lastFrame)/1000,.05);lastFrame=now;
+        if(running&&document.visibilityState==='visible'){update(dt*PLAYBACK);render();metricsAcc+=dt;if(metricsAcc>.2){metricsAcc=0;updateMetrics()}flushImg(false)}
+        requestAnimationFrame(tick)}
+      document.addEventListener('visibilitychange',()=>{lastFrame=0});
+      buildMission();updateRunState();requestAnimationFrame(tick);
     })();
   </script>
 </body>
