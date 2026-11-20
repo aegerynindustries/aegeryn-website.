@@ -902,6 +902,10 @@
       window.addEventListener('scroll',onScroll,{passive:true});window.addEventListener('resize',onScroll,{passive:true});onScroll();
       menu.addEventListener('click',()=>{const open=nav.classList.toggle('menu-open');menu.setAttribute('aria-expanded',String(open));menu.setAttribute('aria-label',open?'Close navigation':'Open navigation')});
       document.querySelectorAll('#navLinks a').forEach(link=>link.addEventListener('click',()=>{nav.classList.remove('menu-open');menu.setAttribute('aria-expanded','false');menu.setAttribute('aria-label','Open navigation')}));
+      // The logo and 'Back to top' scroll to the top without leaving #top in the address bar.
+      const cleanUrl=()=>history.replaceState(null,'',location.pathname+location.search);
+      if(location.hash==='#top')cleanUrl();
+      document.querySelectorAll('a[href="#top"]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();scrollTo({top:0,behavior:reduced.matches?'auto':'smooth'});cleanUrl()}));
       if('IntersectionObserver' in window && !reduced.matches){const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}}),{threshold:.1,rootMargin:'0px 0px -30px 0px'});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el))}else{document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'))}
       // Contact panel: mailto links do nothing on devices without an email app, so offer copy and Gmail too.
       (function contact(){
