@@ -197,6 +197,48 @@
     .gs-row-head{padding:14px 0}.gs-row-head .mono{color:var(--muted)}
     .gs-note{margin:30px 0 0;color:var(--muted);max-width:760px;line-height:1.8;font-size:15px}
     @media(max-width:900px){.gs-head{grid-template-columns:1fr;gap:28px}.gs-grid{grid-template-columns:1fr}.gs-tele{border-left:0;border-top:1px solid var(--stroke)}.gs-row{grid-template-columns:1fr;gap:8px}.gs-row-head{display:none}}
+    .mm-wrap{display:grid;grid-template-columns:minmax(0,1.75fr) minmax(250px,.62fr);border:1px solid rgba(242,243,245,.2);background:#0b0b0d;box-shadow:0 40px 100px rgba(0,0,0,.5);margin-top:56px}
+    .mm-visual{position:relative;aspect-ratio:16/10;min-width:0;overflow:hidden}.mm-visual canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+    .mm-tele{padding:28px 26px;border-left:1px solid var(--stroke);display:flex;flex-direction:column;gap:18px;min-width:0}
+    .mm-tele .stat-rows{margin:0}.mm-tele dd.ok{color:#9ff0c7}.mm-tele dd.warn{color:#ff9a9a}
+    .mm-steps{list-style:none;margin:0;padding:0;counter-reset:mm;display:grid;gap:8px}
+    .mm-steps li{counter-increment:mm;display:grid;grid-template-columns:24px 1fr;gap:8px;font:10px/1.6 var(--mono);color:var(--subtle);letter-spacing:.03em;transition:color .3s}
+    .mm-steps li::before{content:counter(mm,decimal-leading-zero)}.mm-steps li.past{color:var(--muted)}.mm-steps li.on{color:var(--ink)}.mm-steps li.on::before{color:#9ff0c7}
+    .mm-tele .ctrl-note{margin:auto 0 0}
+    @media(max-width:900px){.mm-wrap{grid-template-columns:1fr}.mm-tele{border-left:0;border-top:1px solid var(--stroke)}}
+    /* Results, capability matrix and audiences */
+    .results-section{background:radial-gradient(ellipse at 80% 10%,#1a1b1e,#0a0a0b 60%)}
+    .stat-band{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--stroke);border:1px solid var(--stroke);margin-top:64px}
+    .stat{background:#111113;padding:34px 28px 30px;min-width:0}
+    .stat strong{display:block;font:500 clamp(46px,5.4vw,80px)/1 var(--display);letter-spacing:-.06em;margin-bottom:18px;background:var(--chrome);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;animation:sheen 7s linear infinite;font-variant-numeric:tabular-nums}
+    .stat span{color:var(--muted);font-size:14px;line-height:1.65}
+    .result-charts{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}
+    .rchart{margin:0;border:1px solid var(--stroke);background:#111113;padding:22px 22px 16px;min-width:0}
+    .rchart figcaption{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 16px;margin-bottom:10px}.rchart figcaption .mono{color:var(--ink)}.rc-note{font:10px var(--mono);color:var(--muted)}
+    .rchart svg{display:block;width:100%;height:auto}
+    .rc-grid line{stroke:#f2f3f5;stroke-opacity:.08}.rc-axis text{fill:#9a9ca3;font:10px 'IBM Plex Mono',monospace;text-anchor:end}
+    .rc-bars rect{fill:#5b5e64}.rc-bars rect.hi{fill:#d9dde3}.rc-bars rect.lo{fill:#4a4c51}
+    .rc-val text{fill:#f2f3f5;font:500 12px 'Space Grotesk',Arial,sans-serif;text-anchor:middle}.rc-val.sm text{font-size:11px;fill:#c3c6cc}
+    .rc-x text{fill:#9a9ca3;font:10px 'IBM Plex Mono',monospace;text-anchor:middle}.rc-xl{fill:#6b6d74;font:9px 'IBM Plex Mono',monospace;text-anchor:middle;letter-spacing:1px}
+    .rc-legend{display:flex;gap:18px;margin-top:6px;font:10px var(--mono);color:var(--muted)}.rc-legend span{display:flex;align-items:center;gap:8px}.rc-legend i{width:10px;height:10px;display:inline-block}.rc-legend i.hi{background:#d9dde3}.rc-legend i.lo{background:#4a4c51}
+    .cap-matrix{margin-top:56px;border-top:1px solid var(--stroke)}.cm-title{color:var(--muted);padding:18px 0 6px}
+    .cm-row{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.5fr) 190px;gap:24px;align-items:center;padding:14px 0;border-bottom:1px solid var(--stroke)}
+    .cm-row b{font:500 17px var(--display);color:var(--ink);letter-spacing:-.02em}.cm-row>span{color:var(--muted);font-size:14px;line-height:1.55}
+    .cm-head{padding:10px 0}.cm-head span{font:10px var(--mono)!important;letter-spacing:.1em;text-transform:uppercase;color:var(--subtle)!important}
+    .st{font:10px var(--mono);font-style:normal;letter-spacing:.06em;text-transform:uppercase;justify-self:start;padding:7px 10px;border:1px solid;white-space:nowrap}
+    .st.proven{color:#9ff0c7;border-color:rgba(91,227,161,.5)}.st.concept{color:var(--ink);border-color:rgba(242,243,245,.3)}.st.planned{color:var(--muted);border-color:var(--stroke);border-style:dashed}
+    .results-note{margin:24px 0 0;font:10px/1.7 var(--mono);color:var(--muted);letter-spacing:.03em;max-width:860px}
+    .aud-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--stroke);border:1px solid var(--stroke);margin-top:64px}
+    .aud-card{--mx:50%;--my:120%;position:relative;overflow:hidden;background:#111113;padding:34px 28px 36px;min-width:0}
+    .aud-card::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .35s;background:radial-gradient(380px circle at var(--mx) var(--my),rgba(242,243,245,.09),transparent 60%)}.aud-card:hover::after{opacity:1}
+    .aud-card .mono{color:var(--muted)}.aud-card h3{font:500 clamp(22px,2vw,28px)/1.15 var(--display);letter-spacing:-.035em;margin:30px 0 20px;color:var(--ink)}
+    .aud-card ul{list-style:none;margin:0;padding:0;display:grid;gap:12px}.aud-card li{position:relative;padding-left:18px;color:var(--muted);font-size:14px;line-height:1.6}
+    .aud-card li::before{content:"";position:absolute;left:0;top:.7em;width:8px;height:1px;background:var(--ink)}
+    .p-grid.six{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .cta-grid.four{grid-template-columns:repeat(4,minmax(0,1fr));max-width:none}
+    @media(max-width:1100px){.stat-band,.aud-grid,.cta-grid.four{grid-template-columns:repeat(2,minmax(0,1fr))}.cm-row{grid-template-columns:minmax(0,.8fr) minmax(0,1.4fr) 170px}}
+    @media(max-width:780px){.stat-band,.aud-grid,.result-charts,.cta-grid.four,.p-grid.six{grid-template-columns:1fr}.cm-row{grid-template-columns:1fr;gap:6px}.cm-head{display:none}}
+    .pill.done{border-color:#5be3a1;color:#9ff0c7}
     @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}.hero-world svg{transform:none!important}}
     /* AEGIS Maritime page */
     .sea-canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
@@ -315,7 +357,7 @@
         AEGERYN
       </a>
       <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false" aria-controls="navLinks"><span></span></button>
-      <nav class="nav-links" id="navLinks" aria-label="Main navigation"><a href="#platform">Platform</a><a href="#mission-sim">Mission</a><a href="#ground">Scouts</a><a href="#command">Command</a><a href="#business">Business</a><a href="#roadmap">Roadmap</a><a class="nav-contact" href="#partner">Partner with us ↓</a></nav>
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation"><a href="#platform">Platform</a><a href="#results">Results</a><a href="#mission-sim">Mission</a><a href="#ground">Scouts</a><a href="#command">Command</a><a href="#audiences">Who it's for</a><a class="nav-contact" href="#partner">Partner with us ↓</a></nav>
     </div>
   </header>
   <main>
@@ -375,7 +417,7 @@
         <div class="hero-cta"><a href="#mission-sim" class="btn">Watch a mission <span class="arr">↓</span></a><button type="button" class="btn secondary" data-contact>Partner with us <span class="arr">↗</span></button></div>
       </div></div>
       <div class="hero-index">AEGIS-01 / SECTOR ALPHA / SIMULATED FEED</div>
-      <div class="hero-bottom"><div class="container hero-bottom-inner"><div class="hero-data"><i class="data-dot"></i><div><small>Status</small><strong>Concept · simulation stage</strong></div></div><div class="hero-data"><div><small>Platform</small><strong>AEGIS Command + scouts</strong></div></div><div class="hero-data"><div><small>Domains</small><strong>Land · underground · water</strong></div></div><div class="hero-data"><div><small>Base</small><strong>NSW, Australia</strong></div></div></div></div>
+      <div class="hero-bottom"><div class="container hero-bottom-inner"><div class="hero-data"><i class="data-dot"></i><div><small>Status</small><strong>Phase 1 software built and tested</strong></div></div><div class="hero-data"><div><small>Platform</small><strong>AEGIS Command + scouts</strong></div></div><div class="hero-data"><div><small>Domains</small><strong>Land · underground · water</strong></div></div><div class="hero-data"><div><small>Base</small><strong>NSW, Australia</strong></div></div></div></div>
     </section>
     <div class="ticker" aria-hidden="true"><div class="ticker-track"><span>PERCEPTION</span><i></i><span>COORDINATION</span><i></i><span>RESILIENCE</span><i></i><span>HUMAN OVERSIGHT</span><i></i><span>SEARCH &amp; RESCUE</span><i></i><span>COASTAL &amp; MANGROVE SEARCH</span><i></i><span>CAVES · TUNNELS · COLLAPSED BUILDINGS</span><i></i><span>PERCEPTION</span><i></i><span>COORDINATION</span><i></i><span>RESILIENCE</span><i></i><span>HUMAN OVERSIGHT</span><i></i><span>SEARCH &amp; RESCUE</span><i></i><span>COASTAL &amp; MANGROVE SEARCH</span><i></i><span>CAVES · TUNNELS · COLLAPSED BUILDINGS</span><i></i></div></div>
     <section class="section intro-section" id="problem"><div class="container">
@@ -439,8 +481,66 @@
       <p class="ai-tag reveal">Less piloting. <span>Not less human judgment.</span></p>
     </div></section>
 
+        <section class="section results-section section-border" id="results"><div class="container">
+      <div class="cap-head"><div class="reveal"><div class="mono section-label"><span class="section-num">03 /</span> Proven in simulation</div><h2 class="heading">Not just a vision.<br><span class="highlight">Working software.</span></h2></div>
+        <p class="body-copy reveal">The first AEGIS software is built and tested: a multi-drone search engine with coverage tracking, two allocation algorithms, a primary and backup mission coordinator, and automatic failure recovery. Every figure below is measured over 40 runs per setting.</p></div>
+      <div class="stat-band reveal">
+        <div class="stat"><strong>3.6×</strong><span>faster to cover a search sector with six scouts than with one: 14.9 minutes down to 4.2</span></div>
+        <div class="stat"><strong>100%</strong><span>of the sector still searched after losing three of six drones mid-mission, in 40 of 40 runs</span></div>
+        <div class="stat"><strong>40/40</strong><span>missions completed when the ground coordinator failed, because a backup on a drone took over. Without it: 2 of 40</span></div>
+        <div class="stat"><strong>−21%</strong><span>search time when six scouts launch from the middle of the area, as from a mothership: 4.2 to 3.3 minutes</span></div>
+      </div>
+      <div class="result-charts reveal">
+        <figure class="rchart">
+          <figcaption><span class="mono">Time to cover a 0.6 km² sector</span><span class="rc-note">minutes, by number of scouts</span></figcaption>
+          <svg viewBox="0 0 420 220" role="img" aria-label="Bar chart. Minutes to cover the sector: 1 scout 14.9, 2 scouts 8.3, 3 scouts 6.3, 4 scouts 4.4, 5 scouts 4.2, 6 scouts 4.2.">
+            <g class="rc-grid"><line x1="40" x2="410" y1="180" y2="180"/><line x1="40" x2="410" y1="130" y2="130"/><line x1="40" x2="410" y1="80" y2="80"/><line x1="40" x2="410" y1="30" y2="30"/></g>
+            <g class="rc-axis"><text x="32" y="184">0</text><text x="32" y="134">5</text><text x="32" y="84">10</text><text x="32" y="34">15</text></g>
+            <g class="rc-bars">
+              <rect x="52" y="31" width="44" height="149"/><rect x="112" y="97" width="44" height="83"/><rect x="172" y="117" width="44" height="63"/>
+              <rect x="232" y="136" width="44" height="44" class="hi"/><rect x="292" y="138" width="44" height="42" class="hi"/><rect x="352" y="138" width="44" height="42" class="hi"/>
+            </g>
+            <g class="rc-val"><text x="74" y="25">14.9</text><text x="134" y="91">8.3</text><text x="194" y="111">6.3</text><text x="254" y="130">4.4</text><text x="314" y="132">4.2</text><text x="374" y="132">4.2</text></g>
+            <g class="rc-x"><text x="74" y="200">1</text><text x="134" y="200">2</text><text x="194" y="200">3</text><text x="254" y="200">4</text><text x="314" y="200">5</text><text x="374" y="200">6</text></g>
+            <text x="225" y="216" class="rc-xl">scout drones</text>
+          </svg>
+        </figure>
+        <figure class="rchart">
+          <figcaption><span class="mono">Sector searched after losing drones</span><span class="rc-note">% covered, six scouts, mean of 40 runs</span></figcaption>
+          <svg viewBox="0 0 420 220" role="img" aria-label="Grouped bar chart. With automatic re-planning, 100% coverage after losing 0, 1, 2 or 3 drones. Without re-planning: 100%, 92.8%, 86.0%, 77.6%.">
+            <g class="rc-grid"><line x1="40" x2="410" y1="180" y2="180"/><line x1="40" x2="410" y1="139.5" y2="139.5"/><line x1="40" x2="410" y1="99" y2="99"/><line x1="40" x2="410" y1="58.5" y2="58.5"/><line x1="40" x2="410" y1="18" y2="18"/></g>
+            <g class="rc-axis"><text x="32" y="184">0</text><text x="32" y="143.5">25</text><text x="32" y="103">50</text><text x="32" y="62.5">75</text><text x="32" y="22">100</text></g>
+            <g class="rc-bars">
+              <rect x="58" y="18" width="36" height="162" class="hi"/><rect x="98" y="18" width="36" height="162" class="lo"/>
+              <rect x="148" y="18" width="36" height="162" class="hi"/><rect x="188" y="29.7" width="36" height="150.3" class="lo"/>
+              <rect x="238" y="18" width="36" height="162" class="hi"/><rect x="278" y="40.7" width="36" height="139.3" class="lo"/>
+              <rect x="328" y="18" width="36" height="162" class="hi"/><rect x="368" y="54.3" width="36" height="125.7" class="lo"/>
+            </g>
+            <g class="rc-val sm"><text x="206" y="24">93%</text><text x="296" y="35">86%</text><text x="386" y="48">78%</text></g>
+            <g class="rc-x"><text x="96" y="200">0 lost</text><text x="186" y="200">1 lost</text><text x="276" y="200">2 lost</text><text x="366" y="200">3 lost</text></g>
+          </svg>
+          <div class="rc-legend"><span><i class="hi"></i>AEGIS re-planning</span><span><i class="lo"></i>No re-planning</span></div>
+        </figure>
+      </div>
+      <div class="cap-matrix reveal">
+        <div class="mono cm-title">Capabilities at a glance</div>
+        <div class="cm-row cm-head"><span>Capability</span><span>What it means</span><span>Status</span></div>
+        <div class="cm-row"><b>Multi-drone search</b><span>Splits an area between scouts and re-plans as the mission changes</span><em class="st proven">Proven in simulation</em></div>
+        <div class="cm-row"><b>Failure recovery</b><span>A lost drone's unsearched area is reassigned within seconds</span><em class="st proven">Proven in simulation</em></div>
+        <div class="cm-row"><b>Command failover</b><span>A backup coordinator on a drone takes over if the ground station fails</span><em class="st proven">Proven in simulation</em></div>
+        <div class="cm-row"><b>Find and stay</b><span>A scout holds over a found person while the others keep searching</span><em class="st proven">Proven in simulation</em></div>
+        <div class="cm-row"><b>Human authority</b><span>An operator confirms every find before anything happens</span><em class="st proven">Proven in simulation</em></div>
+        <div class="cm-row"><b>No GPS</b><span>Ground scout builds its own map with lidar underground and in rubble</span><em class="st concept">Demonstrated as concept</em></div>
+        <div class="cm-row"><b>No signal</b><span>Mesh radio and relay chains; the search keeps running offline</span><em class="st concept">Demonstrated as concept</em></div>
+        <div class="cm-row"><b>Air, ground and water</b><span>Air, ground and surface scouts working in one mission</span><em class="st concept">Demonstrated as concept</em></div>
+        <div class="cm-row"><b>Multi-agency command</b><span>One shared picture, sectors by agency, one review queue</span><em class="st concept">Demonstrated as concept</em></div>
+        <div class="cm-row"><b>Open integration</b><span>MAVLink, ROS 2, TAK / Cursor on Target, GeoJSON and KML</span><em class="st planned">Planned</em></div>
+      </div>
+      <p class="results-note reveal">Simulation results from AEGIS Phase 1 software (v0.1, 29 automated tests): a 1000 × 600 m sector, 90 m camera swath, 8 m/s scouts and 90% detection per pass. They are not field results. Code and full results are available on request.</p>
+    </div></section>
+
     <section class="section console-section" id="mission-sim"><div class="container">
-      <div class="console-intro"><div class="reveal"><div class="mono section-label"><span class="section-num">03 /</span> Live mission simulation</div><h2 class="heading">One mission.<br><span class="highlight">Many minds.</span></h2></div><p class="body-copy reveal">A simplified model of a small fleet searching a 954 × 567 m sector for several missing people. When a scout finds someone, it breaks off, holds overhead and talks to them through a loudspeaker while the rest keep searching. Coverage is worked out from the ground each camera has actually seen. Click a drone to knock it out and watch another take over. This is a website demo, not our flight software.</p></div>
+      <div class="console-intro"><div class="reveal"><div class="mono section-label"><span class="section-num">04 /</span> Live mission simulation</div><h2 class="heading">One mission.<br><span class="highlight">Many minds.</span></h2></div><p class="body-copy reveal">A simplified model of a small fleet searching a 954 × 567 m sector for several missing people. When a scout finds someone, it breaks off, holds overhead and talks to them through a loudspeaker while the rest keep searching. Coverage is worked out from the ground each camera has actually seen. Click a drone to knock it out and watch another take over. This is a website demo, not our flight software.</p></div>
       <div class="console reveal">
         <div class="console-head"><div class="row"><i class="status-dot" id="consoleStatusDot"></i><span class="mono">AEGIS / Mission simulation</span></div><span class="console-tag">Illustrative model · not live</span></div>
         <div class="console-content">
@@ -496,11 +596,11 @@
             </div>
           </aside>
         </div>
-        <div class="console-foot"><span><b>Detector 90% per pass · operator confirms every find before contact.</b> Drones on station relay video and use a loudspeaker and lights</span><span>UI concept / not operational telemetry</span></div>
+        <div class="console-foot"><span><b>Detector 90% per pass; anyone missed triggers another search pass · operator confirms every find before contact.</b> Drones on station relay video and use a loudspeaker and lights</span><span>UI concept / not operational telemetry</span></div>
       </div>
     </div></section>
     <section class="section ground-section section-border" id="ground"><div class="container">
-      <div class="gs-head"><div class="reveal"><div class="mono section-label"><span class="section-num">04 /</span> The ground scout</div><h2 class="heading">Where drones<br><span class="highlight">can't fly.</span></h2></div>
+      <div class="gs-head"><div class="reveal"><div class="mono section-label"><span class="section-num">05 /</span> The ground scout</div><h2 class="heading">Where drones<br><span class="highlight">can't fly.</span></h2></div>
         <p class="body-copy reveal">AEGIS Rescue adds a small tracked ground robot for caves, tunnels and collapsed buildings. It goes in ahead of responders, maps the space as it moves, leaves a trail of radio relays so it never loses contact, and lets an operator talk to anyone it finds. Rescue teams decide what happens next.</p></div>
       <div class="gs-grid reveal">
         <div class="gs-visual"><canvas id="groundPreview" role="img" aria-label="Animated plan view of a ground robot mapping a collapsed space with lidar, dropping radio relays and finding a trapped person."></canvas>
@@ -536,9 +636,29 @@
       <p class="gs-note reveal">Cave and collapsed-structure rescues are led by trained specialist teams. The ground scout's job is to look first, so people don't have to go into an unknown space blind.</p>
     </div></section>
     <section class="section project section-border" id="pairing"><div class="container">
-      <div class="project-head"><div class="reveal"><div class="mono section-label"><span class="section-num">05 /</span> AEGIS Maritime</div><h2 class="heading">Two scouts.<br><span class="highlight">One search.</span></h2></div>
+      <div class="project-head"><div class="reveal"><div class="mono section-label"><span class="section-num">06 /</span> AEGIS Maritime</div><h2 class="heading">Two scouts.<br><span class="highlight">One search.</span></h2></div>
         <p class="body-copy reveal">Neither drone can do the job alone. The air scout sees wide but flies for minutes. The surface scout sees little but runs for hours, reaches the person and carries what they need. Together, one finds and the other reaches.</p></div>
-      <div class="duo">
+      <div class="mm-wrap reveal">
+        <div class="mm-visual"><canvas id="maritimeMission" role="img" aria-label="Animated coastal search: the air drone searches the drift area and spots a person in the water, the operator confirms, and the surface drone goes to them and drops flotation while the air drone watches overhead."></canvas>
+          <span class="mt-corner mt-tl mono">AEGIS Maritime / coastal search mission</span><span class="mt-corner mt-br mono">Illustrative · loops every 24 s</span></div>
+        <aside class="mm-tele" aria-label="Maritime mission status">
+          <div class="side-title">Coastal feed · demo</div>
+          <dl class="stat-rows">
+            <div><dt>Air scout</dt><dd id="mmAir">Searching</dd></div>
+            <div><dt>Surface scout</dt><dd id="mmSea">Channel patrol</dd></div>
+            <div><dt>Person</dt><dd id="mmPerson">Not yet found</dd></div>
+            <div><dt>Current</dt><dd>0.6 kn · SW</dd></div>
+          </dl>
+          <ol class="mm-steps" id="mmSteps">
+            <li>Air scout searches the drift area</li>
+            <li>Possible person flagged for operator review</li>
+            <li>Operator confirms; surface scout sent</li>
+            <li>On scene: flotation, loudspeaker, air overwatch</li>
+          </ol>
+          <p class="ctrl-note">Visual concept, not live data.</p>
+        </aside>
+      </div>
+<div class="duo">
         <article class="duo-card reveal">
           <div class="duo-icon" aria-hidden="true"><svg viewBox="0 0 120 70" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 30h80M40 30l-6 10M80 30l6 10"/><rect x="48" y="24" width="24" height="12" rx="4"/><ellipse cx="20" cy="27" rx="16" ry="2.5"/><ellipse cx="100" cy="27" rx="16" ry="2.5"/><path d="M60 36v10M48 62l12-16 12 16" stroke-dasharray="3 4" opacity=".6"/></svg></div>
           <div class="mono">Air scout / UAV</div><h3>Finds.</h3>
@@ -555,7 +675,7 @@
       <p class="duo-note reveal"><b>The surface scout is also the air scout's mothership.</b> The UAV lands on it to recharge between flights, so the pair can keep searching far from shore.</p>
     </div></section>
     <section class="section console-section" id="planner"><div class="container">
-      <div class="console-intro"><div class="reveal"><div class="mono section-label"><span class="section-num">06 /</span> Drift planner</div><h2 class="heading">Search where<br><span class="highlight">they'll be.</span></h2></div>
+      <div class="console-intro"><div class="reveal"><div class="mono section-label"><span class="section-num">07 /</span> Drift planner</div><h2 class="heading">Search where<br><span class="highlight">they'll be.</span></h2></div>
         <p class="body-copy reveal">Click the water to set where someone was last seen. Then change the time since and the current. The planner moves the search area with the drift, grows it as uncertainty builds, and lays out a search pattern for each scout. It uses a simplified model for this website, not an operational planning tool.</p></div>
       <div class="console reveal">
         <div class="console-head"><div class="row"><i class="status-dot"></i><span class="mono">AEGIS Maritime / Drift planner</span></div><span class="console-tag">Simplified model · not for real searches</span></div>
@@ -596,7 +716,7 @@
       </div>
     </div></section>
     <section class="section console-section" id="command"><div class="container">
-      <div class="console-intro"><div class="reveal"><div class="mono section-label"><span class="section-num">07 /</span> AEGIS Command</div><h2 class="heading">Every agency.<br><span class="highlight">One picture.</span></h2></div>
+      <div class="console-intro"><div class="reveal"><div class="mono section-label"><span class="section-num">08 /</span> AEGIS Command</div><h2 class="heading">Every agency.<br><span class="highlight">One picture.</span></h2></div>
         <p class="body-copy reveal">AEGIS Command is where a multi-agency search comes together. Each agency's drones, robots and teams appear on one live map, sectors are handed out by agency, and every possible find goes into one review queue. Try confirming or dismissing a find below. This is a concept interface with an example scenario, and no agency affiliation is implied.</p></div>
       <div class="console cmd reveal">
         <div class="console-head"><div class="row"><i class="status-dot"></i><span class="mono">AEGIS Command · Example: missing bushwalker, mountain gorge</span></div><span class="console-tag" id="cmdClock">Mission T+00:41</span></div>
@@ -655,8 +775,8 @@
     </div></section>
 
     <section class="section capabilities" id="integration"><div class="container">
-      <div class="cap-head"><div class="reveal"><div class="mono section-label"><span class="section-num">08 /</span> Works with everything</div><h2 class="heading">Apple-grade experience.<br><span class="highlight">Open platform.</span></h2></div>
-        <p class="body-copy reveal">A search can involve five agencies with five kinds of equipment. AEGIS is built to just work, like the best consumer technology, without locking anyone in. A shared core does the thinking, and small adapters connect each system.</p></div>
+      <div class="cap-head"><div class="reveal"><div class="mono section-label"><span class="section-num">09 /</span> Works with everything</div><h2 class="heading">Seamless by design.<br><span class="highlight">Open to everyone.</span></h2></div>
+        <p class="body-copy reveal">A search can involve five agencies with five kinds of equipment. AEGIS brings them together in one smooth, well-organised system: quick to set up, clear at a glance and dependable when it matters. A shared core does the thinking, and small adapters connect each system, so no agency is locked in.</p></div>
       <div class="int-grid">
         <div class="core-diagram reveal" aria-label="AEGIS core with adapters">
           <span class="chip">MAVLink<small>ArduPilot · PX4 drones</small></span>
@@ -682,27 +802,54 @@
       </div>
     </div></section>
 
+        <section class="section capabilities" id="audiences"><div class="container">
+      <div class="cap-head"><div class="reveal"><div class="mono section-label"><span class="section-num">10 /</span> Who it's for</div><h2 class="heading">One platform.<br><span class="highlight">Four reasons to care.</span></h2></div>
+        <p class="body-copy reveal">The same software does different jobs for different people. Here is what AEGIS offers each of them.</p></div>
+      <div class="aud-grid">
+        <article class="aud-card reveal"><div class="mono">Search &amp; rescue teams</div><h3>More search, fewer pilots.</h3><ul>
+          <li>One operator runs a team of drones instead of one pilot per drone</li>
+          <li>A found person is never left alone: a drone stays overhead and talks to them</li>
+          <li>Works with the drones your unit already flies</li>
+          <li>Every decision stays with your people</li></ul></article>
+        <article class="aud-card reveal"><div class="mono">Government &amp; emergency management</div><h3>Every agency, one picture.</h3><ul>
+          <li>Police, SES, fire, surf and marine rescue on one live map</li>
+          <li>Designed around AIIMS incident roles, so it fits how incidents already run</li>
+          <li>Australian-designed, with data kept in Australia</li>
+          <li>A full, timestamped record of every mission decision</li></ul></article>
+        <article class="aud-card reveal"><div class="mono">Defence &amp; disaster relief</div><h3>Works when things break.</h3><ul>
+          <li>Built for degraded conditions: no GPS, no signal, lost drones</li>
+          <li>Command keeps running if the ground station fails</li>
+          <li>Air, ground and surface scouts in one mission</li>
+          <li>Open standards, including TAK / Cursor on Target, for disaster relief and personnel recovery</li></ul></article>
+        <article class="aud-card reveal"><div class="mono">Investors</div><h3>A clear gap, a clear path.</h3><ul>
+          <li>Agencies are buying drones fast; coordinating them is still at the research stage</li>
+          <li>Software first: recurring revenue on fleets agencies already own</li>
+          <li>A clear path to specialist hardware where off-the-shelf drones can't go</li>
+          <li>Working Phase 1 software and measured results, not just slides</li></ul></article>
+      </div>
+    </div></section>
+
     <section class="section roadmap section-border" id="business"><div class="container">
-      <div class="roadmap-head"><div class="reveal"><div class="mono section-label"><span class="section-num">09 /</span> Market &amp; business model</div><h2 class="heading">Software first.<br><span class="highlight">Then our own fleet.</span></h2></div>
+      <div class="roadmap-head"><div class="reveal"><div class="mono section-label"><span class="section-num">11 /</span> Market &amp; business model</div><h2 class="heading">Software first.<br><span class="highlight">Then our own fleet.</span></h2></div>
         <p class="body-copy reveal">We start where agencies already are: software that makes the drones they own work as a team. Trust and field results from that open the door to our own specialist hardware, and then to a complete AEGIS fleet, always staying open to other brands.</p></div>
       <div class="stage-grid">
-        <article class="stage reveal"><div class="mono">Stage 1 · Software</div><h3>AEGIS Command</h3><p>Multi-agency coordination and swarm control on the fleets agencies already own.</p><dl><div><dt>Buyers</dt><dd>Emergency agencies and volunteer rescue groups</dd></div><div><dt>Revenue</dt><dd>Annual subscription per agency</dd></div></dl></article>
+        <article class="stage reveal"><div class="mono">Stage 1 · Software</div><h3>AEGIS Command</h3><p>Multi-agency coordination and swarm control on the fleets agencies already own.</p><dl><div><dt>Buyers</dt><dd>Emergency agencies, volunteer rescue groups and state emergency management</dd></div><div><dt>Revenue</dt><dd>Annual subscription per agency</dd></div></dl></article>
         <article class="stage reveal"><div class="mono">Stage 2 · Specialist hardware</div><h3>Relays, ground &amp; surface scouts</h3><p>The gaps off-the-shelf drones can't fill: mesh relay nodes, the ground scout and the surface scout.</p><dl><div><dt>Buyers</dt><dd>Fire and rescue, police rescue, surf and marine rescue</dd></div><div><dt>Revenue</dt><dd>Hardware sales or lease, plus support</dd></div></dl></article>
-        <article class="stage reveal"><div class="mono">Stage 3 · Complete system</div><h3>The AEGIS fleet</h3><p>Swarm-native air scouts with mesh radios, automatic battery swaps and landing on the surface scout.</p><dl><div><dt>Buyers</dt><dd>Agencies standardising on one system</dd></div><div><dt>Revenue</dt><dd>Fleet as a service: hardware, software, updates, repairs and training</dd></div></dl></article>
+        <article class="stage reveal"><div class="mono">Stage 3 · Complete system</div><h3>The AEGIS fleet</h3><p>Swarm-native air scouts with mesh radios, automatic battery swaps and landing on the surface scout.</p><dl><div><dt>Buyers</dt><dd>Agencies standardising on one system, and defence for disaster relief</dd></div><div><dt>Revenue</dt><dd>Fleet as a service: hardware, software, updates, repairs and training</dd></div></dl></article>
       </div>
       <div class="market reveal">
         <div><div class="mono market-title">First market: New South Wales</div>
           <p>Bushland, mountains and gorges, a long coastline with estuaries and mangroves, caves and old mines, and flood-prone towns: every AEGIS scout has a use. NSW agencies already rely on drones, and much of the response depends on volunteers, where saving pilot time matters most.</p></div>
         <div><div class="mono market-title">Groups we want to work with</div>
-          <ul class="tags"><li>NSW SES</li><li>NSW Police Rescue</li><li>Fire and Rescue NSW</li><li>Surf Life Saving NSW</li><li>Marine Rescue NSW</li><li>VRA Rescue NSW</li><li>University research groups</li></ul>
+          <ul class="tags"><li>NSW SES</li><li>NSW Police Rescue</li><li>Fire and Rescue NSW</li><li>Surf Life Saving NSW</li><li>Marine Rescue NSW</li><li>VRA Rescue NSW</li><li>Defence disaster-relief units</li><li>University research groups</li></ul>
           <p class="market-note">Listed as intended partners. AEGERYN has no current agreements with these organisations.</p></div>
       </div>
     </div></section>
 
-    <section class="section roadmap" id="roadmap"><div class="container"><div class="roadmap-head"><div class="reveal"><div class="mono section-label"><span class="section-num">10 /</span> Roadmap</div><h2 class="heading">Proven in stages.<br><span class="highlight">Starting now.</span></h2></div><p class="body-copy reveal">Each stage has to work, and be measured, before the next begins. Any real-world flying or on-water work will follow safety testing, the required CASA and maritime approvals, and human supervision.</p></div>
+    <section class="section roadmap" id="roadmap"><div class="container"><div class="roadmap-head"><div class="reveal"><div class="mono section-label"><span class="section-num">12 /</span> Roadmap</div><h2 class="heading">Proven in stages.<br><span class="highlight">Phase 1 done.</span></h2></div><p class="body-copy reveal">Each stage has to work, and be measured, before the next begins. Any real-world flying or on-water work will follow safety testing, the required CASA and maritime approvals, and human supervision.</p></div>
       <div class="road-rows">
-        <div class="road-row reveal"><div class="mono phase">01</div><h3>Mission simulation</h3><p>Multi-drone search, coverage, failure recovery, person contact, ground-scout mapping and drift planning, as shown on this page.</p><span class="pill now">Current focus</span></div>
-        <div class="road-row reveal"><div class="mono phase">02</div><h3>AEGIS Command prototype</h3><p>Multi-agency mission picture, sector assignment and a shared review queue, tested with operators.</p><span class="pill">Next</span></div>
+        <div class="road-row reveal"><div class="mono phase">01</div><h3>Mission simulation</h3><p>Phase 1 software: multi-drone search, coverage tracking, allocation, coordinator failover and failure recovery, with 29 automated tests and measured results.</p><span class="pill done">Built · v0.1</span></div>
+        <div class="road-row reveal"><div class="mono phase">02</div><h3>AEGIS Command prototype</h3><p>Multi-agency mission picture, sector assignment and a shared review queue, tested with operators.</p><span class="pill now">Current focus</span></div>
         <div class="road-row reveal"><div class="mono phase">03</div><h3>AI perception</h3><p>Thermal and visual detection in bush, rubble and water, with confidence scores and human verification.</p><span class="pill">Planned</span></div>
         <div class="road-row reveal"><div class="mono phase">04</div><h3>Robotics simulation</h3><p>PX4 and Gazebo flight simulation, the ground scout in tunnels and rubble, and marine conditions.</p><span class="pill">Planned</span></div>
         <div class="road-row reveal"><div class="mono phase">05</div><h3>First hardware and supervised trials</h3><p>A scout prototype and controlled trials alongside a partner unit, with approvals in place.</p><span class="pill">Future stage</span></div>
@@ -711,27 +858,30 @@
     </div></section>
 
     <section class="section capabilities" id="principles"><div class="container">
-      <div class="cap-head"><div class="reveal"><div class="mono section-label"><span class="section-num">11 /</span> Principles</div><h2 class="heading">Built to be<br><span class="highlight">trusted.</span></h2></div>
+      <div class="cap-head"><div class="reveal"><div class="mono section-label"><span class="section-num">13 /</span> Principles</div><h2 class="heading">Built to be<br><span class="highlight">trusted.</span></h2></div>
         <p class="body-copy reveal">Search and rescue is about people at their most vulnerable. These commitments shape every part of AEGIS.</p></div>
-      <div class="p-grid">
+      <div class="p-grid six">
         <article class="p-card reveal"><div class="mono">01</div><h3>Human authority</h3><p>People confirm every find and make every rescue decision. Manual control is always one action away.</p></article>
-        <article class="p-card reveal"><div class="mono">02</div><h3>Open by design</h3><p>Works with the equipment agencies already own, through open standards and adapters.</p></article>
-        <article class="p-card reveal"><div class="mono">03</div><h3>Privacy and security</h3><p>No facial recognition. Data kept in Australia, shared only with permission, and every action logged.</p></article>
-        <article class="p-card reveal"><div class="mono">04</div><h3>Evidence over hype</h3><p>We publish what we've measured and say clearly what is still a concept.</p></article>
+        <article class="p-card reveal"><div class="mono">02</div><h3>Life-saving use only</h3><p>AEGIS is built to find and protect people. It is not designed or offered for weapons or targeting.</p></article>
+        <article class="p-card reveal"><div class="mono">03</div><h3>Open by design</h3><p>Works with the equipment agencies already own, through open standards and adapters. No lock-in.</p></article>
+        <article class="p-card reveal"><div class="mono">04</div><h3>Privacy first</h3><p>No facial recognition. Video and locations are shared only with the people who need them.</p></article>
+        <article class="p-card reveal"><div class="mono">05</div><h3>Sovereign and accountable</h3><p>Australian-designed, data kept in Australia, and every action recorded in a mission log.</p></article>
+        <article class="p-card reveal"><div class="mono">06</div><h3>Evidence over hype</h3><p>We publish what we have measured and say clearly what is still a concept.</p></article>
       </div>
     </div></section>
 
-    <section class="section statement" id="partner"><div class="container reveal"><div class="mono section-label"><span class="section-num">12 /</span> Build it with us</div><h2>One operator.<br>A whole search team.<br><span class="highlight">Everyone home.</span></h2>
-      <div class="cta-grid">
-        <div class="cta-card"><div class="mono">Investors</div><p>Early backing for simulation, the AEGIS Command prototype and first hardware.</p></div>
-        <div class="cta-card"><div class="mono">Agencies &amp; buyers</div><p>Tell us what slows your searches down, and help shape and trial AEGIS Command.</p></div>
+    <section class="section statement" id="partner"><div class="container reveal"><div class="mono section-label"><span class="section-num">14 /</span> Build it with us</div><h2>One operator.<br>A whole search team.<br><span class="highlight">Everyone home.</span></h2>
+      <div class="cta-grid four">
+        <div class="cta-card"><div class="mono">Investors</div><p>Back the next stage: the AEGIS Command prototype, perception and first hardware.</p></div>
+        <div class="cta-card"><div class="mono">SAR teams</div><p>Tell us what slows your searches down, and help shape and trial AEGIS Command.</p></div>
+        <div class="cta-card"><div class="mono">Government &amp; defence</div><p>Explore pilots for multi-agency search, disaster relief and personnel recovery.</p></div>
         <div class="cta-card"><div class="mono">Researchers</div><p>Collaborate on swarm coordination, perception and robots for hard environments.</p></div>
       </div>
       <div class="hero-cta"><button class="btn" type="button" data-contact>Get in touch <span class="arr">↗</span></button><a class="btn secondary" href="#mission-sim">Watch a mission <span class="arr">↑</span></a></div>
-      <p class="body-copy disclaimer">AEGERYN is an independent, early-stage initiative based in Australia. Everything on this page is a design vision and interactive demonstration, not a deployed, certified or operational system.</p>
+      <p class="body-copy disclaimer">AEGERYN is an independent, early-stage initiative based in Australia. The results on this page come from our Phase 1 simulation software; the other demonstrations show the design vision. Nothing here is a deployed, certified or operational system.</p>
     </div></section>
   </main>
-  <footer id="contact"><div class="container"><div class="footer-top"><div><div class="footer-brand">AEGERYN<span class="accent">.</span></div><p class="footer-note">One operator. A whole search team. Autonomous systems that put human lives and human judgment first.</p><div class="footer-contact"><div class="mono">Contact</div><a class="footer-email" href="mailto:aegerynindustries@gmail.com" data-contact>aegerynindustries@gmail.com</a></div></div><div class="footer-links"><div class="mono">Platform</div><a href="#platform">AEGIS platform</a><a href="#mission-sim">Mission simulation</a><a href="#ground">Ground scout</a><a href="#pairing">AEGIS Maritime</a><a href="#command">AEGIS Command</a></div><div class="footer-links"><div class="mono">Company</div><a href="#business">Business model</a><a href="#roadmap">Roadmap</a><a href="#principles">Principles</a><a href="mailto:aegerynindustries@gmail.com" data-contact>Email us</a><a href="#top">Back to top ↑</a></div></div><div class="footer-bottom"><span>© <span id="year">2026</span> AEGERYN. All rights reserved.</span><span>Independent initiative / NSW, Australia</span><span>Concepts and demonstrations, not operational systems</span></div></div></footer>
+  <footer id="contact"><div class="container"><div class="footer-top"><div><div class="footer-brand">AEGERYN<span class="accent">.</span></div><p class="footer-note">One operator. A whole search team. Autonomous systems that put human lives and human judgment first.</p><div class="footer-contact"><div class="mono">Contact</div><a class="footer-email" href="mailto:aegerynindustries@gmail.com" data-contact>aegerynindustries@gmail.com</a></div></div><div class="footer-links"><div class="mono">Platform</div><a href="#platform">AEGIS platform</a><a href="#results">Simulation results</a><a href="#mission-sim">Mission simulation</a><a href="#ground">Ground scout</a><a href="#pairing">AEGIS Maritime</a><a href="#command">AEGIS Command</a></div><div class="footer-links"><div class="mono">Company</div><a href="#audiences">Who it's for</a><a href="#business">Business model</a><a href="#roadmap">Roadmap</a><a href="#principles">Principles</a><a href="mailto:aegerynindustries@gmail.com" data-contact>Email us</a><a href="#top">Back to top ↑</a></div></div><div class="footer-bottom"><span>© <span id="year">2026</span> AEGERYN. All rights reserved.</span><span>Independent initiative / NSW, Australia</span><span>Concepts and demonstrations, not operational systems</span></div></div></footer>
   <dialog class="contact-dialog" id="contactDialog" aria-labelledby="contactTitle">
     <button class="contact-x" type="button" id="contactClose" aria-label="Close">×</button>
     <div class="mono accent">Contact AEGERYN</div>
@@ -767,7 +917,7 @@
         });
       })();
       // Spotlight that follows the pointer across the research cards.
-      document.querySelectorAll('.cap-card,.duo-card,.p-card').forEach(c=>c.addEventListener('pointermove',e=>{const r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px')}));
+      document.querySelectorAll('.cap-card,.duo-card,.p-card,.aud-card').forEach(c=>c.addEventListener('pointermove',e=>{const r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px')}));
       {
     // ---- Shared coastal map, in kilometres. Illustrative geography, not a real place. ----
     const KW=16,KH=10,CH_W=.28,INK='242,243,245',SIL='217,221,227',RED='255,90,90',GRN='91,227,161';
@@ -1009,6 +1159,52 @@
         for(let i=0;i<3;i++)step(.05,0);draw(0);
         (function loop(now){const dt=Math.min(.05,(now-last)/1000);last=now;if(visible&&document.visibilityState==='visible'){step(dt,now/1000);if(site)draw(now/1000)}requestAnimationFrame(loop)})(last);
       })();
+      // Maritime mission: air scout searches and spots a person in the water, operator confirms, surface scout reaches them.
+      (function maritimeMission(){
+        const cv=$('maritimeMission');if(!cv||!cv.getContext)return;const ctx=cv.getContext('2d');
+        const ui={air:$('mmAir'),sea:$('mmSea'),person:$('mmPerson'),steps:[...document.querySelectorAll('#mmSteps li')]};
+        let W=0,H=0,T=null,visible=false,trail=[],lastUi=0;
+        function size(){const r=cv.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,2);W=r.width;H=r.height;cv.width=Math.round(W*d);cv.height=Math.round(H*d);ctx.setTransform(d,0,0,d,0,0);
+          const sc=W/5.4;T={sc,ox:W/2-8.7*sc,oy:H/2-5.85*sc}}
+        const D=[7.7,5.3],SQ=expandingSquare(D[0],D[1],.28,.6),DET=.62,pD=along(SQ,DET),PERSON=[pD.x+.05,pD.y+.04];
+        const USV1=[[12.2,6.66],[10.88,6.9],[8.48,6.75],[7.95,6.55]],USV2=[[7.95,6.55],[PERSON[0]+.1,PERSON[1]+.09]];
+        const waves=Array.from({length:60},()=>[rnd()*16-2,rnd()*10,rnd()]);
+        const CYCLE=24,tDet=DET*14;
+        function frame(t){
+          const P=drawMap(ctx,T,W,H);
+          waves.forEach(w=>{const x=((w[0]-t*.04*(.5+w[2]))%18+18)%18-2,y=(w[1]+t*.03)%10;if(!isWater(x,y))return;const[px,py]=P(x,y);ctx.strokeStyle=`rgba(${INK},${.04+w[2]*.08})`;ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(px,py);ctx.lineTo(px+8+w[2]*10,py);ctx.stroke()});
+          const[sx,sy]=P(SQ[0][0],SQ[0][1]);ctx.strokeStyle=`rgba(${INK},.16)`;ctx.setLineDash([3,4]);ctx.beginPath();SQ.forEach(([x,y],k)=>{const[px,py]=P(x,y);k?ctx.lineTo(px,py):ctx.moveTo(px,py)});ctx.stroke();ctx.setLineDash([]);
+          label(ctx,'DATUM',sx+8,sy-8,`rgba(${INK},.5)`,9);
+          let u,uh;if(t<14){const q=along(USV1,t/14);u=[q.x,q.y];uh=q.h}else if(t<20){const q=along(USV2,(t-14)/6);u=[q.x,q.y];uh=q.h}else{u=USV2[1];uh=along(USV2,1).h}
+          trail.push(u);if(trail.length>(t<14?40:70))trail.shift();wake(ctx,trail,P,T.sc);
+          const[ux,uy]=P(u[0],u[1]);drawUSV(ctx,ux,uy,uh);label(ctx,'USV',ux+10,uy+16,`rgba(${INK},.65)`,9);
+          const[ppx,ppy]=P(PERSON[0],PERSON[1]);
+          let a;if(t<tDet){const q=along(SQ,t/14);a=[q.x,q.y]}else{const ang=t*1.3;a=[PERSON[0]+Math.cos(ang)*.14,PERSON[1]+Math.sin(ang)*.14]}
+          const[ax,ay]=P(a[0],a[1]),fp=.15*T.sc;if(t<tDet){ctx.strokeStyle=`rgba(${SIL},.45)`;ctx.setLineDash([3,3]);ctx.strokeRect(ax-fp/2,ay-fp/2,fp,fp);ctx.setLineDash([])}
+          if(t>=tDet){const e=t-tDet,fade=t>23.2?Math.max(0,1-(t-23.2)/.8):1,acq=Math.min(1,e/.8),s=30-15*acq;
+            ctx.fillStyle=`rgba(${t>=20?GRN:RED},${fade})`;ctx.beginPath();ctx.arc(ppx,ppy,3.5,0,6.283);ctx.fill();
+            brackets(ctx,ppx,ppy,s,`rgba(${t>=14?GRN:SIL},${.9*fade})`);
+            const pr=(e%1.6)/1.6;ctx.strokeStyle=`rgba(${t>=14?GRN:SIL},${(1-pr)*.6*fade})`;ctx.beginPath();ctx.arc(ppx,ppy,5+pr*26,0,6.283);ctx.stroke();
+            if(t>=20){ctx.strokeStyle=`rgba(${SIL},${.9*fade})`;ctx.lineWidth=2;ctx.beginPath();ctx.arc(ppx-7,ppy+6,4,0,6.283);ctx.stroke();ctx.lineWidth=1}
+            if(W>=520){const msg=t<14?['PERSON IN WATER','AWAITING HUMAN REVIEW']:t<20?['CONFIRMED BY OPERATOR','SURFACE SCOUT EN ROUTE']:['ON SCENE · FLOTATION DEPLOYED','LOUDSPEAKER CONTACT · AIR OVERWATCH'];
+              ctx.font='11px "IBM Plex Mono", monospace';const tw=Math.max(ctx.measureText(msg[0]).width,ctx.measureText(msg[1]).width);
+              const gap=s+50,right=ppx+gap+tw<W-10,lx=right?ppx+gap:ppx-gap-tw,ly=Math.max(28,ppy-s-6);
+              ctx.strokeStyle=`rgba(${INK},${.5*fade})`;ctx.beginPath();ctx.moveTo(right?ppx+s:ppx-s,ppy-s*.6);ctx.lineTo(right?lx-4:lx+tw+4,ly+4);ctx.lineTo(right?lx+tw:lx,ly+4);ctx.stroke();
+              label(ctx,msg[0],lx,ly-4,`rgba(${t>=14?GRN:INK},${fade})`,11);label(ctx,msg[1],lx,ly+19,`rgba(${INK},${.7*fade})`,10)}}
+          drawUAV(ctx,ax,ay);label(ctx,'UAV',ax+10,ay-9,`rgba(${INK},.65)`,9);
+          if(performance.now()-lastUi>250){lastUi=performance.now();
+            ui.air.textContent=t<tDet?'Searching':'Holding overhead';ui.sea.textContent=t<14?'Channel patrol':t<20?'En route to person':'On scene';
+            ui.person.textContent=t<tDet?'Not yet found':t<14?'Flagged · operator review':t<20?'Confirmed':'Flotation deployed';
+            ui.person.className=t<tDet?'':t<14?'warn':'ok';
+            const step=t<tDet?0:t<14?1:t<20?2:3;ui.steps.forEach((li,i)=>li.className=i===step?'on':i<step?'past':'')}
+        }
+        size();addEventListener('resize',()=>{size();frame(21)},{passive:true});
+        if(reduced.matches){frame(21);return}
+        frame(0);
+        if('IntersectionObserver' in window)new IntersectionObserver(es=>{visible=es[0].isIntersecting},{threshold:0}).observe(cv);else visible=true;
+        let t0=performance.now(),last=-1;
+        (function loop(now){if(visible&&document.visibilityState==='visible'){const tt=(now-t0)/1000,c=Math.floor(tt/CYCLE);if(c!==last){last=c;trail=[]}frame(tt%CYCLE)}else{t0+=16}requestAnimationFrame(loop)})(t0);
+      })();
       // Homepage preview of AEGIS Maritime: air scout on an expanding square, surface scout patrolling a channel.
       (function maritimePreview(){
         const cv=$('maritimePreview');if(!cv||!cv.getContext)return;const ctx=cv.getContext('2d');
@@ -1161,7 +1357,7 @@
         el.countOut.textContent=n;el.peopleOut.textContent=np;el.swathOut.textContent=swM+' m';el.speedOut.textContent=el.speed.value+' m/s';
         const laneN=Math.max(1,Math.ceil(SECTOR.h/sw)),hy=Math.min(sw/2,SECTOR.h/2),hx=Math.min(sw/2,SECTOR.w/2);
         const top=SECTOR.y+hy,bot=SECTOR.y+SECTOR.h-hy,step=laneN>1?(bot-top)/(laneN-1):0;
-        const lanes=Array.from({length:laneN},(_,k)=>({y:laneN>1?top+k*step:SECTOR.y+SECTOR.h/2,a:SECTOR.x+hx,b:SECTOR.x+SECTOR.w-hx,done:false,owner:-1}));
+        const lanes=Array.from({length:laneN},(_,k)=>({y:laneN>1?top+k*step:SECTOR.y+SECTOR.h/2,a:SECTOR.x+hx,b:SECTOR.x+SECTOR.w-hx,a0:SECTOR.x+hx,b0:SECTOR.x+SECTOR.w-hx,done:false,owner:-1}));
         grid.fill(0);cctx.clearRect(0,0,COLS,ROWS);cctx.fillStyle='rgba(188,190,194,.16)';
         [el.lanes,el.trails,el.feet,el.drones,el.persons,el.comms,el.fleet,el.peopleList,el.log].forEach(x=>x.replaceChildren());
         lanes.forEach(l=>mk('line',{x1:SECTOR.x,x2:SECTOR.x+SECTOR.w,y1:l.y.toFixed(1),y2:l.y.toFixed(1),class:'lane-guide'},el.lanes));
@@ -1186,7 +1382,7 @@
           const btn=document.createElement('button');btn.type='button';btn.className='fleet-btn';
           btn.innerHTML='<i></i><span>'+sid(d)+'</span><em>Searching</em>';btn.addEventListener('click',()=>toggleDrone(i));el.fleet.appendChild(btn);d.btn=btn;
           return d});
-        S={t:0,sw,swM,lanes,drones,persons,covered:0,complete:false,allFound:false};
+        S={t:0,sw,swM,lanes,drones,persons,covered:0,complete:false,allFound:false,pass:1};
         assign();render();updateMetrics();imgDirty=true;flushImg(true);
         log(n+' scout'+(n>1?'s':'')+' launched to find '+np+' missing '+(np>1?'people':'person')+'. Sector split into '+laneN+' lanes for a '+swM+' m camera.');
       }
@@ -1270,8 +1466,14 @@
             log(p.response?pid(p)+' is waving back at '+sid(d)+'. Responsive; position sent to the ground team. '+sid(d)+' stays overhead.'
                            :'No visible response from '+pid(p)+'. Marked priority for the ground team; '+sid(d)+' stays overhead with lights on.')}
         });
-        if(!S.complete&&S.lanes.every(l=>l.done)){S.complete=true;const missed=S.persons.filter(p=>p.state==='missing');
-          log('Sector fully covered. '+(missed.length?missed.map(pid).join(', ')+' missed on every pass, so a second search is needed.':'Everyone reported is located.')+' Searching scouts return to launch.')}
+        if(!S.complete&&S.lanes.every(l=>l.done)){const missed=S.persons.filter(p=>p.state==='missing');
+          if(missed.length&&S.pass<3&&S.drones.some(searching)){
+            // Cameras can miss someone, so the fleet searches the sector again rather than giving up.
+            S.pass++;S.lanes.forEach(l=>{l.done=false;l.owner=-1;l.a=l.a0;l.b=l.b0});
+            S.drones.forEach(d=>{if(searching(d)){d.lane=null;d.queue=[];d.phase='idle'}});assign();
+            log('Sector covered but '+missed.map(pid).join(', ')+' not found yet. Cameras can miss someone, so the scouts start search pass '+S.pass+'.')}
+          else{S.complete=true;
+            log('Sector fully covered. '+(missed.length?missed.map(pid).join(', ')+' still not found after '+S.pass+' passes; a ground search is needed.':'Everyone reported is located.')+' Searching scouts return to launch.')}}
       }
       function toggleDrone(i){const d=S.drones[i];
         if(d.alive){const p=d.person;d.alive=false;d.phase='lost';d.lane=null;d.queue=[];d.person=null;
@@ -1303,7 +1505,7 @@
         const pct=S.covered/TOTAL*100;el.cov.textContent=pct.toFixed(1)+'%';el.bar.style.width=pct+'%';
         el.area.textContent=(S.covered*CELL*CELL*M_PER_PX*M_PER_PX/1e6).toFixed(2)+' km²';el.elapsed.textContent='T+'+fmt(S.t);
         const active=S.drones.filter(searching).length,rem=S.lanes.reduce((s,l)=>s+(l.done?0:l.b-l.a),0)*M_PER_PX;
-        el.eta.textContent=S.allFound?'All located':S.complete?'Complete':active?'~'+fmt(rem/(active*(+el.speed.value))):'No free scouts';
+        el.eta.textContent=S.allFound?'All located':S.complete?'Complete':active?(S.pass>1?'Pass '+S.pass+' · ':'')+'~'+fmt(rem/(active*(+el.speed.value))):'No free scouts';
         S.drones.forEach(d=>{d.btn.classList.toggle('offline',!d.alive);d.btn.classList.toggle('station',d.alive&&d.phase==='station');
           d.btn.querySelector('em').textContent=!d.alive?'Lost':d.phase==='station'?(d.person.state==='contact'?'Contact ':'Holding ')+pid(d.person):d.phase==='home'?'Landed':d.phase==='rtb'?'Returning':d.phase==='idle'?'Standing by':'Searching'});
         S.persons.forEach(p=>{const lost=p.state!=='missing'&&p.drone===null;
