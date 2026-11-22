@@ -572,6 +572,40 @@
           <div class="rc-legend"><span><i class="hi"></i>AEGIS, up to 3 passes</span><span><i class="lo"></i>Single pass</span></div>
         </figure>
       </div>
+      <div class="p2-intro reveal">
+        <div><div class="mono section-label">Phase 2 · Battery planning</div><h3>Keeping found people in view on short batteries.</h3></div>
+        <p>When every drone launches together, their batteries run low together, and a person who has been found can be left with no drone overhead. AEGIS now keeps a charged spare at base to step in, sends drones to swap batteries before a trip too short to be useful, and, once everyone is found, swaps the lowest battery early so a fresh drone is always ready. Tested on a larger 1800 × 1200 m sector.</p>
+      </div>
+      <div class="stat-band reveal">
+        <div class="stat"><strong>96%</strong><span>of the time a found person stayed in view of a drone with 15-minute batteries and battery-aware planning. Before: 67.5%</span></div>
+        <div class="stat"><strong>88%</strong><span>in view with 10-minute batteries when seven drones keep one as a spare. All seven searching: 46%</span></div>
+        <div class="stat"><strong>0</strong><span>batteries run flat across all 810 battery-planning test runs, because every drone heads home with a reserve</span></div>
+        <div class="stat"><strong>2×</strong><span>longer to find both people with 10-minute batteries when one of only six drones is held back as a spare: 5.9 to 12.0 minutes. A spare works best as an extra drone</span></div>
+      </div>
+      <div class="result-charts reveal">
+        <figure class="rchart">
+          <figcaption><span class="mono">Found person kept in view · 10-minute batteries</span><span class="rc-note">% of time after a find, mean of 40 runs</span></figcaption>
+          <svg viewBox="0 0 420 220" role="img" aria-label="Bar chart. Share of time a drone kept a found person in view, 10-minute batteries. Six drones as before 60.4%, six drones with battery-aware planning 83.4%, five searching plus one spare 88.1%, seven drones all searching 46.2%, six searching plus one spare 87.7%.">
+            <g class="rc-grid"><line x1="40" x2="410" y1="180" y2="180"/><line x1="40" x2="410" y1="139.5" y2="139.5"/><line x1="40" x2="410" y1="99" y2="99"/><line x1="40" x2="410" y1="58.5" y2="58.5"/><line x1="40" x2="410" y1="18" y2="18"/></g>
+            <g class="rc-axis"><text x="32" y="184">0</text><text x="32" y="143.5">25</text><text x="32" y="103">50</text><text x="32" y="62.5">75</text><text x="32" y="22">100</text></g>
+            <g class="rc-bars"><rect x="55" y="82.2" width="44" height="97.8" class="lo"/><rect x="129" y="44.9" width="44" height="135.1" class="hi"/><rect x="203" y="37.3" width="44" height="142.7" class="hi"/><rect x="277" y="105.2" width="44" height="74.8" class="lo"/><rect x="351" y="37.9" width="44" height="142.1" class="hi"/></g>
+            <g class="rc-val sm"><text x="77" y="76.2">60%</text><text x="151" y="38.9">83%</text><text x="225" y="31.3">88%</text><text x="299" y="99.2">46%</text><text x="373" y="31.9">88%</text></g>
+            <g class="rc-x"><text x="77" y="198">6 drones</text><text x="77" y="211">before</text><text x="151" y="198">6 drones</text><text x="151" y="211">aware</text><text x="225" y="198">5 + 1</text><text x="225" y="211">spare</text><text x="299" y="198">7 drones</text><text x="299" y="211">all search</text><text x="373" y="198">6 + 1</text><text x="373" y="211">spare</text></g>
+          </svg>
+          <div class="rc-legend"><span><i class="hi"></i>AEGIS battery planning</span><span><i class="lo"></i>Before</span></div>
+        </figure>
+        <figure class="rchart">
+          <figcaption><span class="mono">Found person kept in view · 15-minute batteries</span><span class="rc-note">% of time after a find, mean of 40 runs</span></figcaption>
+          <svg viewBox="0 0 420 220" role="img" aria-label="Bar chart. Share of time a drone kept a found person in view, 15-minute batteries. Six drones as before 67.5%, six drones with battery-aware planning 96.0%, five searching plus one spare 98.9%, seven drones all searching 77.1%, six searching plus one spare 98.4%.">
+            <g class="rc-grid"><line x1="40" x2="410" y1="180" y2="180"/><line x1="40" x2="410" y1="139.5" y2="139.5"/><line x1="40" x2="410" y1="99" y2="99"/><line x1="40" x2="410" y1="58.5" y2="58.5"/><line x1="40" x2="410" y1="18" y2="18"/></g>
+            <g class="rc-axis"><text x="32" y="184">0</text><text x="32" y="143.5">25</text><text x="32" y="103">50</text><text x="32" y="62.5">75</text><text x="32" y="22">100</text></g>
+            <g class="rc-bars"><rect x="55" y="70.6" width="44" height="109.4" class="lo"/><rect x="129" y="24.5" width="44" height="155.5" class="hi"/><rect x="203" y="19.8" width="44" height="160.2" class="hi"/><rect x="277" y="55.1" width="44" height="124.9" class="lo"/><rect x="351" y="20.6" width="44" height="159.4" class="hi"/></g>
+            <g class="rc-val sm"><text x="77" y="64.6">68%</text><text x="151" y="18.5">96%</text><text x="225" y="13.8">99%</text><text x="299" y="49.1">77%</text><text x="373" y="14.6">98%</text></g>
+            <g class="rc-x"><text x="77" y="198">6 drones</text><text x="77" y="211">before</text><text x="151" y="198">6 drones</text><text x="151" y="211">aware</text><text x="225" y="198">5 + 1</text><text x="225" y="211">spare</text><text x="299" y="198">7 drones</text><text x="299" y="211">all search</text><text x="373" y="198">6 + 1</text><text x="373" y="211">spare</text></g>
+          </svg>
+          <div class="rc-legend"><span><i class="hi"></i>AEGIS battery planning</span><span><i class="lo"></i>Before</span></div>
+        </figure>
+      </div>
       <div class="cap-matrix reveal">
         <div class="mono cm-title">Capabilities at a glance</div>
         <div class="cm-row cm-head"><span>Capability</span><span>What it means</span><span>Status</span></div>
@@ -582,6 +616,7 @@
         <div class="cm-row"><b>Human authority</b><span>An operator confirms every find before anything happens</span><em class="st proven">Proven in simulation</em></div>
         <div class="cm-row"><b>Edge of range</b><span>Mesh radio, relay drones and store-and-forward keep finds reaching the operator</span><em class="st proven">Proven in simulation</em></div>
         <div class="cm-row"><b>Battery handover</b><span>Drones return with a reserve, swap batteries and hand a found person to a relief drone</span><em class="st proven">Proven in simulation</em></div>
+        <div class="cm-row"><b>Spare drones</b><span>A charged spare waits at base and steps in when a drone must leave a found person or goes home to swap</span><em class="st proven">Proven in simulation</em></div>
         <div class="cm-row"><b>Repeat search</b><span>If anyone is still missing, the fleet searches again, finding people who keep moving</span><em class="st proven">Proven in simulation</em></div>
         <div class="cm-row"><b>Operator workload</b><span>Alerts queue for review; a dismissed false alarm is not raised again</span><em class="st proven">Proven in simulation</em></div>
         <div class="cm-row"><b>No GPS</b><span>Ground scout builds its own map with lidar underground and in rubble</span><em class="st concept">Demonstrated as concept</em></div>
@@ -590,7 +625,7 @@
         <div class="cm-row"><b>Multi-agency command</b><span>One shared picture, sectors by agency, one review queue</span><em class="st concept">Demonstrated as concept</em></div>
         <div class="cm-row"><b>Open integration</b><span>MAVLink, ROS 2, TAK / Cursor on Target, GeoJSON and KML</span><em class="st planned">Planned</em></div>
       </div>
-      <p class="results-note reveal">Simulation results from AEGIS software v0.2 (67 automated tests). Phase 1: a 1000 × 600 m sector, 90 m camera swath, 8 m/s scouts and 90% detection per pass. Phase 2 adds batteries with 90 s swaps, radio range with 5% message loss per hop, false alarms reviewed by one operator at 30 s per alert, and people walking at up to 1.5 m/s. The combined test uses 10-minute batteries, 600 m mesh radio, 20 false-alarm objects and people walking at 0.5 m/s. Results reproduce on separate computers. They are not field results. Code and full results are available on request.</p>
+      <p class="results-note reveal">Simulation results from AEGIS software v0.3 (81 automated tests). Phase 1: a 1000 × 600 m sector, 90 m camera swath, 8 m/s scouts and 90% detection per pass. Phase 2 adds batteries with 90 s swaps, radio range with 5% message loss per hop, false alarms reviewed by one operator at 30 s per alert, and people walking at up to 1.5 m/s. The combined test uses 10-minute batteries, 600 m mesh radio, 20 false-alarm objects and people walking at 0.5 m/s. Battery planning uses an 1800 × 1200 m sector with 10- and 15-minute batteries; "in view" is the share of time from the first find to the end of the search that a drone could see the person. Results reproduce on separate computers. They are not field results. Code and full results are available on request.</p>
     </div></section>
 
     <section class="section console-section" id="mission-sim"><div class="container">
@@ -902,8 +937,8 @@
 
     <section class="section roadmap" id="roadmap"><div class="container"><div class="roadmap-head"><div class="reveal"><div class="mono section-label"><span class="section-num">12 /</span> Roadmap</div><h2 class="heading">Proven in stages.<br><span class="highlight">Simulation built.</span></h2></div><p class="body-copy reveal">Each stage has to work, and be measured, before the next begins. Any real-world flying or on-water work will follow safety testing, the required CASA and maritime approvals, and human supervision.</p></div>
       <div class="road-rows">
-        <div class="road-row reveal"><div class="mono phase">01</div><h3>Mission simulation</h3><p>Multi-drone search, coverage tracking, allocation, coordinator failover and failure recovery, then tested against batteries, radio range, false alarms and moving people. 67 automated tests and measured results.</p><span class="pill done">Built · v0.2</span></div>
-        <div class="road-row reveal"><div class="mono phase">02</div><h3>AEGIS Command prototype</h3><p>Multi-agency mission picture, sector assignment and a shared review queue, tested with operators.</p><span class="pill now">Current focus</span></div>
+        <div class="road-row reveal"><div class="mono phase">01</div><h3>Mission simulation</h3><p>Multi-drone search, coverage tracking, allocation, coordinator failover and failure recovery, then tested against batteries, radio range, false alarms and moving people, then battery planning and spare drones. 81 automated tests and measured results.</p><span class="pill done">Built · v0.3</span></div>
+        <div class="road-row reveal"><div class="mono phase">02</div><h3>AEGIS Command prototype</h3><p>Multi-agency mission picture, sector assignment and a shared review queue, tested with operators.</p><span class="pill now">Next</span></div>
         <div class="road-row reveal"><div class="mono phase">03</div><h3>AI perception</h3><p>Thermal and visual detection in bush, rubble and water, with confidence scores and human verification.</p><span class="pill">Planned</span></div>
         <div class="road-row reveal"><div class="mono phase">04</div><h3>Robotics simulation</h3><p>PX4 and Gazebo flight simulation, the ground scout in tunnels and rubble, and marine conditions.</p><span class="pill">Planned</span></div>
         <div class="road-row reveal"><div class="mono phase">05</div><h3>First hardware and supervised trials</h3><p>A scout prototype and controlled trials alongside a partner unit, with approvals in place.</p><span class="pill">Future stage</span></div>
