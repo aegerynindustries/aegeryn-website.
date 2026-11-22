@@ -717,7 +717,7 @@
           <div class="duo-icon" aria-hidden="true"><svg viewBox="0 0 120 70" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 30h80M40 30l-6 10M80 30l6 10"/><rect x="48" y="24" width="24" height="12" rx="4"/><ellipse cx="20" cy="27" rx="16" ry="2.5"/><ellipse cx="100" cy="27" rx="16" ry="2.5"/><path d="M60 36v10M48 62l12-16 12 16" stroke-dasharray="3 4" opacity=".6"/></svg></div>
           <div class="mono">Air scout / UAV</div><h3>Finds.</h3>
           <p>Covers open water fast from above with thermal and visual cameras, and acts as a radio relay over channels and headlands.</p>
-          <dl class="spec"><div><dt>Role</dt><dd>Wide-area search, overwatch, comms relay</dd></div><div><dt>Search pattern</dt><dd>Expanding square from the drift datum</dd></div><div><dt>Strength</dt><dd>Speed and height, sees a large area</dd></div><div><dt>Limit</dt><dd>Short flights; can't see under canopy</dd></div></dl>
+          <dl class="spec"><div><dt>Role</dt><dd>Wide-area search, overwatch, comms relay</dd></div><div><dt>Search pattern</dt><dd>Track line along the drift, then expanding square from the datum</dd></div><div><dt>Strength</dt><dd>Speed and height, sees a large area</dd></div><div><dt>Limit</dt><dd>Short flights; can't see under canopy</dd></div></dl>
         </article>
         <article class="duo-card reveal">
           <div class="duo-icon" aria-hidden="true"><svg viewBox="0 0 120 70" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 40h86l-10 12H24Z"/><path d="M40 40V28h30l8 12"/><path d="M55 28V16M50 16h10"/><path d="M6 58q10-5 20 0t20 0 20 0 20 0 20 0 20 0" opacity=".5"/><rect x="44" y="31" width="14" height="6" rx="2" opacity=".7"/></svg></div>
@@ -730,7 +730,7 @@
     </div></section>
     <section class="section console-section" id="planner"><div class="container">
       <div class="console-intro"><div class="reveal"><div class="mono section-label"><span class="section-num">07 /</span> Drift planner</div><h2 class="heading">Search where<br><span class="highlight">they'll be.</span></h2></div>
-        <p class="body-copy reveal">Click the water to set where someone was last seen. Then change the time since and the current. The planner moves the search area with the drift, grows it as uncertainty builds, and lays out a search pattern for each scout. It uses a simplified model for this website, not an operational planning tool.</p></div>
+        <p class="body-copy reveal">Click the water to set where someone was last seen. Then change the time since and the current. The planner follows the drift through the water, along the coast and up the channels, for a range of possible currents. It covers every likely drift path back to the last-seen point, grows the area as uncertainty builds, and lays out a search pattern for each scout. It uses a simplified model for this website, not an operational planning tool.</p></div>
       <div class="console reveal">
         <div class="console-head"><div class="row"><i class="status-dot"></i><span class="mono">AEGIS Maritime / Drift planner</span></div><span class="console-tag">Simplified model · not for real searches</span></div>
         <div class="console-content">
@@ -750,7 +750,7 @@
               <div class="side-title">Search area</div>
               <dl class="stat-rows">
                 <div><dt>Drift distance</dt><dd id="driftOut">—</dd></div>
-                <div><dt>Search radius</dt><dd id="radiusOut">—</dd></div>
+                <div><dt>Radius at datum</dt><dd id="radiusOut">—</dd></div>
                 <div><dt>Search area</dt><dd id="areaOut">—</dd></div>
               </dl>
               <p class="side-alert" id="plannerNote" aria-live="polite"></p>
@@ -766,7 +766,7 @@
             </div>
           </aside>
         </div>
-        <div class="console-foot"><span><b>Air:</b> 15 m/s, 150 m camera swath · <b>Surface:</b> 5 m/s, 60 m swath · UAV battery 25 min</span><span>Patterns after the IAMSAR expanding-square and sector searches</span></div>
+        <div class="console-foot"><span><b>Air:</b> 15 m/s, 150 m camera swath · <b>Surface:</b> 5 m/s, 60 m swath · UAV battery 25 min</span><span>Patterns after the IAMSAR track-line, expanding-square and sector searches</span></div>
       </div>
     </div></section>
     <section class="section console-section" id="command"><div class="container">
@@ -1008,7 +1008,31 @@
     function along(pts,f){let target=Math.max(0,Math.min(1,f))*polyLen(pts);for(let i=1;i<pts.length;i++){const a=pts[i-1],b=pts[i],l=Math.hypot(b[0]-a[0],b[1]-a[1]);if(target<=l||i===pts.length-1){const t=l?Math.min(1,target/l):0;return{x:a[0]+(b[0]-a[0])*t,y:a[1]+(b[1]-a[1])*t,h:Math.atan2(b[1]-a[1],b[0]-a[0])}}target-=l}return{x:pts[0][0],y:pts[0][1],h:0}}
     function expandingSquare(cx,cy,s,r){const pts=[[cx,cy]];let x=cx,y=cy,leg=1,dir=0;const D=[[0,-1],[1,0],[0,1],[-1,0]];
       while(leg*s<=r*2+s&&pts.length<400){for(let k=0;k<2;k++){x+=D[dir][0]*leg*s;y+=D[dir][1]*leg*s;pts.push([x,y]);dir=(dir+1)%4}leg++}return pts}
-    function sectorSearch(cx,cy,R,start){const pts=[[cx,cy]];for(let k=0;k<6;k++){const a=start+k*Math.PI/3;pts.push([cx+R*Math.sin(a),cy-R*Math.cos(a)],[cx+R*Math.sin(a+Math.PI/3),cy-R*Math.cos(a+Math.PI/3)],[cx,cy])}return pts}
+    // The surface scout's sector search, kept on the water: legs stop short of the shore, and where it cannot
+    // cross straight to the next leg over water it returns through the centre. If the datum is ashore, the
+    // pattern is centred on the nearest water.
+    const clear=(x,y)=>isWater(x,y)&&isWater(x+.006,y)&&isWater(x-.006,y)&&isWater(x,y+.006)&&isWater(x,y-.006);  // 6 m clear of land
+    // Straight line that stays on the water the whole way, at least 6 m from land.
+    const seaLine=(a,b)=>{const L=Math.hypot(b[0]-a[0],b[1]-a[1]);for(let s=0;s<=L;s+=.01){const t=L?s/L:0;if(!clear(a[0]+(b[0]-a[0])*t,a[1]+(b[1]-a[1])*t))return false}return clear(b[0],b[1])};
+    const wet=(x,y)=>{if(!isWater(x,y))return false;for(let k=0;k<6;k++){const a=k*Math.PI/3;if(!isWater(x+.05*Math.cos(a),y+.05*Math.sin(a)))return false}return true};
+    // Open water joins the two points (used to tell whether two places are in the same stretch of water).
+    const sameWater=(a,b)=>{const L=Math.hypot(b[0]-a[0],b[1]-a[1]);if(L<.03)return true;for(let s=0;s<=L;s+=.005){const t=s/L;if(!isWater(a[0]+(b[0]-a[0])*t,a[1]+(b[1]-a[1])*t))return false}return isWater(b[0],b[1])};
+    function nearestWet(cx,cy,R){if(wet(cx,cy))return[cx,cy];for(let r=.05;r<=R;r+=.05)for(let k=0;k<48;k++){const a=k*Math.PI/24,x=cx+r*Math.cos(a),y=cy+r*Math.sin(a);if(wet(x,y)&&sameWater([cx,cy],[x,y]))return[x,y]}return null}
+    function reachOut(c,b){const L=Math.hypot(b[0]-c[0],b[1]-c[1]);let last=c;for(let s=.02;s<=L+1e-9;s+=.02){const t=Math.min(1,s/L),p=[c[0]+(b[0]-c[0])*t,c[1]+(b[1]-c[1])*t];if(!wet(p[0],p[1]))break;last=p}return last}
+    const allWet=(a,b)=>{const L=Math.hypot(b[0]-a[0],b[1]-a[1]);for(let s=0;s<=L;s+=.02){const t=L?s/L:0;if(!wet(a[0]+(b[0]-a[0])*t,a[1]+(b[1]-a[1])*t))return false}return true};
+    // Drift that follows the water: carried with the current, sliding along a shore or up a channel when the current
+    // meets it at an angle of up to 60 degrees (more slowly, by the cosine of the angle), and stranded against the
+    // shore when it meets land more head-on. It never crosses land.
+    function waterDrift(start,dirDeg,dist){let p=start.slice(),left=dist,stranded=false,n=0;const pts=[p.slice()],D=[0,1,-1,2,-2,3,-3,4,-4];
+      while(left>1e-9){const s=Math.min(.02,left);let moved=false;
+        for(const k of D){const dev=k*Math.PI/12,a=dirDeg*Math.PI/180+dev,m=s*Math.cos(dev),ux=Math.sin(a)*m,uy=-Math.cos(a)*m,q=[p[0]+ux,p[1]+uy];
+          if(clear(q[0],q[1])&&clear(p[0]+ux*.25,p[1]+uy*.25)&&clear(p[0]+ux*.5,p[1]+uy*.5)&&clear(p[0]+ux*.75,p[1]+uy*.75)){p=q;moved=true;break}}
+        left-=s;if(!moved){stranded=true;break}pts.push(p.slice())}
+      return{pts,end:p,stranded}}
+    function seaSearch(cx,cy,R,start){const c=nearestWet(cx,cy,R);if(!c)return null;const pts=[c],add=p=>{const q=pts[pts.length-1];if(Math.hypot(p[0]-q[0],p[1]-q[1])>.005)pts.push(p)};
+      for(let k=0;k<6;k++){const a=start+k*Math.PI/3,A=reachOut(c,[c[0]+R*Math.sin(a),c[1]-R*Math.cos(a)]),B=reachOut(c,[c[0]+R*Math.sin(a+Math.PI/3),c[1]-R*Math.cos(a+Math.PI/3)]);
+        add(A);if(allWet(A,B))add(B);else{add(c);add(B)}add(c)}
+      return pts.length>1?pts:[c,c]}
     function drawUSV(ctx,px,py,h,col){ctx.save();ctx.translate(px,py);ctx.rotate(h);ctx.fillStyle=col||`rgba(${SIL},.95)`;ctx.beginPath();ctx.moveTo(9,0);ctx.lineTo(3,-3.6);ctx.lineTo(-7,-3.6);ctx.lineTo(-7,3.6);ctx.lineTo(3,3.6);ctx.closePath();ctx.fill();ctx.fillStyle='#0b0b0d';ctx.fillRect(-3,-1.6,4,3.2);ctx.restore()}
     function drawUAV(ctx,px,py,col){ctx.save();ctx.translate(px,py);ctx.strokeStyle=col||`rgba(${INK},.95)`;ctx.lineWidth=1.3;ctx.beginPath();ctx.moveTo(-6,-6);ctx.lineTo(6,6);ctx.moveTo(6,-6);ctx.lineTo(-6,6);ctx.stroke();[[-6,-6],[6,6],[6,-6],[-6,6]].forEach(([x,y])=>{ctx.beginPath();ctx.arc(x,y,3,0,6.283);ctx.stroke()});ctx.fillStyle=col||`rgba(${INK},.95)`;ctx.fillRect(-2.5,-2.5,5,5);ctx.restore()}
     function label(ctx,txt,x,y,col,size){ctx.font=(size||10)+'px "IBM Plex Mono", monospace';ctx.fillStyle=col;ctx.fillText(txt,x,y)}
@@ -1063,55 +1087,131 @@
       const cv=$('plannerMap');if(!cv||!cv.getContext)return;const ctx=cv.getContext('2d');
       const el={h:$('hoursInput'),hO:$('hoursOut'),c:$('currentInput'),cO:$('currentOut'),d:$('dirInput'),dO:$('dirOut'),drift:$('driftOut'),rad:$('radiusOut'),area:$('areaOut'),note:$('plannerNote'),
         air:$('etaAir'),sea:$('etaSea'),both:$('etaBoth'),bAir:$('barAir'),bSea:$('barSea'),bBoth:$('barBoth'),bat:$('batteryNote')};
-      const AIR={v:15,sw:150},SEA={v:5,sw:60},BATT=25,KN=1.852;
-      let lkp=[8.7,3.2],W=0,H=0,T=null,plan=null,visible=true,msg='';
+      const AIR={v:15,sw:150},SEA={v:5,sw:60},BATT=25,KN=1.852,R0=.4;
+      // Currents are never known exactly, so each plan follows seven drifts: the set current, directions up to
+      // 20 degrees either side, and speeds 20% either side. Where the coast or a channel junction splits them, they
+      // can end in different places.
+      const SPREAD=[[0,1],[-10,1],[10,1],[-20,1],[20,1],[0,.8],[0,1.2]];
+      // Water grid (50 m cells) for routing the surface scout between places by water.
+      const GC=.05,GX=Math.round(KW/GC),GY=Math.round(KH/GC),WETG=new Uint8Array(GX*GY);
+      // A cell counts as water only if it is water all over (checked at its centre, corners and edge midpoints),
+      // so a route between neighbouring water cells never clips the shore.
+      for(let j=0;j<GY;j++)for(let i=0;i<GX;i++){let ok=1;for(let a=0;a<=2&&ok;a++)for(let b=0;b<=2&&ok;b++)if(!isWater((i+a/2)*GC,(j+b/2)*GC))ok=0;WETG[j*GX+i]=ok}
+      function waterRoute(a,b){
+        if(seaLine(a,b))return[a,b];
+        const ci=p=>{const i=Math.floor(p[0]/GC),j=Math.floor(p[1]/GC);return(i<0||j<0||i>=GX||j>=GY)?-1:j*GX+i};
+        const snap=c=>{if(c<0)return -1;if(WETG[c])return c;const i=c%GX,j=(c-i)/GX;for(let r=1;r<4;r++)for(let dj=-r;dj<=r;dj++)for(let di=-r;di<=r;di++){const ii=i+di,jj=j+dj;if(ii>=0&&jj>=0&&ii<GX&&jj<GY&&WETG[jj*GX+ii])return jj*GX+ii}return -1};
+        const s=snap(ci(a)),g=snap(ci(b));if(s<0||g<0)return null;
+        const prev=new Int32Array(GX*GY).fill(-2),q=new Int32Array(GX*GY);prev[s]=-1;let h=0,t=0;q[t++]=s;
+        while(h<t){const c=q[h++];if(c===g)break;const i=c%GX,j=(c-i)/GX;
+          for(let dj=-1;dj<=1;dj++)for(let di=-1;di<=1;di++){if(!di&&!dj)continue;const ii=i+di,jj=j+dj;if(ii<0||jj<0||ii>=GX||jj>=GY)continue;const n=jj*GX+ii;
+            if(!WETG[n]||prev[n]!==-2)continue;if(di&&dj&&(!WETG[j*GX+ii]||!WETG[jj*GX+i]))continue;prev[n]=c;q[t++]=n}}
+        if(prev[g]===-2)return null;
+        const cells=[];for(let c=g;c!==-1;c=prev[c])cells.push(c);cells.reverse();
+        const raw=[a].concat(cells.map(c=>{const i=c%GX;return[(i+.5)*GC,((c-i)/GX+.5)*GC]}),[b]);
+        const out=[raw[0]];let i=0;   // straighten the grid route wherever a straight line stays on the water
+        while(i<raw.length-1){let ok=i+1,step=2,bad=-1;
+          while(ok+step<raw.length){if(seaLine(raw[i],raw[ok+step])){ok+=step;step*=2}else{bad=ok+step;break}}
+          let lo=ok,hi=bad<0?raw.length:bad;while(hi-lo>1){const m=(lo+hi)>>1;if(seaLine(raw[i],raw[m]))lo=m;else hi=m}
+          out.push(raw[lo]);i=lo}
+        return out}
+      function addHull(pp,ax,ay,ra,bx,by,rb){const d=Math.hypot(bx-ax,by-ay);
+        if(d<=Math.abs(rb-ra)+1e-6){const[cx,cy,r]=rb>=ra?[bx,by,rb]:[ax,ay,ra];pp.moveTo(cx+r,cy);pp.arc(cx,cy,r,0,2*Math.PI);pp.closePath();return}
+        const th=Math.atan2(by-ay,bx-ax),al=Math.acos(Math.max(-1,Math.min(1,(ra-rb)/d)));
+        pp.moveTo(bx+rb*Math.cos(th-al),by+rb*Math.sin(th-al));pp.arc(bx,by,rb,th-al,th+al);pp.arc(ax,ay,ra,th+al,th+2*Math.PI-al);pp.closePath()}
+      let lkp=[8.7,3.2],W=0,H=0,T=null,plan=null,visible=true,overlay=null,union=null;
       const compass=d=>['N','NE','E','SE','S','SW','W','NW'][Math.round(d/45)%8];
       const fmtT=m=>m<60?Math.round(m)+' min':Math.floor(m/60)+' h '+String(Math.round(m%60)).padStart(2,'0')+' min';
-      function size(){const r=cv.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,2);W=r.width;H=r.height;cv.width=Math.round(W*d);cv.height=Math.round(H*d);ctx.setTransform(d,0,0,d,0,0);T={sc:W/KW,ox:0,oy:0}}
+      function size(){const r=cv.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,2);W=r.width;H=r.height;cv.width=Math.round(W*d);cv.height=Math.round(H*d);ctx.setTransform(d,0,0,d,0,0);T={sc:W/KW,ox:0,oy:0};buildOverlay()}
+      function buildOverlay(){
+        if(!plan||!T||!W)return;union=new Path2D();const s=T.sc;
+        plan.rings.forEach(ring=>{for(let k=1;k<ring.length;k++){const[a,b]=[ring[k-1],ring[k]];addHull(union,a[0]*s,a[1]*s,a[2]*s,b[0]*s,b[1]*s,b[2]*s)}});
+        // The outline of the whole search area: stroke every piece, then cut away everything inside the area.
+        const d=Math.min(devicePixelRatio||1,2);overlay=document.createElement('canvas');overlay.width=cv.width;overlay.height=cv.height;
+        const o=overlay.getContext('2d');o.setTransform(d,0,0,d,0,0);o.strokeStyle=`rgba(${SIL},.6)`;o.lineWidth=2.4;o.stroke(union);
+        o.globalCompositeOperation='destination-out';o.fill(union);o.globalCompositeOperation='source-over'}
       function compute(){
-        const hrs=+el.h.value,kn=+el.c.value,dir=+el.d.value,drift=kn*KN*hrs,rad=dir*Math.PI/180;
-        const datum=[lkp[0]+Math.sin(rad)*drift,lkp[1]-Math.cos(rad)*drift];
-        const r=.4+.15*hrs+.3*drift,areaKm=Math.PI*r*r;
-        const airMin=areaKm*1e6/(AIR.v*AIR.sw)/60,seaMin=areaKm*1e6/(SEA.v*SEA.sw)/60,bothMin=1/(1/airMin+1/seaMin);
+        const hrs=+el.h.value,kn=+el.c.value,dir=+el.d.value,nominal=kn*KN*hrs,rad=dir*Math.PI/180;
+        const paths=SPREAD.map(([o,f])=>waterDrift(lkp,dir+o,nominal*f)),main=paths[0],datum=main.end,drift=polyLen(main.pts);
+        const r=.4+.15*hrs+.15*nominal;
+        // Each drift path is searched by circles that grow from 0.4 km at the last-seen point to r at its end.
+        const rings=paths.map(p=>{const L=polyLen(p.pts),n=Math.max(1,Math.ceil(L/.25)),ring=[];for(let k=0;k<=n;k++){const f=k/n,q=along(p.pts,f);ring.push([q.x,q.y,R0+(r-R0)*f])}return ring});
+        // Area and its water share, measured on a grid over the union of all those circles.
+        let x0=1e9,x1=-1e9,y0=1e9,y1=-1e9;rings.flat().forEach(([x,y,c])=>{x0=Math.min(x0,x-c);x1=Math.max(x1,x+c);y0=Math.min(y0,y-c);y1=Math.max(y1,y+c)});
+        const cs=Math.max(x1-x0,y1-y0)/140,nx=Math.ceil((x1-x0)/cs),ny=Math.ceil((y1-y0)/cs),inside=new Uint8Array(nx*ny);
+        rings.flat().forEach(([x,y,c])=>{const i0=Math.max(0,Math.floor((x-c-x0)/cs)),i1=Math.min(nx-1,Math.ceil((x+c-x0)/cs)),j0=Math.max(0,Math.floor((y-c-y0)/cs)),j1=Math.min(ny-1,Math.ceil((y+c-y0)/cs));
+          for(let j=j0;j<=j1;j++)for(let i=i0;i<=i1;i++){const k=j*nx+i;if(inside[k])continue;const px=x0+(i+.5)*cs-x,py=y0+(j+.5)*cs-y;if(px*px+py*py<=c*c)inside[k]=1}});
+        let nIn=0,nWet=0;for(let j=0;j<ny;j++)for(let i=0;i<nx;i++){if(!inside[j*nx+i])continue;nIn++;if(isWater(x0+(i+.5)*cs,y0+(j+.5)*cs))nWet++}
+        const areaKm=nIn*cs*cs,waterKm=areaKm*nWet/Math.max(1,nIn),airRate=AIR.v*AIR.sw*60/1e6,seaRate=SEA.v*SEA.sw*60/1e6;
+        const airMin=areaKm/airRate,seaMin=waterKm>0?waterKm/seaRate:0,bothMin=Math.max(areaKm/(airRate+(waterKm>0?seaRate:0)),(areaKm-waterKm)/airRate);
+        // Where the drifts end. Ends within the surface scout's search radius of each other, with open water between,
+        // count as one place; an end cut off by land (another channel) or further away is a separate place.
+        const Rs=Math.min(r,1.8),places=[];paths.forEach((p,k)=>{const e=p.end,c=places.find(c=>Math.hypot(c.at[0]-e[0],c.at[1]-e[1])<=Rs&&sameWater(c.at,e));if(c)c.n++;else places.push({at:e.slice(),n:1,main:k===0})});
+        places.sort((a,b)=>(b.main-a.main)||(b.n-a.n));
+        places.forEach(c=>{c.off=c.at[0]<0||c.at[0]>KW||c.at[1]<0||c.at[1]>KH});
+        const shown=places.filter((c,k)=>!k||!c.off),beyond=places.length-shown.length;
         const hs=Number.isInteger(hrs)?hrs.toFixed(1):String(+hrs.toFixed(2));el.hO.textContent=hs+' h';el.cO.textContent=kn.toFixed(1)+' kn';el.dO.textContent=dir+'° '+compass(dir);
         el.drift.textContent=drift.toFixed(1)+' km';el.rad.textContent=r.toFixed(1)+' km';el.area.textContent=areaKm.toFixed(1)+' km²';
-        el.air.textContent=fmtT(airMin);el.sea.textContent=fmtT(seaMin);el.both.textContent=fmtT(bothMin);
-        el.bAir.style.width=(airMin/seaMin*100)+'%';el.bSea.style.width='100%';el.bBoth.style.width=(bothMin/seaMin*100)+'%';
-        const flights=Math.max(1,Math.ceil(bothMin/BATT));
-        el.bat.textContent='Working together takes about '+flights+' UAV flight'+(flights>1?'s':'')+' of '+BATT+' min'+(flights>1?', recharging on the surface scout in between.':'.');
-        const off=datum[0]<0||datum[0]>KW||datum[1]<0||datum[1]>KH;
-        msg=off?'The drift carries them off this map. Widen the search area or call in more search assets.':
-          !isWater(datum[0],datum[1])?'The drift carries them onto the shore. Search the mangrove fringe from the water and send teams on foot.':
-          hrs===0?'No time has passed yet: search right around the last-seen point.':
-          drift<.2?'Weak current: they are likely still close to where they were last seen.':'The search area has moved '+drift.toFixed(1)+' km '+compass(dir)+' from the last-seen point.';
-        el.note.textContent=msg;
+        el.air.textContent=fmtT(airMin);el.sea.textContent=waterKm>0?fmtT(seaMin):'no water';el.both.textContent=fmtT(bothMin);
+        const top=Math.max(airMin,seaMin,bothMin)||1;
+        el.bAir.style.width=(airMin/top*100)+'%';el.bSea.style.width=(seaMin/top*100)+'%';el.bBoth.style.width=(bothMin/top*100)+'%';
+        const flights=Math.max(1,Math.ceil(bothMin/BATT)),landPct=Math.round(100*(1-nWet/Math.max(1,nIn)));
+        el.bat.textContent='Working together takes about '+flights+' UAV flight'+(flights>1?'s':'')+' of '+BATT+' min'+(flights>1?', recharging on the surface scout in between.':'.')
+          +(landPct>=2?' '+landPct+'% of the area is land: the surface scout searches only the water, so the air scout covers the land.':'');
+        // Plans. Air: track line down the most likely drift, expanding square at the datum, a smaller square at each other place.
         const sweepS=Math.max(AIR.sw/1000,r/12);
-        plan={hrs:hs,drift,datum,r,air:expandingSquare(datum[0],datum[1],sweepS,r),sea:sectorSearch(datum[0],datum[1],Math.min(r,1.8),rad),sweepS};
+        let air=(drift>.05?main.pts.slice():[]).concat(expandingSquare(datum[0],datum[1],sweepS,r));
+        shown.slice(1).forEach(c=>{air=air.concat(expandingSquare(c.at[0],c.at[1],sweepS,Math.min(r,.8)))});
+        // Surface: a sector search at each place in turn, most likely first, travelling between them by water.
+        let sea=[],reached=0,unreachable=0;
+        shown.forEach((c,k)=>{const loc=seaSearch(c.at[0],c.at[1],k?Math.min(Rs,.8):Rs,rad);if(!loc){unreachable++;return}
+          if(sea.length){const route=waterRoute(sea[sea.length-1],loc[0]);if(!route){unreachable++;return}sea=sea.concat(route.slice(1),loc.slice(1))}else sea=loc.slice();reached++});
+        if(reached>1){const back=waterRoute(sea[sea.length-1],sea[0]);if(back)sea=sea.concat(back.slice(1))}
+        const others=shown.length-1,off=datum[0]<0||datum[0]>KW||datum[1]<0||datum[1]>KH;
+        const also=others?' Small changes in the current could also carry them to '+(others===1?'one other place':others+' other places')+', for example further along a channel or into a different one. The surface scout searches the most likely place first, then goes to the '+(others===1?'other':'others')+' by water; the air scout checks them all.'
+          +(unreachable?' '+(unreachable===1?'One place':unreachable+' places')+' cannot be reached by water, so the air scout covers '+(unreachable===1?'it':'them')+'.':''):'';
+        const past=beyond&&!off?' '+(beyond===1?'One more possible drift ends':beyond+' more possible drifts end')+' beyond this map.':'';
+        el.note.textContent=off?'The drift carries them off this map. Widen the search area or call in more search assets.':
+          main.stranded?'The current pushes them against the shore after '+drift.toFixed(1)+' km. Search that stretch of mangrove edge from the water and send teams on foot.'+also+past:
+          hrs===0?'No time has passed yet: search right around the last-seen point.':
+          nominal<.2?'Weak current: they are likely still close to where they were last seen.'+also+past:
+          'They have most likely drifted '+drift.toFixed(1)+' km with the current, following the water. The search area covers every likely drift path back to the last-seen point.'+also+past;
+        plan={hrs:hs,drift,datum,r,paths,main,places:shown,rings,air,sea:sea.length>1?sea:null,sweepS,airPer:Math.max(26,polyLen(air)*1.2),seaPer:Math.max(40,polyLen(sea)*5)};
+        buildOverlay();
       }
       function draw(t){
-        if(!plan)return;const P=drawMap(ctx,T,W,H),[lx,ly]=P(lkp[0],lkp[1]),[dx,dy]=P(plan.datum[0],plan.datum[1]),rp=plan.r*T.sc;
-        ctx.save();ctx.beginPath();ctx.arc(dx,dy,rp,0,6.283);ctx.fillStyle=`rgba(${SIL},.05)`;ctx.fill();ctx.setLineDash([5,5]);ctx.strokeStyle=`rgba(${SIL},.55)`;ctx.lineWidth=1.2;ctx.stroke();ctx.setLineDash([]);ctx.clip();
-        ctx.strokeStyle=`rgba(${INK},.22)`;ctx.lineWidth=1;ctx.beginPath();plan.air.forEach(([x,y],k)=>{const[px,py]=P(x,y);k?ctx.lineTo(px,py):ctx.moveTo(px,py)});ctx.stroke();
-        ctx.strokeStyle=`rgba(${GRN},.45)`;ctx.setLineDash([4,3]);ctx.beginPath();plan.sea.forEach(([x,y],k)=>{const[px,py]=P(x,y);k?ctx.lineTo(px,py):ctx.moveTo(px,py)});ctx.stroke();ctx.setLineDash([]);ctx.restore();
-        if(plan.drift>.05){ctx.strokeStyle=`rgba(${INK},.8)`;ctx.lineWidth=1.4;ctx.setLineDash([6,4]);ctx.beginPath();ctx.moveTo(lx,ly);ctx.lineTo(dx,dy);ctx.stroke();ctx.setLineDash([]);
-          const ang=Math.atan2(dy-ly,dx-lx);ctx.fillStyle=`rgba(${INK},.9)`;ctx.beginPath();ctx.moveTo(dx,dy);ctx.lineTo(dx-10*Math.cos(ang-.4),dy-10*Math.sin(ang-.4));ctx.lineTo(dx-10*Math.cos(ang+.4),dy-10*Math.sin(ang+.4));ctx.closePath();ctx.fill()}
+        if(!plan||!union)return;const P=drawMap(ctx,T,W,H),[lx,ly]=P(lkp[0],lkp[1]),[dx,dy]=P(plan.datum[0],plan.datum[1]),rp=plan.r*T.sc;
+        ctx.save();ctx.fillStyle=`rgba(${SIL},.035)`;ctx.fill(union);ctx.clip(union);
+        const g=ctx.createRadialGradient(dx,dy,0,dx,dy,rp);g.addColorStop(0,`rgba(${SIL},.10)`);g.addColorStop(1,`rgba(${SIL},0)`);ctx.fillStyle=g;ctx.fillRect(dx-rp,dy-rp,2*rp,2*rp);
+        ctx.strokeStyle=`rgba(${INK},.22)`;ctx.lineWidth=1;ctx.beginPath();plan.air.forEach(([x,y],k)=>{const[px,py]=P(x,y);k?ctx.lineTo(px,py):ctx.moveTo(px,py)});ctx.stroke();ctx.restore();
+        ctx.drawImage(overlay,0,0,W,H);
+        // the other likely drift paths, faint; the most likely one dashed, with an arrow
+        ctx.strokeStyle=`rgba(${INK},.2)`;ctx.lineWidth=1;plan.paths.slice(1).forEach(p=>{ctx.beginPath();p.pts.forEach(([x,y],k)=>{const[px,py]=P(x,y);k?ctx.lineTo(px,py):ctx.moveTo(px,py)});ctx.stroke()});
+        if(plan.sea){ctx.strokeStyle=`rgba(${GRN},.5)`;ctx.setLineDash([4,3]);ctx.beginPath();plan.sea.forEach(([x,y],k)=>{const[px,py]=P(x,y);k?ctx.lineTo(px,py):ctx.moveTo(px,py)});ctx.stroke();ctx.setLineDash([])}
+        if(plan.drift>.05){const pts=plan.main.pts;ctx.strokeStyle=`rgba(${INK},.85)`;ctx.lineWidth=1.4;ctx.setLineDash([6,4]);ctx.beginPath();pts.forEach(([x,y],k)=>{const[px,py]=P(x,y);k?ctx.lineTo(px,py):ctx.moveTo(px,py)});ctx.stroke();ctx.setLineDash([]);
+          const q=along(pts,Math.max(0,1-.12/plan.drift)),[qx,qy]=P(q.x,q.y),ang=Math.atan2(dy-qy,dx-qx);
+          ctx.fillStyle=`rgba(${INK},.9)`;ctx.beginPath();ctx.moveTo(dx,dy);ctx.lineTo(dx-10*Math.cos(ang-.4),dy-10*Math.sin(ang-.4));ctx.lineTo(dx-10*Math.cos(ang+.4),dy-10*Math.sin(ang+.4));ctx.closePath();ctx.fill()}
+        plan.places.slice(1).forEach(c=>{const[px,py]=P(c.at[0],c.at[1]);ctx.strokeStyle=`rgba(${INK},.8)`;ctx.lineWidth=1.2;ctx.beginPath();ctx.arc(px,py,6,0,6.283);ctx.stroke();label(ctx,'ALSO POSSIBLE',px+10,py+4,`rgba(${INK},.75)`,9)});
         ctx.fillStyle=`rgba(${RED},.95)`;ctx.beginPath();ctx.arc(lx,ly,5,0,6.283);ctx.fill();ctx.strokeStyle=`rgba(${RED},.5)`;ctx.beginPath();ctx.arc(lx,ly,10,0,6.283);ctx.stroke();
         label(ctx,'LAST SEEN',lx+13,ly-8,`rgba(255,189,189,.95)`,10);
         ctx.strokeStyle=`rgba(${INK},.95)`;ctx.lineWidth=1.4;ctx.beginPath();ctx.moveTo(dx-7,dy);ctx.lineTo(dx+7,dy);ctx.moveTo(dx,dy-7);ctx.lineTo(dx,dy+7);ctx.stroke();
         label(ctx,'DATUM · T+'+plan.hrs+' H',dx+10,dy+18,`rgba(${INK},.9)`,10);
-        const qa=along(plan.air,(t/26)%1),qs=along(plan.sea,(t/40)%1),[ax,ay]=P(qa.x,qa.y),[sx,sy]=P(qs.x,qs.y);
-        drawUSV(ctx,sx,sy,qs.h,`rgba(${GRN},.95)`);drawUAV(ctx,ax,ay);
+        const qa=along(plan.air,(t/plan.airPer)%1),[ax,ay]=P(qa.x,qa.y);
+        if(plan.sea){const qs=along(plan.sea,(t/plan.seaPer)%1),[sx,sy]=P(qs.x,qs.y);drawUSV(ctx,sx,sy,qs.h,`rgba(${GRN},.95)`)}
+        drawUAV(ctx,ax,ay);
         // legend and scale
-        ctx.fillStyle='rgba(10,10,11,.72)';ctx.fillRect(10,10,196,58);
-        ctx.strokeStyle=`rgba(${INK},.5)`;ctx.beginPath();ctx.moveTo(20,25);ctx.lineTo(40,25);ctx.stroke();label(ctx,'Air: expanding square',48,29,`rgba(${INK},.85)`,10);
-        ctx.strokeStyle=`rgba(${GRN},.8)`;ctx.setLineDash([4,3]);ctx.beginPath();ctx.moveTo(20,43);ctx.lineTo(40,43);ctx.stroke();ctx.setLineDash([]);label(ctx,'Surface: sector search',48,47,`rgba(${GRN},.95)`,10);
-        label(ctx,plan.sweepS*1000>AIR.sw+1?'Air legs drawn wider for clarity':'Air legs at true 150 m spacing',20,62,`rgba(${INK},.5)`,9);
+        const small=W<560;ctx.fillStyle='rgba(10,10,11,.72)';ctx.fillRect(10,10,small?150:270,small?44:74);
+        ctx.strokeStyle=`rgba(${INK},.5)`;ctx.beginPath();ctx.moveTo(20,25);ctx.lineTo(40,25);ctx.stroke();label(ctx,small?'Air':'Air: track line, then expanding square',48,29,`rgba(${INK},.85)`,10);
+        ctx.strokeStyle=`rgba(${GRN},.8)`;ctx.setLineDash([4,3]);ctx.beginPath();ctx.moveTo(20,43);ctx.lineTo(40,43);ctx.stroke();ctx.setLineDash([]);label(ctx,small?'Surface, by water':'Surface: sector search, by water',48,47,`rgba(${GRN},.95)`,10);
+        if(!small){label(ctx,'Faint lines: other likely drift paths',20,62,`rgba(${INK},.5)`,9);
+          label(ctx,plan.sweepS*1000>AIR.sw+1?'Air legs drawn wider for clarity':'Air legs at true 150 m spacing',20,76,`rgba(${INK},.5)`,9)}
         const[b0x,b0y]=P(.5,KH-.5),[b1x]=P(2.5,KH-.5);ctx.strokeStyle=`rgba(${INK},.7)`;ctx.lineWidth=1.4;ctx.beginPath();ctx.moveTo(b0x,b0y);ctx.lineTo(b1x,b0y);ctx.moveTo(b0x,b0y-4);ctx.lineTo(b0x,b0y+4);ctx.moveTo(b1x,b0y-4);ctx.lineTo(b1x,b0y+4);ctx.stroke();label(ctx,'2 KM',b0x,b0y-8,`rgba(${INK},.7)`,9);
         const[nx,ny]=P(KW-.7,.9);ctx.strokeStyle=`rgba(${INK},.7)`;ctx.beginPath();ctx.moveTo(nx,ny+10);ctx.lineTo(nx,ny-10);ctx.lineTo(nx-4,ny-4);ctx.moveTo(nx,ny-10);ctx.lineTo(nx+4,ny-4);ctx.stroke();label(ctx,'N',nx-3,ny+24,`rgba(${INK},.7)`,10);
       }
       cv.addEventListener('click',e=>{const r=cv.getBoundingClientRect(),x=(e.clientX-r.left)/T.sc,y=(e.clientY-r.top)/T.sc;
         if(!isWater(x,y)){el.note.textContent='Pick a point on the water for the last-seen position.';return}lkp=[x,y];compute();draw(performance.now()/1000)});
-      [el.h,el.c,el.d].forEach(i=>i.addEventListener('input',()=>{compute();draw(performance.now()/1000)}));
+      // Recalculate at most once per frame while a slider is dragged.
+      let queued=false;[el.h,el.c,el.d].forEach(i=>i.addEventListener('input',()=>{if(queued)return;queued=true;requestAnimationFrame(()=>{queued=false;compute();draw(performance.now()/1000)})}));
       size();compute();draw(0);
       addEventListener('resize',()=>{size();draw(performance.now()/1000)},{passive:true});
       if(reduced.matches)return;
