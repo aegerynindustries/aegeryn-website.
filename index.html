@@ -227,6 +227,11 @@
     .cm-head{padding:10px 0}.cm-head span{font:10px var(--mono)!important;letter-spacing:.1em;text-transform:uppercase;color:var(--subtle)!important}
     .st{font:10px var(--mono);font-style:normal;letter-spacing:.06em;text-transform:uppercase;justify-self:start;padding:7px 10px;border:1px solid;white-space:nowrap}
     .st.proven{color:#9ff0c7;border-color:rgba(91,227,161,.5)}.st.concept{color:var(--ink);border-color:rgba(242,243,245,.3)}.st.planned{color:var(--muted);border-color:var(--stroke);border-style:dashed}
+    .phase-tag{display:block;margin-top:64px;color:var(--muted)}.phase-tag+.stat-band{margin-top:16px}
+    .p2-intro{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:48px;align-items:end;margin-top:96px;padding-top:48px;border-top:1px solid var(--stroke)}
+    .p2-intro h3{margin:12px 0 0;font:500 clamp(28px,3.2vw,44px)/1.05 var(--display);letter-spacing:-.04em;color:var(--ink)}
+    .p2-intro p{margin:0;color:var(--muted);font-size:15px;line-height:1.7}
+    @media(max-width:780px){.p2-intro{grid-template-columns:1fr;gap:16px;margin-top:72px}}
     .results-note{margin:24px 0 0;font:10px/1.7 var(--mono);color:var(--muted);letter-spacing:.03em;max-width:860px}
     .aud-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--stroke);border:1px solid var(--stroke);margin-top:64px}
     .aud-card{--mx:50%;--my:120%;position:relative;overflow:hidden;background:#111113;padding:34px 28px 36px;min-width:0}
@@ -417,7 +422,7 @@
         <div class="hero-cta"><a href="#mission-sim" class="btn">Watch a mission <span class="arr">↓</span></a><button type="button" class="btn secondary" data-contact>Partner with us <span class="arr">↗</span></button></div>
       </div></div>
       <div class="hero-index">AEGIS-01 / SECTOR ALPHA / SIMULATED FEED</div>
-      <div class="hero-bottom"><div class="container hero-bottom-inner"><div class="hero-data"><i class="data-dot"></i><div><small>Status</small><strong>Phase 1 software built and tested</strong></div></div><div class="hero-data"><div><small>Platform</small><strong>AEGIS Command + scouts</strong></div></div><div class="hero-data"><div><small>Domains</small><strong>Land · underground · water</strong></div></div><div class="hero-data"><div><small>Base</small><strong>NSW, Australia</strong></div></div></div></div>
+      <div class="hero-bottom"><div class="container hero-bottom-inner"><div class="hero-data"><i class="data-dot"></i><div><small>Status</small><strong>Phase 1 and 2 software built and tested</strong></div></div><div class="hero-data"><div><small>Platform</small><strong>AEGIS Command + scouts</strong></div></div><div class="hero-data"><div><small>Domains</small><strong>Land · underground · water</strong></div></div><div class="hero-data"><div><small>Base</small><strong>NSW, Australia</strong></div></div></div></div>
     </section>
     <div class="ticker" aria-hidden="true"><div class="ticker-track"><span>PERCEPTION</span><i></i><span>COORDINATION</span><i></i><span>RESILIENCE</span><i></i><span>HUMAN OVERSIGHT</span><i></i><span>SEARCH &amp; RESCUE</span><i></i><span>COASTAL &amp; MANGROVE SEARCH</span><i></i><span>CAVES · TUNNELS · COLLAPSED BUILDINGS</span><i></i><span>PERCEPTION</span><i></i><span>COORDINATION</span><i></i><span>RESILIENCE</span><i></i><span>HUMAN OVERSIGHT</span><i></i><span>SEARCH &amp; RESCUE</span><i></i><span>COASTAL &amp; MANGROVE SEARCH</span><i></i><span>CAVES · TUNNELS · COLLAPSED BUILDINGS</span><i></i></div></div>
     <section class="section intro-section" id="problem"><div class="container">
@@ -483,7 +488,8 @@
 
         <section class="section results-section section-border" id="results"><div class="container">
       <div class="cap-head"><div class="reveal"><div class="mono section-label"><span class="section-num">03 /</span> Proven in simulation</div><h2 class="heading">Not just a vision.<br><span class="highlight">Working software.</span></h2></div>
-        <p class="body-copy reveal">The first AEGIS software is built and tested: a multi-drone search engine with coverage tracking, two allocation algorithms, a primary and backup mission coordinator, and automatic failure recovery. Every figure below is measured over 40 runs per setting.</p></div>
+        <p class="body-copy reveal">The AEGIS mission software is built and tested: a multi-drone search engine with coverage tracking, two allocation algorithms, a primary and backup mission coordinator, and automatic failure recovery. We then put it up against real-world limits: batteries, radio range, false alarms and people who keep moving. Every figure below is measured over 40 runs per setting.</p></div>
+      <div class="mono phase-tag reveal">Phase 1 · Core search and recovery</div>
       <div class="stat-band reveal">
         <div class="stat"><strong>3.6×</strong><span>faster to cover a search sector with six scouts than with one: 14.9 minutes down to 4.2</span></div>
         <div class="stat"><strong>100%</strong><span>of the sector still searched after losing three of six drones mid-mission, in 40 of 40 runs</span></div>
@@ -522,6 +528,50 @@
           <div class="rc-legend"><span><i class="hi"></i>AEGIS re-planning</span><span><i class="lo"></i>No re-planning</span></div>
         </figure>
       </div>
+      <div class="p2-intro reveal">
+        <div><div class="mono section-label">Phase 2 · Real-world limits</div><h3>Tested against the things that break real missions.</h3></div>
+        <p>Drones now run on batteries and swap them, talk over radios with limited range that lose messages, raise false alarms that a person must check, and search for people who keep walking. The software still finds everyone, and the results show exactly where the next gains are.</p>
+      </div>
+      <div class="stat-band reveal">
+        <div class="stat"><strong>13%</strong><span>of flying time out of radio contact at 400 m range with mesh radio and one relay drone. With direct links only: 55%</span></div>
+        <div class="stat"><strong>40/40</strong><span>missions found both people with repeat search passes, even when they kept walking. With a single pass: 28 of 40</span></div>
+        <div class="stat"><strong>4.8 min</strong><span>median time to find both people with every limit switched on at once, and both found in all 40 missions</span></div>
+        <div class="stat"><strong>94%</strong><span>of one operator's time spent reviewing alerts in an area full of false alarms. A second operator cut time to find from 7.1 to 4.1 minutes</span></div>
+      </div>
+      <div class="result-charts reveal">
+        <figure class="rchart">
+          <figcaption><span class="mono">Drone time out of radio contact</span><span class="rc-note">% of flying time, by radio range, mean of 40 runs</span></figcaption>
+          <svg viewBox="0 0 420 220" role="img" aria-label="Grouped bar chart. Share of flying time out of radio contact. With mesh radio and one relay drone: 31% at 300 m range, 13% at 400 m, 0% at 600 m, 0% at 800 m. With direct links only: 67%, 55%, 37%, 20%.">
+            <g class="rc-grid"><line x1="40" x2="410" y1="180" y2="180"/><line x1="40" x2="410" y1="139.5" y2="139.5"/><line x1="40" x2="410" y1="99" y2="99"/><line x1="40" x2="410" y1="58.5" y2="58.5"/><line x1="40" x2="410" y1="18" y2="18"/></g>
+            <g class="rc-axis"><text x="32" y="184">0</text><text x="32" y="143.5">25</text><text x="32" y="103">50</text><text x="32" y="62.5">75</text><text x="32" y="22">100</text></g>
+            <g class="rc-bars">
+              <rect x="58" y="129.8" width="36" height="50.2" class="hi"/><rect x="98" y="71.5" width="36" height="108.5" class="lo"/>
+              <rect x="148" y="158.9" width="36" height="21.1" class="hi"/><rect x="188" y="90.9" width="36" height="89.1" class="lo"/>
+              <rect x="278" y="120.1" width="36" height="59.9" class="lo"/>
+              <rect x="368" y="147.6" width="36" height="32.4" class="lo"/>
+            </g>
+            <g class="rc-val sm"><text x="76" y="124">31%</text><text x="116" y="65.5">67%</text><text x="166" y="153">13%</text><text x="206" y="85">55%</text><text x="256" y="174">0%</text><text x="296" y="114">37%</text><text x="346" y="174">0%</text><text x="386" y="141.6">20%</text></g>
+            <g class="rc-x"><text x="96" y="200">300 m</text><text x="186" y="200">400 m</text><text x="276" y="200">600 m</text><text x="366" y="200">800 m</text></g>
+          </svg>
+          <div class="rc-legend"><span><i class="hi"></i>AEGIS mesh + 1 relay drone</span><span><i class="lo"></i>Direct links only</span></div>
+        </figure>
+        <figure class="rchart">
+          <figcaption><span class="mono">Both people found when they keep walking</span><span class="rc-note">% of 40 runs, by walking speed</span></figcaption>
+          <svg viewBox="0 0 420 220" role="img" aria-label="Grouped bar chart. Share of runs where both people were found. With up to three search passes: 100% at every walking speed from 0 to 1.5 metres per second. With a single pass: 78% when standing still, 70% at 0.5, 1.0 and 1.5 metres per second.">
+            <g class="rc-grid"><line x1="40" x2="410" y1="180" y2="180"/><line x1="40" x2="410" y1="139.5" y2="139.5"/><line x1="40" x2="410" y1="99" y2="99"/><line x1="40" x2="410" y1="58.5" y2="58.5"/><line x1="40" x2="410" y1="18" y2="18"/></g>
+            <g class="rc-axis"><text x="32" y="184">0</text><text x="32" y="143.5">25</text><text x="32" y="103">50</text><text x="32" y="62.5">75</text><text x="32" y="22">100</text></g>
+            <g class="rc-bars">
+              <rect x="58" y="18" width="36" height="162" class="hi"/><rect x="98" y="54.5" width="36" height="125.5" class="lo"/>
+              <rect x="148" y="18" width="36" height="162" class="hi"/><rect x="188" y="66.6" width="36" height="113.4" class="lo"/>
+              <rect x="238" y="18" width="36" height="162" class="hi"/><rect x="278" y="66.6" width="36" height="113.4" class="lo"/>
+              <rect x="328" y="18" width="36" height="162" class="hi"/><rect x="368" y="66.6" width="36" height="113.4" class="lo"/>
+            </g>
+            <g class="rc-val sm"><text x="116" y="48.5">78%</text><text x="206" y="60.6">70%</text><text x="296" y="60.6">70%</text><text x="386" y="60.6">70%</text></g>
+            <g class="rc-x"><text x="96" y="200">standing</text><text x="186" y="200">0.5 m/s</text><text x="276" y="200">1.0 m/s</text><text x="366" y="200">1.5 m/s</text></g>
+          </svg>
+          <div class="rc-legend"><span><i class="hi"></i>AEGIS, up to 3 passes</span><span><i class="lo"></i>Single pass</span></div>
+        </figure>
+      </div>
       <div class="cap-matrix reveal">
         <div class="mono cm-title">Capabilities at a glance</div>
         <div class="cm-row cm-head"><span>Capability</span><span>What it means</span><span>Status</span></div>
@@ -530,13 +580,17 @@
         <div class="cm-row"><b>Command failover</b><span>A backup coordinator on a drone takes over if the ground station fails</span><em class="st proven">Proven in simulation</em></div>
         <div class="cm-row"><b>Find and stay</b><span>A scout holds over a found person while the others keep searching</span><em class="st proven">Proven in simulation</em></div>
         <div class="cm-row"><b>Human authority</b><span>An operator confirms every find before anything happens</span><em class="st proven">Proven in simulation</em></div>
+        <div class="cm-row"><b>Edge of range</b><span>Mesh radio, relay drones and store-and-forward keep finds reaching the operator</span><em class="st proven">Proven in simulation</em></div>
+        <div class="cm-row"><b>Battery handover</b><span>Drones return with a reserve, swap batteries and hand a found person to a relief drone</span><em class="st proven">Proven in simulation</em></div>
+        <div class="cm-row"><b>Repeat search</b><span>If anyone is still missing, the fleet searches again, finding people who keep moving</span><em class="st proven">Proven in simulation</em></div>
+        <div class="cm-row"><b>Operator workload</b><span>Alerts queue for review; a dismissed false alarm is not raised again</span><em class="st proven">Proven in simulation</em></div>
         <div class="cm-row"><b>No GPS</b><span>Ground scout builds its own map with lidar underground and in rubble</span><em class="st concept">Demonstrated as concept</em></div>
-        <div class="cm-row"><b>No signal</b><span>Mesh radio and relay chains; the search keeps running offline</span><em class="st concept">Demonstrated as concept</em></div>
+        <div class="cm-row"><b>No signal</b><span>The search keeps running with no link to base at all, then syncs when back in contact</span><em class="st concept">Demonstrated as concept</em></div>
         <div class="cm-row"><b>Air, ground and water</b><span>Air, ground and surface scouts working in one mission</span><em class="st concept">Demonstrated as concept</em></div>
         <div class="cm-row"><b>Multi-agency command</b><span>One shared picture, sectors by agency, one review queue</span><em class="st concept">Demonstrated as concept</em></div>
         <div class="cm-row"><b>Open integration</b><span>MAVLink, ROS 2, TAK / Cursor on Target, GeoJSON and KML</span><em class="st planned">Planned</em></div>
       </div>
-      <p class="results-note reveal">Simulation results from AEGIS Phase 1 software (v0.1, 29 automated tests): a 1000 × 600 m sector, 90 m camera swath, 8 m/s scouts and 90% detection per pass. They are not field results. Code and full results are available on request.</p>
+      <p class="results-note reveal">Simulation results from AEGIS software v0.2 (67 automated tests). Phase 1: a 1000 × 600 m sector, 90 m camera swath, 8 m/s scouts and 90% detection per pass. Phase 2 adds batteries with 90 s swaps, radio range with 5% message loss per hop, false alarms reviewed by one operator at 30 s per alert, and people walking at up to 1.5 m/s. The combined test uses 10-minute batteries, 600 m mesh radio, 20 false-alarm objects and people walking at 0.5 m/s. Results reproduce on separate computers. They are not field results. Code and full results are available on request.</p>
     </div></section>
 
     <section class="section console-section" id="mission-sim"><div class="container">
@@ -825,7 +879,7 @@
           <li>Agencies are buying drones fast; coordinating them is still at the research stage</li>
           <li>Software first: recurring revenue on fleets agencies already own</li>
           <li>A clear path to specialist hardware where off-the-shelf drones can't go</li>
-          <li>Working Phase 1 software and measured results, not just slides</li></ul></article>
+          <li>Working simulation software and measured results, not just slides</li></ul></article>
       </div>
     </div></section>
 
@@ -846,9 +900,9 @@
       </div>
     </div></section>
 
-    <section class="section roadmap" id="roadmap"><div class="container"><div class="roadmap-head"><div class="reveal"><div class="mono section-label"><span class="section-num">12 /</span> Roadmap</div><h2 class="heading">Proven in stages.<br><span class="highlight">Phase 1 done.</span></h2></div><p class="body-copy reveal">Each stage has to work, and be measured, before the next begins. Any real-world flying or on-water work will follow safety testing, the required CASA and maritime approvals, and human supervision.</p></div>
+    <section class="section roadmap" id="roadmap"><div class="container"><div class="roadmap-head"><div class="reveal"><div class="mono section-label"><span class="section-num">12 /</span> Roadmap</div><h2 class="heading">Proven in stages.<br><span class="highlight">Simulation built.</span></h2></div><p class="body-copy reveal">Each stage has to work, and be measured, before the next begins. Any real-world flying or on-water work will follow safety testing, the required CASA and maritime approvals, and human supervision.</p></div>
       <div class="road-rows">
-        <div class="road-row reveal"><div class="mono phase">01</div><h3>Mission simulation</h3><p>Phase 1 software: multi-drone search, coverage tracking, allocation, coordinator failover and failure recovery, with 29 automated tests and measured results.</p><span class="pill done">Built · v0.1</span></div>
+        <div class="road-row reveal"><div class="mono phase">01</div><h3>Mission simulation</h3><p>Multi-drone search, coverage tracking, allocation, coordinator failover and failure recovery, then tested against batteries, radio range, false alarms and moving people. 67 automated tests and measured results.</p><span class="pill done">Built · v0.2</span></div>
         <div class="road-row reveal"><div class="mono phase">02</div><h3>AEGIS Command prototype</h3><p>Multi-agency mission picture, sector assignment and a shared review queue, tested with operators.</p><span class="pill now">Current focus</span></div>
         <div class="road-row reveal"><div class="mono phase">03</div><h3>AI perception</h3><p>Thermal and visual detection in bush, rubble and water, with confidence scores and human verification.</p><span class="pill">Planned</span></div>
         <div class="road-row reveal"><div class="mono phase">04</div><h3>Robotics simulation</h3><p>PX4 and Gazebo flight simulation, the ground scout in tunnels and rubble, and marine conditions.</p><span class="pill">Planned</span></div>
@@ -878,7 +932,7 @@
         <div class="cta-card"><div class="mono">Researchers</div><p>Collaborate on swarm coordination, perception and robots for hard environments.</p></div>
       </div>
       <div class="hero-cta"><button class="btn" type="button" data-contact>Get in touch <span class="arr">↗</span></button><a class="btn secondary" href="#mission-sim">Watch a mission <span class="arr">↑</span></a></div>
-      <p class="body-copy disclaimer">AEGERYN is an independent, early-stage initiative based in Australia. The results on this page come from our Phase 1 simulation software; the other demonstrations show the design vision. Nothing here is a deployed, certified or operational system.</p>
+      <p class="body-copy disclaimer">AEGERYN is an independent, early-stage initiative based in Australia. The results on this page come from our simulation software; the other demonstrations show the design vision. Nothing here is a deployed, certified or operational system.</p>
     </div></section>
   </main>
   <footer id="contact"><div class="container"><div class="footer-top"><div><div class="footer-brand">AEGERYN<span class="accent">.</span></div><p class="footer-note">One operator. A whole search team. Autonomous systems that put human lives and human judgment first.</p><div class="footer-contact"><div class="mono">Contact</div><a class="footer-email" href="mailto:aegerynindustries@gmail.com" data-contact>aegerynindustries@gmail.com</a></div></div><div class="footer-links"><div class="mono">Platform</div><a href="#platform">AEGIS platform</a><a href="#results">Simulation results</a><a href="#mission-sim">Mission simulation</a><a href="#ground">Ground scout</a><a href="#pairing">AEGIS Maritime</a><a href="#command">AEGIS Command</a></div><div class="footer-links"><div class="mono">Company</div><a href="#audiences">Who it's for</a><a href="#business">Business model</a><a href="#roadmap">Roadmap</a><a href="#principles">Principles</a><a href="mailto:aegerynindustries@gmail.com" data-contact>Email us</a><a href="#top">Back to top ↑</a></div></div><div class="footer-bottom"><span>© <span id="year">2026</span> AEGERYN. All rights reserved.</span><span>Independent initiative / NSW, Australia</span><span>Concepts and demonstrations, not operational systems</span></div></div></footer>
